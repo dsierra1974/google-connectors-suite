@@ -1,0 +1,911 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.ico" />
+<title>
+
+  com.google.code.com.sun.mail.pop3
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    
+    	<li id="guide"><a href="../../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/DefaultFolder.html">DefaultFolder</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Folder.html">POP3Folder</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Message.html">POP3Message</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3SSLStore.html">POP3SSLStore</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Store.html">POP3Store</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>com.google.code.com.sun.mail.pop3</h1>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+
+
+  <div class="jd-descr">
+    A POP3 protocol provider for the JavaMail API
+that provides access to a POP3 message store.
+Refer to <A HREF="http://www.ietf.org/rfc/rfc1939.txt" TARGET="_top">
+RFC 1939</A>
+for more information.
+<P>
+The POP3 provider provides a Store object that contains a single Folder
+named "INBOX". Due to the limitations of the POP3 protocol, many of
+the JavaMail API capabilities like event notification, folder management,
+flag management, etc. are not allowed.  The corresponding methods throw
+the MethodNotSupportedException exception; see below for details.
+<P>
+Note that JavaMail does <strong>not</strong> include a local store into
+which messages can be downloaded and stored.  See our
+<A HREF="http://java.sun.com/products/javamail/Third_Party.html" TARGET="_top">
+Third Party Products</A>
+web page for availability of "mbox" and "MH" local store providers.
+<P>
+The POP3 provider is accessed through the JavaMail APIs by using the protocol
+name "pop3" or a URL of the form "pop3://user:password@host:port/INBOX".
+<P>
+POP3 supports only a single folder named "INBOX".
+<P>
+POP3 supports <strong>no</strong> permanent flags (see
+javax.mail.Folder#getPermanentFlags Folder.getPermanentFlags()).
+In particular, the <code>Flags.Flag.RECENT</code> flag will never be set
+for POP3
+messages.  It's up to the application to determine which messages in a
+POP3 mailbox are "new".  There are several strategies to accomplish
+this, depending on the needs of the application and the environment:
+<P>
+<UL>
+<LI>
+A simple approach would be to keep track of the newest
+message seen by the application.
+</LI>
+<LI>
+An alternative would be to keep track of the UIDs (see below)
+of all messages that have been seen.
+</LI>
+<LI>
+Another approach is to download <strong>all</strong> messages into a local
+mailbox, so that all messages in the POP3 mailbox are, by
+definition, new.
+</LI>
+</UL>
+<P>
+All approaches will require some permanent storage associated with the client.
+<P>
+POP3 does not support the <code>Folder.expunge()</code> method.  To delete and
+expunge messages, set the <code>Flags.Flag.DELETED</code> flag on the messages
+and close the folder using the <code>Folder.close(true)</code> method.  You
+cannot expunge without closing the folder.
+<P>
+POP3 does not provide a "received date", so the <code>getReceivedDate</code>
+method will return null.
+It may be possible to examine other message headers (e.g., the
+"Received" headers) to estimate the received date, but these techniques
+are error-prone at best.
+<P>
+The POP3 provider supports the POP3 UIDL command, see
+com.sun.mail.pop3.POP3Folder#getUID POP3Folder.getUID().
+You can use it as follows:
+<P>
+<BLOCKQUOTE><PRE>
+if (folder instanceof com.sun.mail.pop3.POP3Folder) {
+    com.sun.mail.pop3.POP3Folder pf =
+	(com.sun.mail.pop3.POP3Folder)folder;
+    String uid = pf.getUID(msg);
+    if (uid != null)
+	... // use it
+}
+</PRE></BLOCKQUOTE>
+<P>
+You can also pre-fetch all the UIDs for all messages like this:
+<P>
+<BLOCKQUOTE><PRE>
+FetchProfile fp = new FetchProfile();
+fp.add(UIDFolder.FetchProfileItem.UID);
+folder.fetch(folder.getMessages(), fp);
+</PRE></BLOCKQUOTE>
+<P>
+Then use the technique above to get the UID for each message.  This is
+similar to the technique used with the UIDFolder interface supported by
+IMAP, but note that POP3 UIDs are strings, not integers like IMAP
+UIDs.  See the POP3 spec for details.
+<P>
+When the headers of a POP3 message are accessed, the POP3 provider uses
+the TOP command to fetch all headers, which are then cached.  Use of the
+TOP command can be disabled with the <CODE>mail.pop3.disabletop</CODE>
+property, in which case the entire message content is fetched with the
+RETR command.
+<P>
+When the content of a POP3 message is accessed, the POP3 provider uses
+the RETR command to fetch the entire message.  Normally the message
+content is cached in memory.  By setting the
+<CODE>mail.pop3.filecache.enable</CODE> property, the message content
+will instead be cached in a temporary file.  The file will be removed
+when the folder is closed.  Caching message content in a file is generally
+slower, but uses substantially less memory and may be helpful when dealing
+with very large messages.
+<P>
+The com.sun.mail.pop3.POP3Message#invalidate POP3Message.invalidate
+method can be used to invalidate cached data without closing the folder.
+Note that if the file cache is being used the data in the file will be
+forgotten and fetched from the server if it's needed again, and stored again
+in the file cache.
+<P>
+The POP3 CAPA command (defined by
+<A HREF="http://www.ietf.org/rfc/rfc2449.txt" TARGET="_top">RFC 2449</A>)
+will be used to determine the capabilities supported by the server.
+Some servers don't implement the CAPA command, and some servers don't
+return correct information, so various properties are available to
+disable use of certain POP3 commands, including CAPA.
+<P>
+If the server advertises the PIPELINING capability (defined by
+<A HREF="http://www.ietf.org/rfc/rfc2449.txt" TARGET="_top">RFC 2449</A>),
+or the <CODE>mail.pop3.pipelining</CODE> property is set, the POP3
+provider will send some commands in batches, which can significantly
+improve performance and memory use.
+Some servers that don't support the CAPA command or don't advertise
+PIPELINING may still support pipelining; experimentation may be required.
+<P>
+If pipelining is supported and the connection is using
+SSL, the USER and PASS commands will be sent as a batch.
+(If SSL is not being used, the PASS command isn't sent
+until the user is verified to avoid exposing the password
+if the user name is bad.)
+<P>
+If pipelining is supported, when fetching a message with the RETR command,
+the LIST command will be sent as well, and the result will be used to size
+the I/O buffer, greatly reducing memory usage when fetching messages.
+<P>
+The POP3 protocol provider supports the following properties,
+which may be set in the JavaMail <code>Session</code> object.
+The properties are always set as strings; the Type column describes
+how the string is interpreted.  For example, use
+<PRE>
+	props.put("mail.pop3.port", "888");
+</PRE>
+to set the <CODE>mail.pop3.port</CODE> property, which is of type int.
+<P>
+Note that if you're using the "pop3s" protocol to access POP3 over SSL,
+all the properties would be named "mail.pop3s.*".
+<P>
+<TABLE BORDER>
+<TR>
+<TH>Name</TH>
+<TH>Type</TH>
+<TH>Description</TH>
+</TR>
+
+<TR>
+<TD>mail.pop3.user</TD>
+<TD>String</TD>
+<TD>Default user name for POP3.</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.host</TD>
+<TD>String</TD>
+<TD>The POP3 server to connect to.</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.port</TD>
+<TD>int</TD>
+<TD>The POP3 server port to connect to, if the connect() method doesn't
+explicitly specify one. Defaults to 110.</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.connectiontimeout</TD>
+<TD>int</TD>
+<TD>Socket connection timeout value in milliseconds.
+Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.timeout</TD>
+<TD>int</TD>
+<TD>Socket I/O timeout value in milliseconds.  Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.rsetbeforequit</TD>
+<TD>boolean</TD>
+<TD>
+Send a POP3 RSET command when closing the folder, before sending the
+QUIT command.  Useful with POP3 servers that implicitly mark all
+messages that are read as "deleted"; this will prevent such messages
+from being deleted and expunged unless the client requests so.  Default
+is false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.message.class</TD>
+<TD>String</TD>
+<TD>
+Class name of a subclass of <code>com.sun.mail.pop3.POP3Message</code>.
+The subclass can be used to handle (for example) non-standard
+Content-Type headers.  The subclass must have a public constructor
+of the form <code>MyPOP3Message(Folder f, int msgno)
+throws MessagingException</code>.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.localaddress</TD>
+<TD>String</TD>
+<TD>
+Local address (host name) to bind to when creating the POP3 socket.
+Defaults to the address picked by the Socket class.
+Should not normally need to be set, but useful with multi-homed hosts
+where it's important to pick a particular local address to bind to.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.localport</TD>
+<TD>int</TD>
+<TD>
+Local port number to bind to when creating the POP3 socket.
+Defaults to the port number picked by the Socket class.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.apop.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, use APOP instead of USER/PASS to login to the
+POP3 server, if the POP3 server supports APOP.  APOP sends a
+digest of the password rather than the clear text password.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.socketFactory</TD>
+<TD>SocketFactory</TD>
+<TD>
+If set to a class that implements the
+<code>javax.net.SocketFactory</code> interface, this class
+will be used to create POP3 sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that implements the
+<code>javax.net.SocketFactory</code> interface.  This class
+will be used to create POP3 sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.socketFactory.fallback</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, failure to create a socket using the specified
+socket factory class will cause the socket to be created using
+the <code>java.net.Socket</code> class.
+Defaults to true.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, use SSL to connect and use the SSL port by default.
+Defaults to false for the "pop3" protocol and true for the "pop3s" protocol.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.checkserveridentity</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, check the server identity as specified by
+<A HREF="http://www.ietf.org/rfc/rfc2595.txt" TARGET="_top">RFC 2595</A>.
+These additional checks based on the content of the server's certificate
+are intended to prevent man-in-the-middle attacks.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.trust</TD>
+<TD>String</TD>
+<TD>
+If set, and a socket factory hasn't been specified, enables use of a
+com.sun.mail.util.MailSSLSocketFactory MailSSLSocketFactory.
+If set to "*", all hosts are trusted.
+If set to a whitespace separated list of hosts, those hosts are trusted.
+Otherwise, trust depends on the certificate the server presents.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.socketFactory</TD>
+<TD>SSLSocketFactory</TD>
+<TD>
+If set to a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class, this class
+will be used to create POP3 SSL sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class.  This class
+will be used to create POP3 SSL sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.protocols</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL protocols that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledProtocols</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.ssl.ciphersuites</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL cipher suites that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledCipherSuites</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.starttls.enable</TD>
+<TD>boolean</TD>
+<TD>
+If true, enables the use of the <code>STLS</code> command (if
+supported by the server) to switch the connection to a TLS-protected
+connection before issuing any login commands.  Note that an appropriate
+trust store must configured so that the client will trust the server's
+certificate.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.starttls.required</TD>
+<TD>boolean</TD>
+<TD>
+If true, requires the use of the <code>STLS</code> command.
+If the server doesn't support the STLS command, or the command
+fails, the connect method will fail.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.disabletop</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, the POP3 TOP command will not be used to fetch
+message headers.  This is useful for POP3 servers that don't
+properly implement the TOP command, or that provide incorrect
+information in the TOP command results.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.disablecapa</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, the POP3 CAPA command will not be used to fetch
+server capabilities.  This is useful for POP3 servers that don't
+properly implement the CAPA command, or that provide incorrect
+information in the CAPA command results.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.forgettopheaders</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, the headers that might have been retrieved using
+the POP3 TOP command will be forgotten and replaced by headers
+retrieved as part of the POP3 RETR command.  Some servers, such
+as some versions of Microsft Exchange and IBM Lotus Notes,
+will return slightly different
+headers each time the TOP or RETR command is used.  To allow the
+POP3 provider to properly parse the message content returned from
+the RETR command, the headers also returned by the RETR command
+must be used.  Setting this property to true will cause these
+headers to be used, even if they differ from the headers returned
+previously as a result of using the TOP command.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.filecache.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, the POP3 provider will cache message data in a temporary
+file rather than in memory.  Messages are only added to the cache when
+accessing the message content.  Message headers are always cached in
+memory (on demand).  The file cache is removed when the folder is closed
+or the JVM terminates.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.filecache.dir</TD>
+<TD>String</TD>
+<TD>
+If the file cache is enabled, this property can be used to override the
+default directory used by the JDK for temporary files.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.cachewriteto</TD>
+<TD>boolean</TD>
+<TD>
+Controls the behavior of the
+com.sun.mail.pop3.POP3Message#writeTo writeTo method
+on a POP3 message object.
+If set to true, and the message content hasn't yet been cached,
+and ignoreList is null, the message is cached before being written.
+Otherwise, the message is streamed directly
+to the output stream without being cached.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.pop3.keepmessagecontent</TD>
+<TD>boolean</TD>
+<TD>
+The content of a message is cached when it is first fetched.
+Normally this cache uses a java.lang.ref.SoftReference SoftReference
+to refer to the cached content.  This allows the cached content to be purged
+if memory is low, in which case the content will be fetched again if it's
+needed.
+If this property is set to true, a hard reference to the cached content
+will be kept, preventing the memory from being reused until the folder
+is closed or the cached content is explicitly invalidated (using the
+com.sun.mail.pop3.POP3Message#invalidate invalidate method).
+(This was the behavior in previous versions of JavaMail.)
+Defaults to false.
+</TD>
+</TR>
+
+</TABLE>
+<P>
+In general, applications should not need to use the classes in this
+package directly.  Instead, they should use the APIs defined by
+<code>javax.mail</code> package (and subpackages).  Applications should
+never construct instances of <code>POP3Store</code> or
+<code>POP3Folder</code> directly.  Instead, they should use the
+<code>Session</code> method <code>getStore</code> to acquire an
+appropriate <code>Store</code> object, and from that acquire
+<code>Folder</code> objects.
+<P>
+<strong>WARNING:</strong> The APIs unique to this package should be
+considered <strong>EXPERIMENTAL</strong>.  They may be changed in the
+future in ways that are incompatible with applications using the
+current APIs.
+
+
+  </div>
+
+
+
+
+
+  
+
+
+  
+    <h2>Classes</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/DefaultFolder.html">DefaultFolder</a></td>
+              <td class="jd-descrcol" width="100%">The POP3 DefaultFolder.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Folder.html">POP3Folder</a></td>
+              <td class="jd-descrcol" width="100%">A POP3 GmailFolder (can only be "INBOX").&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Message.html">POP3Message</a></td>
+              <td class="jd-descrcol" width="100%">A POP3 Message.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3SSLStore.html">POP3SSLStore</a></td>
+              <td class="jd-descrcol" width="100%">A POP3 Message Store using SSL.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Store.html">POP3Store</a></td>
+              <td class="jd-descrcol" width="100%">A POP3 Message Store.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

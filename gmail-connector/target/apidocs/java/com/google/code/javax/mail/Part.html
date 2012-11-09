@@ -1,0 +1,2739 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  Part
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageAware.html">MessageAware</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MultipartDataSource.html">MultipartDataSource</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Part.html">Part</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/QuotaAwareStore.html">QuotaAwareStore</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.html">UIDFolder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.html">FetchProfile</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.Item.html">FetchProfile.Item</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.html">Flags</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.Flag.html">Flags.Flag</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Folder.html">Folder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Header.html">Header</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.RecipientType.html">Message.RecipientType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageContext.html">MessageContext</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.Type.html">Provider.Type</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.html">Quota</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.Resource.html">Quota.Resource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Service.html">Service</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.FetchProfileItem.html">UIDFolder.FetchProfileItem</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/AuthenticationFailedException.html">AuthenticationFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderClosedException.html">FolderClosedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderNotFoundException.html">FolderNotFoundException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageRemovedException.html">MessageRemovedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MethodNotSupportedException.html">MethodNotSupportedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/ReadOnlyFolderException.html">ReadOnlyFolderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/StoreClosedException.html">StoreClosedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+  <a href="#constants">Constants</a>
+  
+
+
+
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    interface
+<h1>Part</h1>
+
+
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.mail.Part</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-indirect" class="jd-expando-trigger closed"
+          ><img id="subclasses-indirect-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Indirect Subclasses
+
+  <div id="subclasses-indirect">
+      <div id="subclasses-indirect-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a>,
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPBodyPart.html">IMAPBodyPart</a>,
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPMessage.html">IMAPMessage</a>,
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPNestedMessage.html">IMAPNestedMessage</a>,
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a>,
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a>,
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.html">MimeMessage</a>,
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/internet/MimePart.html">MimePart</a>,
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Message.html">POP3Message</a>,
+            
+              <a href="../../../../../../java/com/google/code/javax/mail/internet/PreencodedMimeBodyPart.html">PreencodedMimeBodyPart</a>,
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPMessage.html">SMTPMessage</a>
+            
+          
+      </div>
+      <div id="subclasses-indirect-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></td>
+              <td class="jd-descrcol" width="100%">This class models a Part that is contained within a Multipart.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPBodyPart.html">IMAPBodyPart</a></td>
+              <td class="jd-descrcol" width="100%">An IMAP body part.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPMessage.html">IMAPMessage</a></td>
+              <td class="jd-descrcol" width="100%">This class implements an IMAPMessage object.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/imap/IMAPNestedMessage.html">IMAPNestedMessage</a></td>
+              <td class="jd-descrcol" width="100%">This class implements a nested IMAP message&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a></td>
+              <td class="jd-descrcol" width="100%">This class models an email message.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a></td>
+              <td class="jd-descrcol" width="100%">This class represents a MIME body part.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.html">MimeMessage</a></td>
+              <td class="jd-descrcol" width="100%">This class represents a MIME style email message.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/internet/MimePart.html">MimePart</a></td>
+              <td class="jd-descrcol" width="100%">The MimePart interface models an <strong>Entity</strong> as defined
+ by MIME (RFC2045, Section 2.4).&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/pop3/POP3Message.html">POP3Message</a></td>
+              <td class="jd-descrcol" width="100%">A POP3 Message.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/javax/mail/internet/PreencodedMimeBodyPart.html">PreencodedMimeBodyPart</a></td>
+              <td class="jd-descrcol" width="100%">A MimeBodyPart that handles data that has already been encoded.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPMessage.html">SMTPMessage</a></td>
+              <td class="jd-descrcol" width="100%">This class is a specialization of the MimeMessage class that allows
+ you to specify various SMTP options and parameters that will be
+ used when this message is sent over SMTP.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>The <code>Part</code> interface is the common base interface for 
+ Messages and BodyParts. <p>
+
+ Part consists of a set of attributes and a "Content".<p>
+
+ <strong> Attributes: </strong> <p>
+
+ The JavaMail API defines a set of standard Part attributes that are
+ considered to be common to most existing Mail systems. These
+ attributes have their own settor and gettor methods. Mail systems 
+ may support other Part attributes as well, these are represented as 
+ name-value pairs where both the name and value are Strings.<p>
+
+ <strong> Content: </strong> <p>
+
+ The <strong>data type</strong> of the "content" is returned by
+ the <code>getContentType()</code> method. The MIME typing system
+ is used to name data types. <p>
+
+ The "content" of a Part is available in various formats:
+ <ul>
+ <li> As a DataHandler - using the <code>getDataHandler()</code> method.
+ The "content" of a Part is also available through a 
+ <code>javax.activation.DataHandler</code> object. The DataHandler 
+ object allows clients to discover the operations available on the
+ content, and to instantiate the appropriate component to perform
+ those operations. 
+
+ <li> As an input stream - using the <code>getInputStream()</code> method.
+ Any mail-specific encodings are decoded before this stream is returned.
+
+ <li> As a Java object - using the <code>getContent()</code> method.
+ This method returns the "content" as a Java object.
+ The returned object is of course dependent on the content
+ itself. In particular, a "multipart" Part's content is always a 
+ Multipart or subclass thereof.  That is, <code>getContent()</code> on a 
+ "multipart" type Part will always return a Multipart (or subclass) object.
+ </ul>
+
+ Part provides the <code>writeTo()</code> method that streams
+ out its bytestream in mail-safe form suitable for transmission. 
+ This bytestream is typically an aggregation of the Part attributes
+ and its content's bytestream. <p>
+
+ Message and BodyPart implement the Part interface. Note that in
+ MIME parlance, Part models an Entity (RFC 2045, Section 2.4).</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Part.html#ATTACHMENT">ATTACHMENT</a></td>
+        <td class="jd-descrcol" width="100%">This part should be presented as an attachment.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Part.html#INLINE">INLINE</a></td>
+        <td class="jd-descrcol" width="100%">This part should be presented inline.</td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#addHeader(java.lang.String, java.lang.String)">addHeader</a></span>(String header_name, String header_value)</nobr>
+        
+        <div class="jd-descrdiv">Add this value to the existing values for this header_name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getAllHeaders()">getAllHeaders</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return all the headers from this part as an Enumeration of
+ Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getContent()">getContent</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the content as a Java object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getContentType()">getContentType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the Content-Type of the content of this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/activation/DataHandler.html">DataHandler</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getDataHandler()">getDataHandler</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return a DataHandler for the content within this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getDescription()">getDescription</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return a description String for this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getDisposition()">getDisposition</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the disposition of this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getFileName()">getFileName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the filename associated with this part, if possible.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            String[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getHeader(java.lang.String)">getHeader</a></span>(String header_name)</nobr>
+        
+        <div class="jd-descrdiv">Get all the headers for this header name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            InputStream</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getInputStream()">getInputStream</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return an input stream for this part's "content".</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getLineCount()">getLineCount</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the number of lines in the content of this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getMatchingHeaders(java.lang.String[])">getMatchingHeaders</a></span>(String[] header_names)</nobr>
+        
+        <div class="jd-descrdiv">Return matching headers from this part as an Enumeration of
+ Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getNonMatchingHeaders(java.lang.String[])">getNonMatchingHeaders</a></span>(String[] header_names)</nobr>
+        
+        <div class="jd-descrdiv">Return non-matching headers from this envelope as an Enumeration
+ of Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#getSize()">getSize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the size of the content of this part in bytes.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#isMimeType(java.lang.String)">isMimeType</a></span>(String mimeType)</nobr>
+        
+        <div class="jd-descrdiv">Is this Part of the specified MIME type?  This method
+ compares <strong>only the <code>primaryType</code> and 
+ <code>subType</code></strong>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#removeHeader(java.lang.String)">removeHeader</a></span>(String header_name)</nobr>
+        
+        <div class="jd-descrdiv">Remove all headers with this name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setContent(java.lang.Object, java.lang.String)">setContent</a></span>(Object obj, String type)</nobr>
+        
+        <div class="jd-descrdiv">A convenience method for setting this part's content.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setContent(com.google.code.javax.mail.Multipart)">setContent</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a> mp)</nobr>
+        
+        <div class="jd-descrdiv">This method sets the given Multipart object as this message's
+ content.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setDataHandler(com.google.code.javax.activation.DataHandler)">setDataHandler</a></span>(<a href="../../../../../../java/com/google/code/javax/activation/DataHandler.html">DataHandler</a> dh)</nobr>
+        
+        <div class="jd-descrdiv">This method provides the mechanism to set this part's content.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setDescription(java.lang.String)">setDescription</a></span>(String description)</nobr>
+        
+        <div class="jd-descrdiv">Set a description String for this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setDisposition(java.lang.String)">setDisposition</a></span>(String disposition)</nobr>
+        
+        <div class="jd-descrdiv">Set the disposition of this part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setFileName(java.lang.String)">setFileName</a></span>(String filename)</nobr>
+        
+        <div class="jd-descrdiv">Set the filename associated with this part, if possible.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setHeader(java.lang.String, java.lang.String)">setHeader</a></span>(String header_name, String header_value)</nobr>
+        
+        <div class="jd-descrdiv">Set the value for this header_name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#setText(java.lang.String)">setText</a></span>(String text)</nobr>
+        
+        <div class="jd-descrdiv">A convenience method that sets the given String as this
+ part's content with a MIME type of "text/plain".</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Part.html#writeTo(java.io.OutputStream)">writeTo</a></span>(OutputStream os)</nobr>
+        
+        <div class="jd-descrdiv">Output a bytestream for this Part.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="ATTACHMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ATTACHMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This part should be presented as an attachment.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#getDisposition()">getDisposition()</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#setDisposition(java.lang.String)">setDisposition(String)</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "attachment"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INLINE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INLINE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This part should be presented inline.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#getDisposition()">getDisposition()</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#setDisposition(java.lang.String)">setDisposition(String)</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "inline"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addHeader(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">addHeader</span>
+      <span class="normal">(String header_name, String header_value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add this value to the existing values for this header_name.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_name</td>
+          <td>The name of this header</td>
+        </tr>
+        <tr>
+          <th>header_value</td>
+          <td>The value for this header</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying 
+				implementation does not support modification 
+				of existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is 
+				obtained from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAllHeaders()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        Enumeration
+      </span>
+      <span class="sympad">getAllHeaders</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all the headers from this part as an Enumeration of
+ Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>enumeration of Header objects</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getContent()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        Object
+      </span>
+      <span class="sympad">getContent</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the content as a Java object. The type of the returned 
+ object is of course dependent on the content itself. For example,
+ the object returned for "text/plain" content is usually a String 
+ object. The object returned for a "multipart" content is always a
+ Multipart subclass. For content-types that are  unknown to the
+ DataHandler system, an input stream is returned as the content <p>
+
+ This is a convenience method that just invokes the DataHandler's
+ getContent() method</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>this is typically thrown by the 
+			DataHandler. Refer to the documentation for 
+			javax.activation.DataHandler for more details.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getContent()">getContent()</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getContentType()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        String
+      </span>
+      <span class="sympad">getContentType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the Content-Type of the content of this part.
+ Returns null if the Content-Type could not be determined. <p>
+
+ The MIME typing system is used to name Content-types.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The ContentType of this part</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.activation.DataHandler</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDataHandler()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataHandler.html">DataHandler</a>
+      </span>
+      <span class="sympad">getDataHandler</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return a DataHandler for the content within this part. The
+ DataHandler allows clients to operate on as well as retrieve
+ the content.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>DataHandler for the content</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDescription()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        String
+      </span>
+      <span class="sympad">getDescription</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return a description String for this part. This typically
+ associates some descriptive information with this part.
+ Returns null if none is available.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>description of this part</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDisposition()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        String
+      </span>
+      <span class="sympad">getDisposition</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the disposition of this part.  The disposition
+ describes how the part should be presented to the user.
+ (See RFC 2183.)  The return value should be considered
+ without regard to case.  For example: <p>
+ <blockquote><pre>
+ String disp = part.getDisposition();
+ if (disp == null || disp.equalsIgnoreCase(Part.ATTACHMENT))
+	// treat as attachment if not first part
+ </pre></blockquote></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>disposition of this part, or null if unknown</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#ATTACHMENT">ATTACHMENT</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#INLINE">INLINE</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#getFileName()">getFileName()</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getFileName()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        String
+      </span>
+      <span class="sympad">getFileName</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the filename associated with this part, if possible.
+ Useful if this part represents an "attachment" that was
+ loaded from a file.  The filename will usually be a simple
+ name, not including directory components.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Filename to associate with this part
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getHeader(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        String[]
+      </span>
+      <span class="sympad">getHeader</span>
+      <span class="normal">(String header_name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get all the headers for this header name. Returns <code>null</code>
+ if no headers for this header name are available.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_name</td>
+          <td>The name of this header</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the value fields for all headers with 
+				this name</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInputStream()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        InputStream
+      </span>
+      <span class="sympad">getInputStream</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return an input stream for this part's "content". Any 
+ mail-specific transfer encodings will be decoded before the 
+ input stream is provided. <p>
+
+ This is typically a convenience method that just invokes
+ the DataHandler's <code>getInputStream()</code> method.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>an InputStream</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>this is typically thrown by the 
+			DataHandler. Refer to the documentation for 
+			javax.activation.DataHandler for more details.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#getDataHandler()">getDataHandler()</a></code></li><li><code><a href="../../../../../../null#getInputStream()">getInputStream()</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getLineCount()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        int
+      </span>
+      <span class="sympad">getLineCount</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the number of lines in the content of this part. 
+ Return -1 if the number cannot be determined.
+
+ Note that this number may not be an exact measure of the 
+ content length and may or may not account for any transfer 
+ encoding of the content. </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>number of lines in the content.</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMatchingHeaders(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        Enumeration
+      </span>
+      <span class="sympad">getMatchingHeaders</span>
+      <span class="normal">(String[] header_names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return matching headers from this part as an Enumeration of
+ Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>enumeration of Header objects</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getNonMatchingHeaders(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        Enumeration
+      </span>
+      <span class="sympad">getNonMatchingHeaders</span>
+      <span class="normal">(String[] header_names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return non-matching headers from this envelope as an Enumeration
+ of Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>enumeration of Header objects</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSize()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        int
+      </span>
+      <span class="sympad">getSize</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the size of the content of this part in bytes.
+ Return -1 if the size cannot be determined. <p>
+
+ Note that the size may not be an exact measure of the content
+ size and may or may not account for any transfer encoding
+ of the content. The size is appropriate for display in a 
+ user interface to give the user a rough idea of the size
+ of this part.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>size of content in bytes</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isMimeType(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        boolean
+      </span>
+      <span class="sympad">isMimeType</span>
+      <span class="normal">(String mimeType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Is this Part of the specified MIME type?  This method
+ compares <strong>only the <code>primaryType</code> and 
+ <code>subType</code></strong>.
+ The parameters of the content types are ignored. <p>
+
+ For example, this method will return <code>true</code> when
+ comparing a Part of content type <strong>"text/plain"</strong>
+ with <strong>"text/plain; charset=foobar"</strong>. <p>
+
+ If the <code>subType</code> of <code>mimeType</code> is the
+ special character '*', then the subtype is ignored during the
+ comparison.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>mimeType</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeHeader(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">removeHeader</span>
+      <span class="normal">(String header_name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove all headers with this name.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_name</td>
+          <td>The name of this header</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying 
+				implementation does not support modification 
+				of existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is 
+				obtained from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setContent(java.lang.Object, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setContent</span>
+      <span class="normal">(Object obj, String type)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A convenience method for setting this part's content.  The part
+ internally wraps the content in a DataHandler. <p>
+
+ Note that a DataContentHandler class for the specified type should 
+ be available to the JavaMail implementation for this to work right.
+ i.e., to do <code>setContent(foobar, "application/x-foobar")</code>,
+ a DataContentHandler for "application/x-foobar" should be installed.
+ Refer to the Java Activation Framework for more information.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>obj</td>
+          <td>A java object.</td>
+        </tr>
+        <tr>
+          <th>type</td>
+          <td>MIME type of this object.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying implementation
+			does not support modification of existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setContent(com.google.code.javax.mail.Multipart)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setContent</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a> mp)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method sets the given Multipart object as this message's
+ content.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>mp</td>
+          <td>The multipart object that is the Message's content</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying 
+			implementation	does not support modification of 
+			existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDataHandler(com.google.code.javax.activation.DataHandler)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setDataHandler</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/activation/DataHandler.html">DataHandler</a> dh)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method provides the mechanism to set this part's content.
+ The DataHandler wraps around the actual content.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>dh</td>
+          <td>The DataHandler for the content.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying implementation
+			does not support modification of existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDescription(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setDescription</span>
+      <span class="normal">(String description)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set a description String for this part. This typically
+ associates some descriptive information with this part.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>description</td>
+          <td>Description of this part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying implementation
+			does not support modification of this header</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDisposition(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setDisposition</span>
+      <span class="normal">(String disposition)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the disposition of this part.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>disposition</td>
+          <td>Disposition of this part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying implementation
+			does not support modification of this header</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#ATTACHMENT">ATTACHMENT</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#INLINE">INLINE</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Part.html#setFileName(java.lang.String)">setFileName(String)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setFileName(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setFileName</span>
+      <span class="normal">(String filename)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the filename associated with this part, if possible.
+ Useful if this part represents an "attachment" that was
+ loaded from a file.  The filename will usually be a simple
+ name, not including directory components.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>filename</td>
+          <td>Filename to associate with this part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying implementation
+			does not support modification of this header</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setHeader(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setHeader</span>
+      <span class="normal">(String header_name, String header_value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the value for this header_name. Replaces all existing
+ header values with this new value.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>header_name</td>
+          <td>The name of this header</td>
+        </tr>
+        <tr>
+          <th>header_value</td>
+          <td>The value for this header</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying 
+				implementation does not support modification 
+				of existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is 
+				obtained from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setText(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">setText</span>
+      <span class="normal">(String text)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A convenience method that sets the given String as this
+ part's content with a MIME type of "text/plain". </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>text</td>
+          <td>The text that is the Message's content.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying 
+			implementation does not support modification of 
+			existing values</td>
+        </tr>  
+        <tr>
+            <th>IllegalStateException</td>
+            <td>if this Part is obtained
+			from a READ_ONLY folder
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="writeTo(java.io.OutputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">writeTo</span>
+      <span class="normal">(OutputStream os)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Output a bytestream for this Part. This bytestream is
+ typically an aggregration of the Part attributes and
+ an appropriately encoded bytestream from its 'content'. <p>
+
+ Classes that implement the Part interface decide on
+ the appropriate encoding algorithm to be used. <p>
+
+ The bytestream is typically used for sending.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>os</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an error occurs writing to the 
+					stream or if an error is generated
+					by the javax.activation layer.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if an error occurs fetching the
+					data to be written</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#writeTo(java.io.OutputStream)">writeTo(OutputStream)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

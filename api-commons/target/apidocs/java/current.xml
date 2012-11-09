@@ -1,0 +1,871 @@
+<api>
+<package name="org.mule.modules.google"
+>
+<class name="AbstractGoogleOAuthConnector"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AbstractGoogleOAuthConnector"
+ type="org.mule.modules.google.AbstractGoogleOAuthConnector"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAccessToken"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUserId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setUserId"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="userId" type="java.lang.String">
+</parameter>
+</method>
+<field name="USER_PROFILE_SCOPE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;https://www.googleapis.com/auth/userinfo.profile&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="userId"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="AccessType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="org.mule.modules.google.AccessType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="org.mule.modules.google.AccessType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="ForcePrompt"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="org.mule.modules.google.ForcePrompt"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="org.mule.modules.google.ForcePrompt[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="GoogleUserIdExtractor"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="GoogleUserIdExtractor"
+ type="org.mule.modules.google.GoogleUserIdExtractor"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getUserId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="connector" type="org.mule.modules.google.AbstractGoogleOAuthConnector">
+</parameter>
+</method>
+<field name="logger"
+ type="org.apache.log4j.Logger"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="restClient"
+ type="com.sun.jersey.api.client.Client"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="userIdPattern"
+ type="java.util.regex.Pattern"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.google.api.client.batch"
+>
+<class name="BatchCallback"
+ extends="com.google.api.client.googleapis.batch.json.JsonBatchCallback"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BatchCallback"
+ type="org.mule.modules.google.api.client.batch.BatchCallback"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getResponse"
+ return="org.mule.modules.google.api.client.batch.BatchResponse&lt;W&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onFailure"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="e" type="com.google.api.client.googleapis.json.GoogleJsonError">
+</parameter>
+<parameter name="responseHeaders" type="com.google.api.client.googleapis.GoogleHeaders">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="onSuccess"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="t" type="T">
+</parameter>
+<parameter name="responseHeaders" type="com.google.api.client.googleapis.GoogleHeaders">
+</parameter>
+</method>
+<method name="typeToWrapper"
+ return="W"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="object" type="T">
+</parameter>
+</method>
+<field name="response"
+ type="org.mule.modules.google.api.client.batch.BatchResponse"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="BatchResponse"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BatchResponse"
+ type="org.mule.modules.google.api.client.batch.BatchResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addError"
+ return="org.mule.modules.google.api.client.batch.BatchResponse&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="error" type="com.google.api.client.googleapis.json.GoogleJsonError">
+</parameter>
+</method>
+<method name="addSuccessful"
+ return="org.mule.modules.google.api.client.batch.BatchResponse&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="succesful" type="T">
+</parameter>
+</method>
+<method name="getErrors"
+ return="java.util.List&lt;com.google.api.client.googleapis.json.GoogleJsonError.ErrorInfo&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSuccessful"
+ return="java.util.List&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="errors"
+ type="java.util.List"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+<field name="successful"
+ type="java.util.List"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<class name="VoidBatchCallback"
+ extends="com.google.api.client.googleapis.batch.json.JsonBatchCallback"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VoidBatchCallback"
+ type="org.mule.modules.google.api.client.batch.VoidBatchCallback"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="onFailure"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="e" type="com.google.api.client.googleapis.json.GoogleJsonError">
+</parameter>
+<parameter name="responseHeaders" type="com.google.api.client.googleapis.GoogleHeaders">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="onSuccess"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="t" type="java.lang.Void">
+</parameter>
+<parameter name="responseHeaders" type="com.google.api.client.googleapis.GoogleHeaders">
+</parameter>
+</method>
+</class>
+</package>
+<package name="org.mule.modules.google.api.datetime"
+>
+<class name="DateTime"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.util.Date">
+</parameter>
+<parameter name="zone" type="java.util.TimeZone">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="long">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="com.google.api.client.util.DateTime">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.util.Date">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="long">
+</parameter>
+<parameter name="tzShift" type="java.lang.Integer">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dateOnly" type="boolean">
+</parameter>
+<parameter name="value" type="long">
+</parameter>
+<parameter name="tzShift" type="java.lang.Integer">
+</parameter>
+</constructor>
+<constructor name="DateTime"
+ type="org.mule.modules.google.api.datetime.DateTime"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getTimeZoneShift"
+ return="java.lang.Integer"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getWrapped"
+ return="com.google.api.client.util.DateTime"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isDateOnly"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setTimeZoneShift"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tzShift" type="java.lang.Integer">
+</parameter>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="long">
+</parameter>
+</method>
+<method name="setValue"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="long">
+</parameter>
+<parameter name="tzShift" type="int">
+</parameter>
+</method>
+<method name="toStringRfc3339"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="wrapped"
+ type="com.google.api.client.util.DateTime"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+<interface name="DateTimeConstants"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<field name="RFC3339"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;yyyy-MM-dd\&pos;T\&pos;HH:mm:ss\&pos;Z\&pos;&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="DateTimeUtils"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DateTimeUtils"
+ type="org.mule.modules.google.api.datetime.DateTimeUtils"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="parseDate"
+ return="java.util.Date"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.lang.String">
+</parameter>
+<parameter name="format" type="java.lang.String">
+</parameter>
+</method>
+<method name="parseDateTime"
+ return="com.google.api.client.util.DateTime"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="date" type="java.lang.String">
+</parameter>
+<parameter name="pattern" type="java.lang.String">
+</parameter>
+<parameter name="timezone" type="java.lang.String">
+</parameter>
+</method>
+<field name="RFC3339"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;yyyy-MM-dd\&pos;T\&pos;HH:mm:ss\&pos;Z\&pos;&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.google.api.model"
+>
+<class name="BaseWrapper"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseWrapper"
+ type="org.mule.modules.google.api.model.BaseWrapper"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="wrapped" type="T">
+</parameter>
+</constructor>
+<method name="unwrapp"
+ return="java.util.List&lt;G&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="models" type="java.util.Collection&lt;T&gt;">
+</parameter>
+<parameter name="returnClass" type="java.lang.Class&lt;G&gt;">
+</parameter>
+</method>
+<method name="valueOf"
+ return="java.util.List&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="googles" type="java.util.Collection&lt;G&gt;">
+</parameter>
+<parameter name="returnClass" type="java.lang.Class&lt;T&gt;">
+</parameter>
+</method>
+<method name="wrapped"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="wrapped"
+ type="T"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+</package>
+<package name="org.mule.modules.google.api.pagination"
+>
+<class name="PaginationUtils"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PaginationUtils"
+ type="org.mule.modules.google.api.pagination.PaginationUtils"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="savePageToken"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="propertyName" type="java.lang.String">
+</parameter>
+<parameter name="pageToken" type="java.lang.String">
+</parameter>
+<parameter name="message" type="org.mule.api.MuleMessage">
+</parameter>
+</method>
+</class>
+</package>
+<package name="org.mule.modules.google.oauth.invalidation"
+>
+<class name="InvalidationAwareCredential"
+ extends="com.google.api.client.auth.oauth2.Credential"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="InvalidationAwareCredential"
+ type="org.mule.modules.google.oauth.invalidation.InvalidationAwareCredential"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="method" type="com.google.api.client.auth.oauth2.Credential.AccessMethod">
+</parameter>
+</constructor>
+</class>
+<class name="OAuthTokenExpiredException"
+ extends="java.lang.RuntimeException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="OAuthTokenExpiredException"
+ type="org.mule.modules.google.oauth.invalidation.OAuthTokenExpiredException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="OAuthTokenExpiredException"
+ type="org.mule.modules.google.oauth.invalidation.OAuthTokenExpiredException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<field name="serialVersionUID"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="2088778737502664177L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="private"
+>
+</field>
+</class>
+</package>
+</api>

@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.ico" />
+<title>
+
+  com.google.code.com.sun.mail.imap Details
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    
+    	<li id="guide"><a href="../../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPFolder.ProtocolCommand.html">IMAPFolder.ProtocolCommand</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/Utility.Condition.html">Utility.Condition</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/ACL.html">ACL</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/AppendUID.html">AppendUID</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/DefaultFolder.html">DefaultFolder</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPBodyPart.html">IMAPBodyPart</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPFolder.html">IMAPFolder</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPFolder.FetchProfileItem.html">IMAPFolder.FetchProfileItem</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPInputStream.html">IMAPInputStream</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPMessage.html">IMAPMessage</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPMultipartDataSource.html">IMAPMultipartDataSource</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPNestedMessage.html">IMAPNestedMessage</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPSSLStore.html">IMAPSSLStore</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/IMAPStore.html">IMAPStore</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/MessageCache.html">MessageCache</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/Rights.html">Rights</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/Rights.Right.html">Rights.Right</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/SortTerm.html">SortTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/Utility.html">Utility</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>com.google.code.com.sun.mail.imap</b></h1>
+  <div class="jd-nav">
+      <a class="jd-navlink" href="package-summary.html">Classes</a> | Description
+  </div>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<div class="jd-descr">
+<p>An IMAP protocol provider for the JavaMail API
+that provides access to an IMAP message store.
+Both the IMAP4 and IMAP4rev1 protocols are supported.
+Refer to <A HREF="http://www.ietf.org/rfc/rfc2060.txt" TARGET="_top">
+RFC 2060</A>
+for more information.
+<P>
+The IMAP protocol provider can use SASL
+(<A HREF="http://www.ietf.org/rfc/rfc2222.txt" TARGET="_top">RFC 2222</A>)
+authentication mechanisms on systems that support the
+<CODE>javax.security.sasl</CODE> APIs, such as J2SE 5.0.
+In addition to the SASL mechanisms that are built into 
+the SASL implementation, users can also provide additional
+SASL mechanisms of their own design to support custom authentication
+schemes.  See the
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/guide/security/sasl/sasl-refguide.html" TARGET="_top">
+Java SASL API Programming and Deployment Guide</A> for details.
+Note that the current implementation doesn't support SASL mechanisms
+that provide their own integrity or confidentiality layer.
+<P>
+A connected IMAPStore maintains a pool of IMAP protocol objects for
+use in communicating with the IMAP server. The IMAPStore will create
+the initial AUTHENTICATED connection and seed the pool with this
+connection. As folders are opened and new IMAP protocol objects are
+needed, the IMAPStore will provide them from the connection pool,
+or create them if none are available. When a folder is closed,
+its IMAP protocol object is returned to the connection pool if the
+pool is not over capacity.
+<P>
+A mechanism is provided for timing out idle connection pool IMAP
+protocol objects. Timed out connections are closed and removed (pruned)
+from the connection pool.
+<P>
+The connected IMAPStore object may or may not maintain a separate IMAP
+protocol object that provides the store a dedicated connection to the
+IMAP server. This is provided mainly for compatibility with previous
+implementations of the IMAP protocol provider.
+<P>
+The IMAP protocol provider supports the following properties,
+which may be set in the JavaMail <code>Session</code> object.
+The properties are always set as strings; the Type column describes
+how the string is interpreted.  For example, use
+<PRE>
+	props.put("mail.imap.port", "888");
+</PRE>
+to set the <CODE>mail.imap.port</CODE> property, which is of type int.
+<P>
+Note that if you're using the "imaps" protocol to access IMAP over SSL,
+all the properties would be named "mail.imaps.*".
+<P>
+<TABLE BORDER>
+<TR>
+<TH>Name</TH>
+<TH>Type</TH>
+<TH>Description</TH>
+</TR>
+
+<TR>
+<TD>mail.imap.user</TD>
+<TD>String</TD>
+<TD>Default user name for IMAP.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.host</TD>
+<TD>String</TD>
+<TD>The IMAP server to connect to.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.port</TD>
+<TD>int</TD>
+<TD>The IMAP server port to connect to, if the connect() method doesn't
+explicitly specify one. Defaults to 143.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.partialfetch</TD>
+<TD>boolean</TD>
+<TD>Controls whether the IMAP partial-fetch capability should be used.
+Defaults to true.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.fetchsize</TD>
+<TD>int</TD>
+<TD>Partial fetch size in bytes. Defaults to 16K.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.connectiontimeout</TD>
+<TD>int</TD>
+<TD>Socket connection timeout value in milliseconds.
+Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.timeout</TD>
+<TD>int</TD>
+<TD>Socket I/O timeout value in milliseconds.  Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.statuscachetimeout</TD>
+<TD>int</TD>
+<TD>Timeout value in milliseconds for cache of STATUS command response.
+Default is 1000 (1 second).  Zero disables cache.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.appendbuffersize</TD>
+<TD>int</TD>
+<TD>
+Maximum size of a message to buffer in memory when appending to an IMAP
+folder.  If not set, or set to -1, there is no maximum and all messages
+are buffered.  If set to 0, no messages are buffered.  If set to (e.g.)
+8192, messages of 8K bytes or less are buffered, larger messages are
+not buffered.  Buffering saves cpu time at the expense of short term
+memory usage.  If you commonly append very large messages to IMAP
+mailboxes you might want to set this to a moderate value (1M or less).
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.connectionpoolsize</TD>
+<TD>int</TD>
+<TD>Maximum number of available connections in the connection pool.
+Default is 1.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.connectionpooltimeout</TD>
+<TD>int</TD>
+<TD>Timeout value in milliseconds for connection pool connections.  Default
+is 45000 (45 seconds).</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.separatestoreconnection</TD>
+<TD>boolean</TD>
+<TD>Flag to indicate whether to use a dedicated store connection for store
+commands.  Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.allowreadonlyselect</TD>
+<TD>boolean</TD>
+<TD>If false, attempts to open a folder read/write will fail
+if the SELECT command succeeds but indicates that the folder is READ-ONLY.
+This sometimes indicates that the folder contents can'tbe changed, but
+the flags are per-user and can be changed, such as might be the case for
+public shared folders.  If true, such open attempts will succeed, allowing
+the flags to be changed.  The <code>getMode</code> method on the
+<code>Folder</code> object will return <code>Folder.READ_ONLY</code>
+in this case even though the <code>open</code> method specified
+<code>Folder.READ_WRITE</code>.  Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.auth.login.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the non-standard <code>AUTHENTICATE LOGIN</code>
+command, instead using the plain <code>LOGIN</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.auth.plain.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTHENTICATE PLAIN</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.auth.ntlm.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTHENTICATE NTLM</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.proxyauth.user</TD>
+<TD>String</TD>
+<TD>If the server supports the PROXYAUTH extension, this property
+specifies the name of the user to act as.  Authenticate to the
+server using the administrator's credentials.  After authentication,
+the IMAP provider will issue the <code>PROXYAUTH</code> command with
+the user name specified in this property.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.starttls.enable</TD>
+<TD>boolean</TD>
+<TD>If true, enables the use of the <code>STARTTLS</code> command (if
+supported by the server) to switch the connection to a TLS-protected
+connection before issuing any login commands.  Note that an appropriate
+trust store must configured so that the client will trust the server's
+certificate.  This feature only works on J2SE 1.4 and newer systems.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.starttls.required</TD>
+<TD>boolean</TD>
+<TD>
+If true, requires the use of the <code>STARTTLS</code> command.
+If the server doesn't support the STARTTLS command, or the command
+fails, the connect method will fail.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.localaddress</TD>
+<TD>String</TD>
+<TD>
+Local address (host name) to bind to when creating the IMAP socket.
+Defaults to the address picked by the Socket class.
+Should not normally need to be set, but useful with multi-homed hosts
+where it's important to pick a particular local address to bind to.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.localport</TD>
+<TD>int</TD>
+<TD>
+Local port number to bind to when creating the IMAP socket.
+Defaults to the port number picked by the Socket class.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.sasl.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, attempt to use the javax.security.sasl package to
+choose an authentication mechanism for login.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.sasl.mechanisms</TD>
+<TD>String</TD>
+<TD>
+A space or comma separated list of SASL mechanism names to try
+to use.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.sasl.authorizationid</TD>
+<TD>String</TD>
+<TD>
+The authorization ID to use in the SASL authentication.
+If not set, the authentication ID (user name) is used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.sasl.realm</TD>
+<TD>String</TD>
+<TD>The realm to use with SASL authentication mechanisms that
+require a realm, such as DIGEST-MD5.</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.sasl. xgwtrustedapphack.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, enables a workaround for a bug in the Novell Groupwise
+XGWTRUSTEDAPP SASL mechanism, when that mechanism is being used.
+Defaults to true.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.auth.ntlm.domain</TD>
+<TD>String</TD>
+<TD>
+The NTLM authentication domain.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.auth.ntlm.flags</TD>
+<TD>int</TD>
+<TD>
+NTLM protocol-specific flags.
+See <A HREF="http://curl.haxx.se/rfc/ntlm.html#theNtlmFlags" TARGET="_top">
+http://curl.haxx.se/rfc/ntlm.html#theNtlmFlags</A> for details.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.socketFactory</TD>
+<TD>SocketFactory</TD>
+<TD>
+If set to a class that implements the
+<code>javax.net.SocketFactory</code> interface, this class
+will be used to create IMAP sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that implements the
+<code>javax.net.SocketFactory</code> interface.  This class
+will be used to create IMAP sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.socketFactory.fallback</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, failure to create a socket using the specified
+socket factory class will cause the socket to be created using
+the <code>java.net.Socket</code> class.
+Defaults to true.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, use SSL to connect and use the SSL port by default.
+Defaults to false for the "imap" protocol and true for the "imaps" protocol.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.checkserveridentity</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, check the server identity as specified by
+<A HREF="http://www.ietf.org/rfc/rfc2595.txt" TARGET="_top">RFC 2595</A>.
+These additional checks based on the content of the server's certificate
+are intended to prevent man-in-the-middle attacks.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.trust</TD>
+<TD>String</TD>
+<TD>
+If set, and a socket factory hasn't been specified, enables use of a
+com.sun.mail.util.MailSSLSocketFactory MailSSLSocketFactory.
+If set to "*", all hosts are trusted.
+If set to a whitespace separated list of hosts, those hosts are trusted.
+Otherwise, trust depends on the certificate the server presents.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.socketFactory</TD>
+<TD>SSLSocketFactory</TD>
+<TD>
+If set to a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class, this class
+will be used to create IMAP SSL sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class.  This class
+will be used to create IMAP SSL sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.protocols</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL protocols that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledProtocols</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.ssl.ciphersuites</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL cipher suites that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledCipherSuites</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.minidletime</TD>
+<TD>int</TD>
+<TD>
+Applications typically call the idle method in a loop.  If another
+thread termiantes the IDLE command, it needs a chance to do its
+work before another IDLE command is issued.  The idle method enforces
+a delay to prevent thrashing between the IDLE command and regular
+commands.  This property sets the delay in milliseconds.  If not
+set, the default is 10 milliseconds.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.enableimapevents</TD>
+<TD>boolean</TD>
+<TD>
+Enable special IMAP-specific events to be delivered to the Store's
+<code>ConnectionListener</code>.  If true, unsolicited responses
+received during the Store's <code>idle</code> method will be sent
+as <code>ConnectionEvent</code>s with a type of
+<code>IMAPStore.RESPONSE</code>.  The event's message will be the
+raw IMAP response string.
+By default, these events are not sent.
+NOTE: This capability is highly experimental and likely will change
+in future releases.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.imap.folder.class</TD>
+<TD>String</TD>
+<TD>
+Class name of a subclass of <code>com.sun.mail.imap.IMAPFolder</code>.
+The subclass can be used to provide support for additional IMAP commands.
+The subclass must have public constructors of the form
+<code>public MyIMAPFolder(String fullName, char separator, IMAPStore store,
+Boolean isNamespace)</code> and
+<code>public MyIMAPFolder(ListInfo li, IMAPStore store)</code>
+</TD>
+</TR>
+
+</TABLE>
+<P>
+In general, applications should not need to use the classes in this
+package directly.  Instead, they should use the APIs defined by
+<code>javax.mail</code> package (and subpackages).  Applications should
+never construct instances of <code>IMAPStore</code> or
+<code>IMAPFolder</code> directly.  Instead, they should use the
+<code>Session</code> method <code>getStore</code> to acquire an
+appropriate <code>Store</code> object, and from that acquire
+<code>Folder</code> objects.
+<P>
+<strong>WARNING:</strong> The APIs unique to this package should be
+considered <strong>EXPERIMENTAL</strong>.  They may be changed in the
+future in ways that are incompatible with applications using the
+current APIs.
+
+</p>
+</div>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div> <!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

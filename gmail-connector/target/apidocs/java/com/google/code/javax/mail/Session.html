@@ -1,0 +1,3377 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  Session
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageAware.html">MessageAware</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MultipartDataSource.html">MultipartDataSource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Part.html">Part</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/QuotaAwareStore.html">QuotaAwareStore</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.html">UIDFolder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.html">FetchProfile</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.Item.html">FetchProfile.Item</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.html">Flags</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.Flag.html">Flags.Flag</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Folder.html">Folder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Header.html">Header</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.RecipientType.html">Message.RecipientType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageContext.html">MessageContext</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.Type.html">Provider.Type</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.html">Quota</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.Resource.html">Quota.Resource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Service.html">Service</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.FetchProfileItem.html">UIDFolder.FetchProfileItem</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/AuthenticationFailedException.html">AuthenticationFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderClosedException.html">FolderClosedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderNotFoundException.html">FolderNotFoundException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageRemovedException.html">MessageRemovedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MethodNotSupportedException.html">MethodNotSupportedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/ReadOnlyFolderException.html">ReadOnlyFolderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/StoreClosedException.html">StoreClosedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+    final 
+    
+    class
+<h1>Session</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.mail.Session</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>The Session class represents a mail session and is not subclassed.
+ It collects together properties and defaults used by the mail API's.
+ A single default session can be shared by multiple applications on the
+ desktop.  Unshared sessions can also be created. <p>
+
+ The Session class provides access to the protocol providers that
+ implement the <code>Store</code>, <code>Transport</code>, and related
+ classes.  The protocol providers are configured using the following files:
+ <ul>
+  <li> <code>java-gmail-imap.providers</code> and
+ 	<code>java-gmail-imap.default.providers</code> </li>
+  <li> <code>java-gmail-imap.address.map</code> and
+ 	<code>java-gmail-imap.default.address.map</code> </li>
+ </ul>
+ <p>
+ Each <code>java-gmail-imap.</code><i>X</i> resource file is searched for using
+ three methods in the following order:
+ <ol>
+  <li> <code>java.home/lib/java-gmail-imap.</code><i>X</i> </li>
+  <li> <code>META-INF/java-gmail-imap.</code><i>X</i> </li>
+  <li> <code>META-INF/java-gmail-imap.default.</code><i>X</i> </li>
+ </ol>
+ <p>
+ The first method allows the user to include their own version of the
+ resource file by placing it in the <code>lib</code> directory where the
+ <code>java.home</code> property points.  The second method allows an
+ application that uses the JavaMail APIs to include their own resource
+ files in their application's or jar file's <code>META-INF</code>
+ directory.  The <code>java-gmail-imap.default.</code><i>X</i> default files
+ are part of the JavaMail <code>mail.jar</code> file. <p>
+
+ File location depends upon how the <code>ClassLoader</code> method
+ <code>getResource</code> is implemented.  Usually, the
+ <code>getResource</code> method searches through CLASSPATH until it
+ finds the requested file and then stops.  JDK 1.1 has a limitation that
+ the number of files of each name that will be found in the CLASSPATH is
+ limited to one.  However, this only affects method two, above; method
+ one is loaded from a specific location (if allowed by the
+ SecurityManager) and method three uses a different name to ensure that
+ the default resource file is always loaded successfully.  J2SE 1.2 and
+ later are not limited to one file of a given name. <p>
+
+ The ordering of entries in the resource files matters.  If multiple
+ entries exist, the first entries take precedence over the later
+ entries.  For example, the first IMAP provider found will be set as the
+ default IMAP implementation until explicitly changed by the
+ application.  The user- or system-supplied resource files augment, they
+ do not override, the default files included with the JavaMail APIs.
+ This means that all entries in all files loaded will be available. <p>
+
+ <b><code>java-gmail-imap.providers</code></b> and
+ <b><code>java-gmail-imap.default.providers</code></b><p>
+
+ These resource files specify the stores and transports that are
+ available on the system, allowing an application to "discover" what
+ store and transport implementations are available.  The protocol
+ implementations are listed one per line.  The file format defines four
+ attributes that describe a protocol implementation.  Each attribute is
+ an "="-separated name-value pair with the name in lowercase. Each
+ name-value pair is semi-colon (";") separated.  The following names
+ are defined. <p>
+
+ <table border=1>
+ <caption>
+ Attribute Names in Providers Files
+ </caption>
+ <tr>
+ <th>Name</th><th>Description</th>
+ </tr>
+ <tr>
+ <td>protocol</td>
+ <td>Name assigned to protocol.
+ For example, <code>smtp</code> for Transport.</td>
+ </tr>
+ <tr>
+ <td>type</td>
+ <td>Valid entries are <code>store</code> and <code>transport</code>.</td>
+ </tr>
+ <tr>
+ <td>class</td>
+ <td>Class name that implements this protocol.</td>
+ </tr>
+ <tr>
+ <td>vendor</td>
+ <td>Optional string identifying the vendor.</td>
+ </tr>
+ <tr>
+ <td>version</td>
+ <td>Optional string identifying the version.</td>
+ </tr>
+ </table><p>
+
+ Here's an example of <code>META-INF/java-gmail-imap.default.providers</code>
+ file contents:
+ <pre>
+ protocol=imap; type=store; class=com.google.code.com.sun.mail.imap.IMAPStore; vendor=Sun Microsystems, Inc.;
+ protocol=smtp; type=transport; class=com.google.code.com.sun.mail.smtp.SMTPTransport; vendor=Sun Microsystems, Inc.;
+ </pre><p>
+
+ <b><code>java-gmail-imap.address.map</code></b> and
+ <b><code>java-gmail-imap.default.address.map</code></b><p>
+
+ These resource files map transport address types to the transport
+ protocol.  The <code>getType</code> method of
+ </code>javax.mail.Address</code> returns the address type.  The
+ <code>javamail.address.map</code> file maps the transport type to the
+ protocol.  The file format is a series of name-value pairs.  Each key
+ name should correspond to an address type that is currently installed
+ on the system; there should also be an entry for each
+ <code>javax.mail.Address</code> implementation that is present if it is
+ to be used.  For example, the
+ <code>javax.mail.internet.InternetAddress</code> method
+ <code>getType</code> returns "rfc822". Each referenced protocol should
+ be installed on the system.  For the case of <code>news</code>, below,
+ the client should install a Transport provider supporting the nntp
+ protocol. <p>
+
+ Here are the typical contents of a <code>javamail.address.map</code> file:
+ <pre>
+ rfc822=smtp
+ news=nntp
+ </pre></p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Properties</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#addressMap">addressMap</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Hashtable</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#authTable">authTable</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#authenticator">authenticator</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#debug">debug</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#defaultSession">defaultSession</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          PrintStream</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#out">out</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Properties</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#props">props</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#providers">providers</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Hashtable</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#providersByClassName">providersByClassName</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Hashtable</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Session.html#providersByProtocol">providersByProtocol</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#addProvider(com.google.code.javax.mail.Provider)">addProvider</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</nobr>
+        
+        <div class="jd-descrdiv">Add a provider to the session.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getDebug()">getDebug</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the debug setting for this Session.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            PrintStream</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getDebugOut()">getDebugOut</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the stream to be used for debugging output.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            static
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getDefaultInstance(java.util.Properties, com.google.code.javax.mail.Authenticator)">getDefaultInstance</a></span>(Properties props, <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a> authenticator)</nobr>
+        
+        <div class="jd-descrdiv">Get the default Session object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getDefaultInstance(java.util.Properties)">getDefaultInstance</a></span>(Properties props)</nobr>
+        
+        <div class="jd-descrdiv">Get the default Session object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Folder.html">Folder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getFolder(com.google.code.javax.mail.URLName)">getFolder</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Get a closed GmailFolder object for the given URLName.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getInstance(java.util.Properties)">getInstance</a></span>(Properties props)</nobr>
+        
+        <div class="jd-descrdiv">Get a new Session object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getInstance(java.util.Properties, com.google.code.javax.mail.Authenticator)">getInstance</a></span>(Properties props, <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a> authenticator)</nobr>
+        
+        <div class="jd-descrdiv">Get a new Session object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getPasswordAuthentication(com.google.code.javax.mail.URLName)">getPasswordAuthentication</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Return any saved PasswordAuthentication for this (store or transport)
+ URLName.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Properties</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getProperties()">getProperties</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the Properties object associated with this Session</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getProperty(java.lang.String)">getProperty</a></span>(String name)</nobr>
+        
+        <div class="jd-descrdiv">Returns the value of the specified property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getProvider(java.lang.String)">getProvider</a></span>(String protocol)</nobr>
+        
+        <div class="jd-descrdiv">Returns the default Provider for the protocol
+ specified.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getProviders()">getProviders</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">This method returns an array of all the implementations installed
+ via the javamail.[default.]providers files that can
+ be loaded using the ClassLoader available to this application.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getStore(com.google.code.javax.mail.Provider)">getStore</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</nobr>
+        
+        <div class="jd-descrdiv">Get an instance of the store specified by Provider.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getStore(com.google.code.javax.mail.URLName)">getStore</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Get a Store object for the given URLName.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getStore(java.lang.String)">getStore</a></span>(String protocol)</nobr>
+        
+        <div class="jd-descrdiv">Get a Store object that implements the specified protocol.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getStore()">getStore</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get a Store object that implements this user's desired Store
+ protocol.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport(com.google.code.javax.mail.URLName)">getTransport</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Get a Transport object for the given URLName.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport()">getTransport</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get a Transport object that implements this user's desired
+ Transport protcol.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport(java.lang.String)">getTransport</a></span>(String protocol)</nobr>
+        
+        <div class="jd-descrdiv">Get a Transport object that implements the specified protocol.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport(com.google.code.javax.mail.Address)">getTransport</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address</a> address)</nobr>
+        
+        <div class="jd-descrdiv">Get a Transport object that can transport a Message of the
+ specified address type.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport(com.google.code.javax.mail.Provider)">getTransport</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</nobr>
+        
+        <div class="jd-descrdiv">Get an instance of the transport specified in the Provider.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#requestPasswordAuthentication(java.net.InetAddress, int, java.lang.String, java.lang.String, java.lang.String)">requestPasswordAuthentication</a></span>(InetAddress addr, int port, String protocol, String prompt, String defaultUserName)</nobr>
+        
+        <div class="jd-descrdiv">Call back to the application to get the needed user name and password.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#setDebug(boolean)">setDebug</a></span>(boolean debug)</nobr>
+        
+        <div class="jd-descrdiv">Set the debug setting for this Session.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#setDebugOut(java.io.PrintStream)">setDebugOut</a></span>(PrintStream out)</nobr>
+        
+        <div class="jd-descrdiv">Set the stream to be used for debugging output for this session.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#setPasswordAuthentication(com.google.code.javax.mail.URLName, com.google.code.javax.mail.PasswordAuthentication)">setPasswordAuthentication</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url, <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a> pw)</nobr>
+        
+        <div class="jd-descrdiv">Save a PasswordAuthentication for this (store or transport) URLName.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#setProtocolForAddress(java.lang.String, java.lang.String)">setProtocolForAddress</a></span>(String addresstype, String protocol)</nobr>
+        
+        <div class="jd-descrdiv">Set the default transport protocol to use for addresses of
+ the specified type.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Session.html#setProvider(com.google.code.javax.mail.Provider)">setProvider</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</nobr>
+        
+        <div class="jd-descrdiv">Set the passed Provider to be the default implementation
+ for the protocol in Provider.protocol overriding any previous values.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="addressMap"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Properties
+      </span>
+        addressMap
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="authTable"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Hashtable
+      </span>
+        authTable
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="authenticator"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a>
+      </span>
+        authenticator
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="debug"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        debug
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="defaultSession"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a>
+      </span>
+        defaultSession
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="out"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        PrintStream
+      </span>
+        out
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="props"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Properties
+      </span>
+        props
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="providers"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Vector
+      </span>
+        providers
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="providersByClassName"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Hashtable
+      </span>
+        providersByClassName
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="providersByProtocol"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Hashtable
+      </span>
+        providersByProtocol
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addProvider(com.google.code.javax.mail.Provider)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">addProvider</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a provider to the session.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>provider</td>
+          <td>The provider to add</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDebug()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        boolean
+      </span>
+      <span class="sympad">getDebug</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the debug setting for this Session.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>current debug setting
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDebugOut()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        PrintStream
+      </span>
+      <span class="sympad">getDebugOut</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the stream to be used for debugging output.  If no stream
+ has been set, <code>System.out</code> is returned.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the PrintStream to use for debugging output</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDefaultInstance(java.util.Properties, com.google.code.javax.mail.Authenticator)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+        synchronized 
+        <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a>
+      </span>
+      <span class="sympad">getDefaultInstance</span>
+      <span class="normal">(Properties props, <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a> authenticator)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default Session object. If a default has not yet been
+ setup, a new Session object is created and installed as the
+ default. <p>
+
+ Since the default session is potentially available to all
+ code executing in the same Java virtual machine, and the session
+ can contain security sensitive information such as user names
+ and passwords, access to the default session is restricted.
+ The Authenticator object, which must be created by the caller,
+ is used indirectly to check access permission.  The Authenticator
+ object passed in when the session is created is compared with
+ the Authenticator object passed in to subsequent requests to
+ get the default session.  If both objects are the same, or are
+ from the same ClassLoader, the request is allowed.  Otherwise,
+ it is denied.  <p>
+
+ Note that if the Authenticator object used to create the session
+ is null, anyone can get the default session by passing in null.  <p>
+
+ Note also that the Properties object is used only the first time
+ this method is called, when a new Session object is created.
+ Subsequent calls return the Session object that was created by the
+ first call, and ignore the passed Properties object.  Use the
+ <code>getInstance</code> method to get a new Session object every
+ time the method is called. <p>
+
+ In JDK 1.2, additional security Permission objects may be used to
+ control access to the default session.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>props</td>
+          <td>Properties object. Used only if a new Session
+			object is created.<br>
+                  It is expected that the client supplies values
+                  for the properties listed in Appendix A of the
+                  JavaMail spec (particularly  mail.store.protocol,
+                  mail.transport.protocol, mail.host, mail.user,
+                  and mail.from) as the defaults are unlikely to
+                  work in all cases.</td>
+        </tr>
+        <tr>
+          <th>authenticator</td>
+          <td>Authenticator object.  Used only if a
+			new Session object is created.  Otherwise,
+			it must match the Authenticator used to create
+			the Session.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the default Session object
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDefaultInstance(java.util.Properties)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a>
+      </span>
+      <span class="sympad">getDefaultInstance</span>
+      <span class="normal">(Properties props)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default Session object. If a default has not yet been
+ setup, a new Session object is created and installed as the
+ default. <p>
+
+ Note that a default session created with no Authenticator is
+ available to all code executing in the same Java virtual
+ machine, and the session can contain security sensitive
+ information such as user names and passwords.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>props</td>
+          <td>Properties object. Used only if a new Session
+			object is created.<br>
+                  It is expected that the client supplies values
+                  for the properties listed in Appendix A of the
+                  JavaMail spec (particularly  mail.store.protocol,
+                  mail.transport.protocol, mail.host, mail.user,
+                  and mail.from) as the defaults are unlikely to
+                  work in all cases.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the default Session object</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getFolder(com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Folder.html">Folder</a>
+      </span>
+      <span class="sympad">getFolder</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a closed GmailFolder object for the given URLName. If the requested
+ GmailFolder object cannot be obtained, null is returned. <p>
+
+ The "scheme" part of the URL string (Refer RFC 1738) is used
+ to locate the Store protocol. The rest of the URL string (that is,
+ the "schemepart", as per RFC 1738) is used by that Store
+ in a protocol dependent manner to locate and instantiate the
+ appropriate GmailFolder object. <p>
+
+ Note that RFC 1738 also specifies the syntax for the
+ "schemepart" for IP-based protocols (IMAP4, POP3, etc.).
+ Providers of IP-based mail Stores should implement that
+ syntax for referring to Folders. <p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td>URLName that represents the desired folder</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>GmailFolder</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			URLName is not found.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if the GmailFolder could not be
+			located or created.
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Session.html#getStore(com.google.code.javax.mail.URLName)">getStore(URLName)</a></code></li><li>javax.mail.URLName</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInstance(java.util.Properties)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a>
+      </span>
+      <span class="sympad">getInstance</span>
+      <span class="normal">(Properties props)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a new Session object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>props</td>
+          <td>Properties object that hold relevant properties.<br>
+                  It is expected that the client supplies values
+                  for the properties listed in Appendix A of the
+                  JavaMail spec (particularly  mail.store.protocol,
+                  mail.transport.protocol, mail.host, mail.user,
+                  and mail.from) as the defaults are unlikely to
+                  work in all cases.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a new Session object</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInstance(java.util.Properties, com.google.code.javax.mail.Authenticator)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a>
+      </span>
+      <span class="sympad">getInstance</span>
+      <span class="normal">(Properties props, <a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a> authenticator)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a new Session object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>props</td>
+          <td>Properties object that hold relevant properties.<br>
+                  It is expected that the client supplies values
+                  for the properties listed in Appendix A of the
+                  JavaMail spec (particularly  mail.store.protocol,
+                  mail.transport.protocol, mail.host, mail.user,
+                  and mail.from) as the defaults are unlikely to
+                  work in all cases.</td>
+        </tr>
+        <tr>
+          <th>authenticator</td>
+          <td>Authenticator object used to call back to
+			the application when a user name and password is
+			needed.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a new Session object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.Authenticator</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPasswordAuthentication(com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a>
+      </span>
+      <span class="sympad">getPasswordAuthentication</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return any saved PasswordAuthentication for this (store or transport)
+ URLName.  Normally used only by store or transport implementations.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the PasswordAuthentication corresponding to the URLName
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProperties()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Properties
+      </span>
+      <span class="sympad">getProperties</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the Properties object associated with this Session</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Properties object
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProperty(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getProperty</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the value of the specified property. Returns null
+ if this property does not exist.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>String that is the property value
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProvider(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        <a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a>
+      </span>
+      <span class="sympad">getProvider</span>
+      <span class="normal">(String protocol)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the default Provider for the protocol
+ specified. Checks mail.&lt;protocol&gt;.class property
+ first and if it exists, returns the Provider
+ associated with this implementation. If it doesn't exist,
+ returns the Provider that appeared first in the
+ configuration files. If an implementation for the protocol
+ isn't found, throws NoSuchProviderException</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>protocol</td>
+          <td>Configured protocol (i.e. smtp, imap, etc)</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Currently configured Provider for the specified protocol</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			protocol is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProviders()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        <a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider[]</a>
+      </span>
+      <span class="sympad">getProviders</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method returns an array of all the implementations installed
+ via the javamail.[default.]providers files that can
+ be loaded using the ClassLoader available to this application.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Array of configured providers
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getStore(com.google.code.javax.mail.Provider)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a>
+      </span>
+      <span class="sympad">getStore</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get an instance of the store specified by Provider. Instantiates
+ the store and returns it.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>provider</td>
+          <td>Store Provider that will be instantiated</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Instantiated Store</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			Provider is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getStore(com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a>
+      </span>
+      <span class="sympad">getStore</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Store object for the given URLName. If the requested Store
+ object cannot be obtained, NoSuchProviderException is thrown.
+
+ The "scheme" part of the URL string (Refer RFC 1738) is used
+ to locate the Store protocol. <p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td>URLName that represents the desired Store</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a closed Store object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			URLName is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Session.html#getFolder(com.google.code.javax.mail.URLName)">getFolder(URLName)</a></code></li><li>javax.mail.URLName</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getStore(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a>
+      </span>
+      <span class="sympad">getStore</span>
+      <span class="normal">(String protocol)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Store object that implements the specified protocol. If an
+ appropriate Store object cannot be obtained,
+ NoSuchProviderException is thrown.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>protocol</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Store object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			protocol is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getStore()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a>
+      </span>
+      <span class="sympad">getStore</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Store object that implements this user's desired Store
+ protocol. The <code>mail.store.protocol</code> property specifies the
+ desired protocol. If an appropriate Store object is not obtained,
+ NoSuchProviderException is thrown</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Store object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			protocol is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransport(com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a>
+      </span>
+      <span class="sympad">getTransport</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Transport object for the given URLName. If the requested
+ Transport object cannot be obtained, NoSuchProviderException is thrown.
+
+ The "scheme" part of the URL string (Refer RFC 1738) is used
+ to locate the Transport protocol. <p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td>URLName that represents the desired Transport</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a closed Transport object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If a provider for the given
+			URLName is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.URLName</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransport()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a>
+      </span>
+      <span class="sympad">getTransport</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Transport object that implements this user's desired
+ Transport protcol. The <code>mail.transport.protocol</code> property
+ specifies the desired protocol. If an appropriate Transport
+ object cannot be obtained, MessagingException is thrown.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Transport object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If the provider is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransport(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a>
+      </span>
+      <span class="sympad">getTransport</span>
+      <span class="normal">(String protocol)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Transport object that implements the specified protocol.
+ If an appropriate Transport object cannot be obtained, null is
+ returned.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>protocol</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Transport object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If provider for the given
+			protocol is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransport(com.google.code.javax.mail.Address)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a>
+      </span>
+      <span class="sympad">getTransport</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address</a> address)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a Transport object that can transport a Message of the
+ specified address type.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>address</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>A Transport object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If provider for the
+			Address type is not found
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.Address</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransport(com.google.code.javax.mail.Provider)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a>
+      </span>
+      <span class="sympad">getTransport</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get an instance of the transport specified in the Provider. Instantiates
+ the transport and returns it.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>provider</td>
+          <td>Transport Provider that will be instantiated</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Instantiated Transport</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If provider for the given
+			provider is not found.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="requestPasswordAuthentication(java.net.InetAddress, int, java.lang.String, java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a>
+      </span>
+      <span class="sympad">requestPasswordAuthentication</span>
+      <span class="normal">(InetAddress addr, int port, String protocol, String prompt, String defaultUserName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Call back to the application to get the needed user name and password.
+ The application should put up a dialog something like:
+ <p> <pre>
+ Connecting to &lt;protocol&gt; mail service on host &lt;addr&gt;, port &lt;port&gt;.
+ &lt;prompt&gt;
+
+ User Name: &lt;defaultUserName&gt;
+ Password:
+ </pre></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>addr</td>
+          <td>InetAddress of the host.  may be null.</td>
+        </tr>
+        <tr>
+          <th>port</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>protocol</td>
+          <td>Protocol scheme (e.g. imap, pop3, etc.)</td>
+        </tr>
+        <tr>
+          <th>prompt</td>
+          <td>Any additional String to show as part of
+                          the prompt; may be null.</td>
+        </tr>
+        <tr>
+          <th>defaultUserName</td>
+          <td>The default username. may be null.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the authentication which was collected by the authenticator;
+          may be null.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDebug(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setDebug</span>
+      <span class="normal">(boolean debug)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the debug setting for this Session.
+ <p>
+ Since the debug setting can be turned on only after the Session
+ has been created, to turn on debugging in the Session
+ constructor, set the property <code>mail.debug</code> in the
+ Properties object passed in to the constructor to true.  The
+ value of the <code>mail.debug</code> property is used to
+ initialize the per-Session debugging flag.  Subsequent calls to
+ the <code>setDebug</code> method manipulate the per-Session
+ debugging flag and have no affect on the <code>mail.debug</code>
+ property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>debug</td>
+          <td>Debug setting
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDebugOut(java.io.PrintStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setDebugOut</span>
+      <span class="normal">(PrintStream out)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the stream to be used for debugging output for this session.
+ If <code>out</code> is null, <code>System.out</code> will be used.
+ Note that debugging output that occurs before any session is created,
+ as a result of setting the <code>mail.debug</code> system property,
+ will always be sent to <code>System.out</code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>out</td>
+          <td>The PrintStream to use for debugging output</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPasswordAuthentication(com.google.code.javax.mail.URLName, com.google.code.javax.mail.PasswordAuthentication)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPasswordAuthentication</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url, <a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a> pw)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Save a PasswordAuthentication for this (store or transport) URLName.
+ If pw is null the entry corresponding to the URLName is removed.
+ <p>
+ This is normally used only by the store or transport implementations
+ to allow authentication information to be shared among multiple
+ uses of a session.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>pw</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setProtocolForAddress(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setProtocolForAddress</span>
+      <span class="normal">(String addresstype, String protocol)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the default transport protocol to use for addresses of
+ the specified type.  Normally the default is set by the
+ <code>javamail.default.address.map</code> or
+ <code>javamail.address.map</code> files or resources.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>addresstype</td>
+          <td>Type of address</td>
+        </tr>
+        <tr>
+          <th>protocol</td>
+          <td>Name of protocol</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Session.html#getTransport(com.google.code.javax.mail.Address)">getTransport(Address)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setProvider(com.google.code.javax.mail.Provider)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setProvider</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a> provider)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the passed Provider to be the default implementation
+ for the protocol in Provider.protocol overriding any previous values.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>provider</td>
+          <td>Currently configured Provider which will be
+ set as the default for the protocol</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></td>
+            <td>If the provider passed in
+			is invalid.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

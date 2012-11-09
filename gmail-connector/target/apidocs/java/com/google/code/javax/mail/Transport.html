@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  Transport
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageAware.html">MessageAware</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MultipartDataSource.html">MultipartDataSource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Part.html">Part</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/QuotaAwareStore.html">QuotaAwareStore</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.html">UIDFolder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Authenticator.html">Authenticator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.html">FetchProfile</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FetchProfile.Item.html">FetchProfile.Item</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.html">Flags</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Flags.Flag.html">Flags.Flag</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Folder.html">Folder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Header.html">Header</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Message.RecipientType.html">Message.RecipientType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageContext.html">MessageContext</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/PasswordAuthentication.html">PasswordAuthentication</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.html">Provider</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Provider.Type.html">Provider.Type</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.html">Quota</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Quota.Resource.html">Quota.Resource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Service.html">Service</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/Transport.html">Transport</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/UIDFolder.FetchProfileItem.html">UIDFolder.FetchProfileItem</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/AuthenticationFailedException.html">AuthenticationFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderClosedException.html">FolderClosedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/FolderNotFoundException.html">FolderNotFoundException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessageRemovedException.html">MessageRemovedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/MethodNotSupportedException.html">MethodNotSupportedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/NoSuchProviderException.html">NoSuchProviderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/ReadOnlyFolderException.html">ReadOnlyFolderException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/mail/StoreClosedException.html">StoreClosedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+  &#124; <a href="#promethods">Protected Methods</a>
+  
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    abstract
+    class
+<h1>Transport</h1>
+
+
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../java/com/google/code/javax/mail/Service.html">Service</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.mail.Transport</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-direct" class="jd-expando-trigger closed"
+          ><img id="subclasses-direct-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Direct Subclasses
+
+  <div id="subclasses-direct">
+      <div id="subclasses-direct-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a>
+            
+          
+      </div>
+      <div id="subclasses-direct-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the Transport abstract class using SMTP for
+ message submission and transport.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
+
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-indirect" class="jd-expando-trigger closed"
+          ><img id="subclasses-indirect-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Indirect Subclasses
+
+  <div id="subclasses-indirect">
+      <div id="subclasses-indirect-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html">SMTPSSLTransport</a>
+            
+          
+      </div>
+      <div id="subclasses-indirect-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html">SMTPSSLTransport</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the Transport abstract class using SMTP
+ over SSL for message submission and transport.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>An abstract class that models a message transport.
+ Subclasses provide actual implementations. <p>
+
+ Note that <code>Transport</code> extends the <code>Service</code>
+ class, which provides many common methods for naming transports,
+ connecting to transports, and listening to connection events.</p>
+
+
+
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.Service</li><li>javax.mail.event.ConnectionEvent</li><li>javax.mail.event.TransportEvent</li>
+      </ul>
+  </div>
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Transport.html#transportListeners">transportListeners</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.google.code.javax.mail.Service" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.google.code.javax.mail.Service-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a>
+<div id="inherited-fields-com.google.code.javax.mail.Service">
+  <div id="inherited-fields-com.google.code.javax.mail.Service-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.google.code.javax.mail.Service-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#connected">connected</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#connectionListeners">connectionListeners</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#debug">debug</a></td>
+          <td class="jd-descrcol" width="100%">Debug flag for this service.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          EventQueue</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#q">q</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#qLock">qLock</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#session">session</a></td>
+          <td class="jd-descrcol" width="100%">The session from which this service was created.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/mail/Service.html#url">url</a></td>
+          <td class="jd-descrcol" width="100%">The <code>URLName</code> of this service.</td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#Transport(com.google.code.javax.mail.Session, com.google.code.javax.mail.URLName)">Transport</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a> session, <a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> urlname)</nobr>
+        
+        <div class="jd-descrdiv">Constructor.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#addTransportListener(com.google.code.javax.mail.event.TransportListener)">addTransportListener</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Add a listener for Transport events.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#removeTransportListener(com.google.code.javax.mail.event.TransportListener)">removeTransportListener</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Remove a listener for Transport events.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">send</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</nobr>
+        
+        <div class="jd-descrdiv">Send the message to the specified addresses, ignoring any
+ recipients specified in the message itself.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message)">send</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</nobr>
+        
+        <div class="jd-descrdiv">Send a message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#sendMessage(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">sendMessage</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</nobr>
+        
+        <div class="jd-descrdiv">Send the Message to the specified list of addresses.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Transport.html#notifyTransportListeners(int, com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Message)">notifyTransportListeners</a></span>(int type, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validSent, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validUnsent, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> invalid, <a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</nobr>
+        
+        <div class="jd-descrdiv">Notify all TransportListeners.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.code.javax.mail.Service" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.code.javax.mail.Service-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a>
+
+<div id="inherited-methods-com.google.code.javax.mail.Service">
+  <div id="inherited-methods-com.google.code.javax.mail.Service-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.code.javax.mail.Service-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#addConnectionListener(com.google.code.javax.mail.event.ConnectionListener)">addConnectionListener</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/event/ConnectionListener.html">ConnectionListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Add a listener for Connection events on this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#close()">close</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Close this service and terminate its connection.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, int, java.lang.String, java.lang.String)">connect</a></span>(String host, int port, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Similar to connect(host, user, password) except a specific port
+ can be specified.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#connect()">connect</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">A generic connect method that takes no parameters.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, java.lang.String, java.lang.String)">connect</a></span>(String host, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Connect to the specified address.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, java.lang.String)">connect</a></span>(String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Connect to the current host using the specified username
+ and password.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#finalize()">finalize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Stop the event dispatcher thread so the queue can be garbage collected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#getURLName()">getURLName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return a URLName representing this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#isConnected()">isConnected</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Is this service currently connected? <p>
+
+ This implementation uses a private boolean field to 
+ store the connection state.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#notifyConnectionListeners(int)">notifyConnectionListeners</a></span>(int type)</nobr>
+        
+        <div class="jd-descrdiv">Notify all ConnectionListeners.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#protocolConnect(java.lang.String, int, java.lang.String, java.lang.String)">protocolConnect</a></span>(String host, int port, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">The service implementation should override this method to
+ perform the actual protocol-specific connection attempt.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#queueEvent(com.google.code.javax.mail.event.MailEvent, java.util.Vector)">queueEvent</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/event/MailEvent.html">MailEvent</a> event, Vector vector)</nobr>
+        
+        <div class="jd-descrdiv">Add the event and vector of listeners to the queue to be delivered.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#removeConnectionListener(com.google.code.javax.mail.event.ConnectionListener)">removeConnectionListener</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/event/ConnectionListener.html">ConnectionListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Remove a Connection event listener.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#setConnected(boolean)">setConnected</a></span>(boolean connected)</nobr>
+        
+        <div class="jd-descrdiv">Set the connection state of this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#setURLName(com.google.code.javax.mail.URLName)">setURLName</a></span>(<a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Set the URLName representing this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/mail/Service.html#toString()">toString</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return <code>getURLName.toString()</code> if this service has a URLName,
+ otherwise it will return the default <code>toString</code>.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="transportListeners"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Vector
+      </span>
+        transportListeners
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="Transport(com.google.code.javax.mail.Session, com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">Transport</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Session.html">Session</a> session, <a href="../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> urlname)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>session</td>
+          <td>Session object for this Transport.</td>
+        </tr>
+        <tr>
+          <th>urlname</td>
+          <td>URLName object to be used for this Transport
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addTransportListener(com.google.code.javax.mail.event.TransportListener)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">addTransportListener</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a listener for Transport events. <p>
+
+ The default implementation provided here adds this listener
+ to an internal list of TransportListeners.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>l</td>
+          <td>The Listener for Transport events</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.event.TransportEvent</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeTransportListener(com.google.code.javax.mail.event.TransportListener)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">removeTransportListener</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove a listener for Transport events. <p>
+
+ The default implementation provided here removes this listener
+ from the internal list of TransportListeners.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>l</td>
+          <td>The listener</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Transport.html#addTransportListener(com.google.code.javax.mail.event.TransportListener)">addTransportListener(TransportListener)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="send(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">send</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send the message to the specified addresses, ignoring any
+ recipients specified in the message itself. The
+ <code>send</code> method calls the <code>saveChanges</code>
+ method on the message before sending it. <p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>msg</td>
+          <td>The message to send</td>
+        </tr>
+        <tr>
+          <th>addresses</td>
+          <td>The addresses to which to send the message</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></td>
+            <td>if the message could not
+			be sent to some or any of the recipients.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Message.html#saveChanges()">saveChanges()</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message)">send(Message)</a></code></li><li>javax.mail.SendFailedException</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="send(com.google.code.javax.mail.Message)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">send</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a message.  The message will be sent to all recipient
+ addresses specified in the message (as returned from the
+ <code>Message</code> method <code>getAllRecipients</code>),
+ using message transports appropriate to each address.  The
+ <code>send</code> method calls the <code>saveChanges</code>
+ method on the message before sending it. <p>
+
+ If any of the recipient addresses is detected to be invalid by
+ the Transport during message submission, a SendFailedException
+ is thrown.  Clients can get more detail about the failure by examining
+ the exception.  Whether or not the message is still sent successfully
+ to any valid addresses depends on the Transport implementation.  See 
+ SendFailedException for more details.  Note also that success does 
+ not imply that the message was delivered to the ultimate recipient,
+ as failures may occur in later stages of delivery.  Once a Transport 
+ accepts a message for delivery to a recipient, failures that occur later
+ should be reported to the user via another mechanism, such as
+ returning the undeliverable message. <p>
+
+ In typical usage, a SendFailedException reflects an error detected
+ by the server.  The details of the SendFailedException will usually
+ contain the error message from the server (such as an SMTP error
+ message).  An address may be detected as invalid for a variety of
+ reasons - the address may not exist, the address may have invalid
+ syntax, the address may have exceeded its quota, etc. <p>
+
+ Note that <code>send</code> is a static method that creates and
+ manages its own connection.  Any connection associated with any
+ Transport instance used to invoke this method is ignored and not
+ used.  This method should only be invoked using the form
+ <code>Transport.send(msg);</code>, and should never be invoked
+ using an instance variable.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>msg</td>
+          <td>The message to send</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></td>
+            <td>if the message could not
+			be sent to some or any of the recipients.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../com/google/code/javax/mail/Message.html#saveChanges()">saveChanges()</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Message.html#getAllRecipients()">getAllRecipients()</a></code></li><li><code><a href="../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">send(Message, Address[])</a></code></li><li>javax.mail.SendFailedException</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="sendMessage(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">sendMessage</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send the Message to the specified list of addresses. An appropriate
+ TransportEvent indicating the delivery status is delivered to any 
+ TransportListener registered on this Transport. Also, if any of
+ the addresses is invalid, a SendFailedException is thrown.
+ Whether or not the message is still sent succesfully to
+ any valid addresses depends on the Transport implementation. <p>
+
+ Unlike the static <code>send</code> method, the <code>sendMessage</code>
+ method does <em>not</em> call the <code>saveChanges</code> method on
+ the message; the caller should do so.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>msg</td>
+          <td>The Message to be sent</td>
+        </tr>
+        <tr>
+          <th>addresses</td>
+          <td>Array of addresses to send this message to</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/SendFailedException.html">SendFailedException</a></td>
+            <td>if the send failed because of
+			invalid addresses.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if the connection is dead or not in the 
+ 				connected state
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.event.TransportEvent</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="notifyTransportListeners(int, com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Message)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">notifyTransportListeners</span>
+      <span class="normal">(int type, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validSent, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validUnsent, <a href="../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> invalid, <a href="../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Notify all TransportListeners. Transport implementations are
+ expected to use this method to broadcast TransportEvents.<p>
+
+ The provided default implementation queues the event into
+ an internal event queue. An event dispatcher thread dequeues
+ events from the queue and dispatches them to the registered
+ TransportListeners. Note that the event dispatching occurs
+ in a separate thread, thus avoiding potential deadlock problems.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>validSent</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>validUnsent</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>invalid</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>msg</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

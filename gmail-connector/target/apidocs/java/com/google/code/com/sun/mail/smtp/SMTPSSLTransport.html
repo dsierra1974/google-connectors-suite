@@ -1,0 +1,2975 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.ico" />
+<title>
+
+  SMTPSSLTransport
+
+
+| Mule Cloud Connector
+
+</title>
+<link href="../../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SaslAuthenticator.html">SaslAuthenticator</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/DigestMD5.html">DigestMD5</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPMessage.html">SMTPMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPOutputStream.html">SMTPOutputStream</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSaslAuthenticator.html">SMTPSaslAuthenticator</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html">SMTPSSLTransport</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressFailedException.html">SMTPAddressFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressSucceededException.html">SMTPAddressSucceededException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSenderFailedException.html">SMTPSenderFailedException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSendFailedException.html">SMTPSendFailedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+  <a href="#inhconstants">Inherited Constants</a>
+  
+
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>SMTPSSLTransport</h1>
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="5" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="4" class="jd-inheritance-class-cell"><a href="../../../../../../../../java/com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../../../java/com/google/code/javax/mail/Transport.html">com.google.code.javax.mail.Transport</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">com.google.code.com.sun.mail.smtp.SMTPTransport</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.com.sun.mail.smtp.SMTPSSLTransport</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>This class implements the Transport abstract class using SMTP
+ over SSL for message submission and transport.</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="inhconstants" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Constants</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-com.google.code.com.sun.mail.smtp.SMTPTransport" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-com.google.code.com.sun.mail.smtp.SMTPTransport-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html">com.google.code.com.sun.mail.smtp.SMTPTransport</a>
+<div id="inherited-constants-com.google.code.com.sun.mail.smtp.SMTPTransport">
+  <div id="inherited-constants-com.google.code.com.sun.mail.smtp.SMTPTransport-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-com.google.code.com.sun.mail.smtp.SMTPTransport-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#UNKNOWN">UNKNOWN</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.google.code.com.sun.mail.smtp.SMTPTransport" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.google.code.com.sun.mail.smtp.SMTPTransport-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html">com.google.code.com.sun.mail.smtp.SMTPTransport</a>
+<div id="inherited-fields-com.google.code.com.sun.mail.smtp.SMTPTransport">
+  <div id="inherited-fields-com.google.code.com.sun.mail.smtp.SMTPTransport-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.google.code.com.sun.mail.smtp.SMTPTransport-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          byte[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#CRLF">CRLF</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          String[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#UNKNOWN_SA">UNKNOWN_SA</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#addresses">addresses</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Map</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#authenticators">authenticators</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#authorizationID">authorizationID</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPOutputStream.html">SMTPOutputStream</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#dataStream">dataStream</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#defaultAuthenticationMechanisms">defaultAuthenticationMechanisms</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#defaultPort">defaultPort</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#enableSASL">enableSASL</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#exception">exception</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Hashtable</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#extMap">extMap</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          char[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#hexchar">hexchar</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#host">host</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          String[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#ignoreList">ignoreList</a></td>
+          <td class="jd-descrcol" width="100%">Headers that should not be included when sending </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#invalidAddr">invalidAddr</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#isSSL">isSSL</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#lastReturnCode">lastReturnCode</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#lastServerResponse">lastServerResponse</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/LineInputStream.html">LineInputStream</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#lineInputStream">lineInputStream</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#localHostName">localHostName</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.html">MimeMessage</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#message">message</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#name">name</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#noopStrict">noopStrict</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#notificationDone">notificationDone</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#ntlmDomain">ntlmDomain</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          PrintStream</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#out">out</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#quitWait">quitWait</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#reportSuccess">reportSuccess</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#requireStartTLS">requireStartTLS</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SaslAuthenticator.html">SaslAuthenticator</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#saslAuthenticator">saslAuthenticator</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#saslMechanisms">saslMechanisms</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#saslRealm">saslRealm</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#sendPartiallyFailed">sendPartiallyFailed</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          BufferedInputStream</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#serverInput">serverInput</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          OutputStream</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#serverOutput">serverOutput</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Socket</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#serverSocket">serverSocket</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#useRset">useRset</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#useStartTLS">useStartTLS</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#validSentAddr">validSentAddr</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#validUnsentAddr">validUnsentAddr</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.google.code.javax.mail.Transport" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.google.code.javax.mail.Transport-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../../com/google/code/javax/mail/Transport.html">com.google.code.javax.mail.Transport</a>
+<div id="inherited-fields-com.google.code.javax.mail.Transport">
+  <div id="inherited-fields-com.google.code.javax.mail.Transport-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.google.code.javax.mail.Transport-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#transportListeners">transportListeners</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.google.code.javax.mail.Service" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.google.code.javax.mail.Service-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../../com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a>
+<div id="inherited-fields-com.google.code.javax.mail.Service">
+  <div id="inherited-fields-com.google.code.javax.mail.Service-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.google.code.javax.mail.Service-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connected">connected</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connectionListeners">connectionListeners</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#debug">debug</a></td>
+          <td class="jd-descrcol" width="100%">Debug flag for this service.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          EventQueue</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#q">q</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#qLock">qLock</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/Session.html">Session</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#session">session</a></td>
+          <td class="jd-descrcol" width="100%">The session from which this service was created.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#url">url</a></td>
+          <td class="jd-descrcol" width="100%">The <code>URLName</code> of this service.</td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html#SMTPSSLTransport(com.google.code.javax.mail.Session, com.google.code.javax.mail.URLName)">SMTPSSLTransport</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/Session.html">Session</a> session, <a href="../../../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> urlname)</nobr>
+        
+        <div class="jd-descrdiv">Constructor </div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.code.com.sun.mail.smtp.SMTPTransport" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.code.com.sun.mail.smtp.SMTPTransport-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html">com.google.code.com.sun.mail.smtp.SMTPTransport</a>
+
+<div id="inherited-methods-com.google.code.com.sun.mail.smtp.SMTPTransport">
+  <div id="inherited-methods-com.google.code.com.sun.mail.smtp.SMTPTransport-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.code.com.sun.mail.smtp.SMTPTransport-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#checkConnected()">checkConnected</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Check if we're in the connected state.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#close()">close</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Close the Transport and terminate the connection to the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#connect(java.net.Socket)">connect</a></span>(Socket socket)</nobr>
+        
+        <div class="jd-descrdiv">Start the SMTP protocol on the given socket, which was already
+ connected by the caller.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            OutputStream</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#data()">data</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Send the <code>DATA</code> command to the SMTP host and return
+ an OutputStream to which the data is to be written.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#ehlo(java.lang.String)">ehlo</a></span>(String domain)</nobr>
+        
+        <div class="jd-descrdiv">Issue the <code>EHLO</code> command.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#finalize()">finalize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Stop the event dispatcher thread so the queue can be garbage collected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#finishData()">finishData</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Terminate the sent data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getAuthorizationId()">getAuthorizationId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the authorization ID to be used for authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getExtensionParameter(java.lang.String)">getExtensionParameter</a></span>(String ext)</nobr>
+        
+        <div class="jd-descrdiv">Return the parameter the server provided for the specified
+ service extension, or null if the extension isn't supported.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getLastReturnCode()">getLastReturnCode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the return code from the last response we got from the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getLastServerResponse()">getLastServerResponse</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the last response we got from the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getLocalHost()">getLocalHost</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the name of the local host, for use in the EHLO and HELO commands.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getNTLMDomain()">getNTLMDomain</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the NTLM domain to be used for NTLM authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getNoopStrict()">getNoopStrict</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Is the NOOP command required to return a response code
+ of 250 to indicate success?</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getReportSuccess()">getReportSuccess</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Should we report even successful sends by throwing an exception?
+ If so, a <code>SendFailedException</code> will always be thrown and
+ an com.sun.mail.smtp.SMTPAddressSucceededException
+ SMTPAddressSucceededException will be included in the exception
+ chain for each successful address, along with the usual
+ com.sun.mail.smtp.SMTPAddressFailedException
+ SMTPAddressFailedException for each unsuccessful address.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getRequireStartTLS()">getRequireStartTLS</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Should we require the STARTTLS command to secure the connection?</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getSASLEnabled()">getSASLEnabled</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Is SASL authentication enabled?</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getSASLMechanisms()">getSASLMechanisms</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the list of SASL mechanisms to consider if SASL authentication
+ is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getSASLRealm()">getSASLRealm</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the SASL realm to be used for DIGEST-MD5 authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getStartTLS()">getStartTLS</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Should we use the STARTTLS command to secure the connection
+ if the server supports it?</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#getUseRset()">getUseRset</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Should we use the RSET command instead of the NOOP command
+ in the @{link #isConnected isConnected} method?</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#helo(java.lang.String)">helo</a></span>(String domain)</nobr>
+        
+        <div class="jd-descrdiv">Issue the <code>HELO</code> command.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#isConnected()">isConnected</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Check whether the transport is connected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#issueCommand(java.lang.String, int)">issueCommand</a></span>(String cmd, int expect)</nobr>
+        
+        <div class="jd-descrdiv">Send the command to the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#mailFrom()">mailFrom</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Issue the <code>MAIL FROM:</code> command to start sending a message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#notifyTransportListeners(int, com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Message)">notifyTransportListeners</a></span>(int type, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validSent, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validUnsent, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> invalid, <a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</nobr>
+        
+        <div class="jd-descrdiv">Notify all TransportListeners.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#protocolConnect(java.lang.String, int, java.lang.String, java.lang.String)">protocolConnect</a></span>(String host, int port, String user, String passwd)</nobr>
+        
+        <div class="jd-descrdiv">Performs the actual protocol-specific connection attempt.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#rcptTo()">rcptTo</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Sends each address to the SMTP host using the <code>RCPT TO:</code>
+ command and copies the address either into
+ the validSentAddr or invalidAddr arrays.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#readServerResponse()">readServerResponse</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Reads server reponse returning the <code>returnCode</code>
+ as the number.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#sasllogin(java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String)">sasllogin</a></span>(String[] allowed, String realm, String authzid, String u, String p)</nobr>
+        
+        <div class="jd-descrdiv">SASL-based login.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#sendCommand(java.lang.String)">sendCommand</a></span>(String cmd)</nobr>
+        
+        <div class="jd-descrdiv">Sends command <code>cmd</code> to the server terminating
+ it with <code>CRLF</code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#sendMessage(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">sendMessage</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> message, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</nobr>
+        
+        <div class="jd-descrdiv">Send the Message to the specified list of addresses.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setAuthorizationID(java.lang.String)">setAuthorizationID</a></span>(String authzid)</nobr>
+        
+        <div class="jd-descrdiv">Sets the authorization ID to be used for authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setLocalHost(java.lang.String)">setLocalHost</a></span>(String localhost)</nobr>
+        
+        <div class="jd-descrdiv">Set the name of the local host, for use in the EHLO and HELO commands.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setNTLMDomain(java.lang.String)">setNTLMDomain</a></span>(String ntlmDomain)</nobr>
+        
+        <div class="jd-descrdiv">Sets the NTLM domain to be used for NTLM authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setNoopStrict(boolean)">setNoopStrict</a></span>(boolean noopStrict)</nobr>
+        
+        <div class="jd-descrdiv">Set whether the NOOP command is required to return a response code
+ of 250 to indicate success.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setReportSuccess(boolean)">setReportSuccess</a></span>(boolean reportSuccess)</nobr>
+        
+        <div class="jd-descrdiv">Set whether successful sends should be reported by throwing
+ an exception.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setRequireStartTLS(boolean)">setRequireStartTLS</a></span>(boolean requireStartTLS)</nobr>
+        
+        <div class="jd-descrdiv">Set whether the STARTTLS command should be required.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setSASLEnabled(boolean)">setSASLEnabled</a></span>(boolean enableSASL)</nobr>
+        
+        <div class="jd-descrdiv">Set whether SASL authentication is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setSASLMechanisms(java.lang.String[])">setSASLMechanisms</a></span>(String[] mechanisms)</nobr>
+        
+        <div class="jd-descrdiv">Set the list of SASL mechanisms to consider if SASL authentication
+ is enabled.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setSASLRealm(java.lang.String)">setSASLRealm</a></span>(String saslRealm)</nobr>
+        
+        <div class="jd-descrdiv">Sets the SASL realm to be used for DIGEST-MD5 authentication.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setStartTLS(boolean)">setStartTLS</a></span>(boolean useStartTLS)</nobr>
+        
+        <div class="jd-descrdiv">Set whether the STARTTLS command should be used.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#setUseRset(boolean)">setUseRset</a></span>(boolean useRset)</nobr>
+        
+        <div class="jd-descrdiv">Set whether the RSET command should be used instead of the
+ NOOP command in the @{link #isConnected isConnected} method.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#simpleCommand(java.lang.String)">simpleCommand</a></span>(String cmd)</nobr>
+        
+        <div class="jd-descrdiv">Send the command to the server and return the response code
+ from the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#simpleCommand(byte[])">simpleCommand</a></span>(byte[] cmd)</nobr>
+        
+        <div class="jd-descrdiv">Send the command to the server and return the response code
+ from the server.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#startTLS()">startTLS</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Issue the <code>STARTTLS</code> command and switch the socket to
+ TLS mode if it succeeds.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#supportsAuthentication(java.lang.String)">supportsAuthentication</a></span>(String auth)</nobr>
+        
+        <div class="jd-descrdiv">Does the server we're connected to support the specified
+ authentication mechanism?  Uses the extension information
+ returned by the server from the EHLO command.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#supportsExtension(java.lang.String)">supportsExtension</a></span>(String ext)</nobr>
+        
+        <div class="jd-descrdiv">Return true if the SMTP server supports the specified service
+ extension.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/com/sun/mail/smtp/SMTPTransport.html#xtext(java.lang.String)">xtext</a></span>(String s)</nobr>
+        
+        <div class="jd-descrdiv">Convert a string to RFC 1891 xtext format.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.code.javax.mail.Transport" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.code.javax.mail.Transport-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../../com/google/code/javax/mail/Transport.html">com.google.code.javax.mail.Transport</a>
+
+<div id="inherited-methods-com.google.code.javax.mail.Transport">
+  <div id="inherited-methods-com.google.code.javax.mail.Transport-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.code.javax.mail.Transport-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#addTransportListener(com.google.code.javax.mail.event.TransportListener)">addTransportListener</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Add a listener for Transport events.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#notifyTransportListeners(int, com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Address[], com.google.code.javax.mail.Message)">notifyTransportListeners</a></span>(int type, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validSent, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> validUnsent, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> invalid, <a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</nobr>
+        
+        <div class="jd-descrdiv">Notify all TransportListeners.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#removeTransportListener(com.google.code.javax.mail.event.TransportListener)">removeTransportListener</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/event/TransportListener.html">TransportListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Remove a listener for Transport events.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">send</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</nobr>
+        
+        <div class="jd-descrdiv">Send the message to the specified addresses, ignoring any
+ recipients specified in the message itself.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#send(com.google.code.javax.mail.Message)">send</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg)</nobr>
+        
+        <div class="jd-descrdiv">Send a message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Transport.html#sendMessage(com.google.code.javax.mail.Message, com.google.code.javax.mail.Address[])">sendMessage</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/Message.html">Message</a> msg, <a href="../../../../../../../../java/com/google/code/javax/mail/Address.html">Address[]</a> addresses)</nobr>
+        
+        <div class="jd-descrdiv">Send the Message to the specified list of addresses.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.code.javax.mail.Service" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.code.javax.mail.Service-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../../com/google/code/javax/mail/Service.html">com.google.code.javax.mail.Service</a>
+
+<div id="inherited-methods-com.google.code.javax.mail.Service">
+  <div id="inherited-methods-com.google.code.javax.mail.Service-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.code.javax.mail.Service-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#addConnectionListener(com.google.code.javax.mail.event.ConnectionListener)">addConnectionListener</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/event/ConnectionListener.html">ConnectionListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Add a listener for Connection events on this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#close()">close</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Close this service and terminate its connection.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, int, java.lang.String, java.lang.String)">connect</a></span>(String host, int port, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Similar to connect(host, user, password) except a specific port
+ can be specified.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connect()">connect</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">A generic connect method that takes no parameters.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, java.lang.String, java.lang.String)">connect</a></span>(String host, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Connect to the specified address.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#connect(java.lang.String, java.lang.String)">connect</a></span>(String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">Connect to the current host using the specified username
+ and password.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#finalize()">finalize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Stop the event dispatcher thread so the queue can be garbage collected.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#getURLName()">getURLName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return a URLName representing this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#isConnected()">isConnected</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Is this service currently connected? <p>
+
+ This implementation uses a private boolean field to 
+ store the connection state.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#notifyConnectionListeners(int)">notifyConnectionListeners</a></span>(int type)</nobr>
+        
+        <div class="jd-descrdiv">Notify all ConnectionListeners.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#protocolConnect(java.lang.String, int, java.lang.String, java.lang.String)">protocolConnect</a></span>(String host, int port, String user, String password)</nobr>
+        
+        <div class="jd-descrdiv">The service implementation should override this method to
+ perform the actual protocol-specific connection attempt.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#queueEvent(com.google.code.javax.mail.event.MailEvent, java.util.Vector)">queueEvent</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/event/MailEvent.html">MailEvent</a> event, Vector vector)</nobr>
+        
+        <div class="jd-descrdiv">Add the event and vector of listeners to the queue to be delivered.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#removeConnectionListener(com.google.code.javax.mail.event.ConnectionListener)">removeConnectionListener</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/event/ConnectionListener.html">ConnectionListener</a> l)</nobr>
+        
+        <div class="jd-descrdiv">Remove a Connection event listener.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#setConnected(boolean)">setConnected</a></span>(boolean connected)</nobr>
+        
+        <div class="jd-descrdiv">Set the connection state of this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#setURLName(com.google.code.javax.mail.URLName)">setURLName</a></span>(<a href="../../../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> url)</nobr>
+        
+        <div class="jd-descrdiv">Set the URLName representing this service.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../../com/google/code/javax/mail/Service.html#toString()">toString</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return <code>getURLName.toString()</code> if this service has a URLName,
+ otherwise it will return the default <code>toString</code>.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="SMTPSSLTransport(com.google.code.javax.mail.Session, com.google.code.javax.mail.URLName)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">SMTPSSLTransport</span>
+      <span class="normal">(<a href="../../../../../../../../java/com/google/code/javax/mail/Session.html">Session</a> session, <a href="../../../../../../../../java/com/google/code/javax/mail/URLName.html">URLName</a> urlname)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>session</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>urlname</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>
