@@ -21,8 +21,9 @@ import org.mule.api.annotations.oauth.OAuthInvalidateAccessTokenOn;
 import org.mule.api.annotations.oauth.OAuthProtected;
 import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
-import org.mule.module.gmail.model.GmailFolder;
+import org.mule.module.gmail.model.MailMessage;
 import org.mule.module.gmail.search.FlagCriteria;
+import org.mule.module.gmail.search.GmailFolder;
 import org.mule.module.gmail.search.SearchCriteria;
 import org.mule.modules.google.AbstractGoogleOAuthConnector;
 import org.mule.modules.google.api.datetime.DateTimeUtils;
@@ -63,11 +64,15 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 
 	protected abstract Store getStore(String username);
 	
-//	public void send()
 	
 	/**
 	 * Search and returns messages on a folder of the given username
-	 * using a search criteria provided by the user via the searchTerm parameter
+	 * using a search criteria provided by the user via the searchTerm parameter.
+	 * 
+	 * Returns messages in the user mailbox applying optional search criterias.
+	 * The messages are returned in the form of  {@link org.mule.module.gmail.model.MailMessage} instances
+	 * which allows the connector's user to be decoupled from the IMAP protocol internals but also allows for the
+	 * mailbox connection to be closed automatically.
 	 * 
 	 * {@sample.xml ../../../doc/Gmail-connector.xml.sample gmail:advanced-search}
 	 * 
@@ -75,26 +80,31 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	 * @param folder the folder in which to search. If you want all of them then use ALL_MAIL
 	 * @param searchTerm an instance of {@link com.google.code.javax.mail.search.SearchTerm}. If not provided, then no filtering criteria is applied
 	 * @param expunge if true, all read messages will be deleted upon operation completion
-	 * @return a list of {@link com.google.code.com.sun.mail.imap.IMAPMessage} representing the found messages
+	 * @param includeAttachments wether or not to also download the message's attachments. Default value is false bandwidth wise.
+	 * @return a list of {@link org.mule.module.gmail.model.MailMessage} representing the found messages
 	 * @throws MessagingException if an error is found accessing the mailbox
 	 */
 	@Processor
 	@OAuthProtected
 	@OAuthInvalidateAccessTokenOn(exception=OAuthTokenExpiredException.class)
-	public List<IMAPMessage> advancedSearch(
+	public List<MailMessage> advancedSearch(
 									String username,
 									GmailFolder folder,
 									SearchTerm searchTerm,
-									@Optional @Default("false") Boolean expunge) throws MessagingException {
+									@Optional @Default("false") Boolean expunge,
+									@Optional @Default("false") Boolean includeAttachments) throws MessagingException {
 		
 		List<SearchTerm> terms = new ArrayList<SearchTerm>(1);
 		terms.add(searchTerm);
-		return this.doGetMessages(username, folder, terms, expunge);
+		return this.doGetMessages(username, folder, terms, expunge, includeAttachments);
 	}
 	
 
 	/**
-	 * Returns messages in the user mailbox
+	 * Returns messages in the user mailbox applying optional search criterias.
+	 * The messages are returned in the form of  {@link org.mule.module.gmail.model.MailMessage} instances
+	 * which allows the connector's user to be decoupled from the IMAP protocol internals but also allows for the
+	 * mailbox connection to be closed automatically.
 	 * 
 	 * {@sample.xml ../../../doc/Gmail-connector.xml.sample gmail:search}
 	 * 
@@ -118,19 +128,20 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	 * @param subjectTerms a list of Strings which represent the subject terms that the messages need to have. This is an OR operation logic. All messages with any one of these terms will be returned
 	 * @param dateFormat the format to be used to parse the date attributes. If no dateFormat is specified, then RFC3339 is assumed
 	 * @param expunge if true, all read messages will be deleted upon operation completion
-	 * @return a list of {@link com.google.code.com.sun.mail.imap.IMAPMessage}
+	 * @param includeAttachments wether or not to also download the message's attachments. Default value is false bandwidth wise.
+	 * @return a list of {@link org.mule.module.gmail.model.MailMessage}
 	 * @throws MessagingException if an error is found accessing the mailbox
 	 */
 	@Processor
 	@OAuthProtected
 	@OAuthInvalidateAccessTokenOn(exception=OAuthTokenExpiredException.class)
-	public List<IMAPMessage> search(
+	public List<MailMessage> search(
 					String username,
 					GmailFolder folder,
-					@Optional @Default("") String receivedBefore,
-					@Optional @Default("") String receivedAfter,
-					@Optional @Default("") String sentBefore,
-					@Optional @Default("") String sentAfter,
+					@Optional String receivedBefore,
+					@Optional String receivedAfter,
+					@Optional String sentBefore,
+					@Optional String sentAfter,
 					@Optional List<String> fromAddresses,
 					@Optional List<String> toAddresses,
 					@Optional Integer messageNumber,
@@ -138,13 +149,14 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 					@Optional List<FlagCriteria> flags,
 					@Optional List<String> labels,
 					@Optional List<String> rawSearchTerms,
-					@Optional @Default("") String threadId,
+					@Optional String threadId,
 					@Optional List<String> bodyTerms,
 					@Optional List<String> headerTerms,
-					@Optional @Default("") String messageId,
+					@Optional String messageId,
 					@Optional List<String> subjectTerms,
 					@Optional @Default(DateTimeUtils.RFC3339) String dateFormat,
-					@Optional @Default("false") Boolean expunge) throws MessagingException {
+					@Optional @Default("false") Boolean expunge,
+					@Optional @Default("false") Boolean includeAttachments) throws MessagingException {
 		
 		List<SearchTerm> searchTerms = new ArrayList<SearchTerm>();
 		
@@ -212,10 +224,10 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 			searchTerms.add(new MessageIDTerm(messageId));
 		}
 		
-		return this.doGetMessages(username, folder, searchTerms, expunge);
+		return this.doGetMessages(username, folder, searchTerms, expunge, includeAttachments);
 	}
 	
-	private List<IMAPMessage> doGetMessages(String username, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge) throws MessagingException {
+	private List<MailMessage> doGetMessages(String username, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge, boolean includeAttachments) throws MessagingException {
 		FetchProfile fp = new FetchProfile();
 		fp.add(IMAPFolder.FetchProfileItem.X_GM_MSGID);
 		fp.add(IMAPFolder.FetchProfileItem.X_GM_THRID);
@@ -230,11 +242,11 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 
 			int size = searchTerms != null ? searchTerms.size() : 0;
 			if (size == 0) {
-				return this.returnMessages((IMAPMessage[]) folder.getMessages());
+				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.getMessages());
 			} else if (size == 1) {
-				return this.returnMessages((IMAPMessage[]) folder.search(searchTerms.get(0)));
+				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.search(searchTerms.get(0)));
 			} else {
-				return this.returnMessages((IMAPMessage[]) folder.search(new AndTerm(searchTerms.toArray(new SearchTerm[searchTerms.size()]))));
+				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.search(new AndTerm(searchTerms.toArray(new SearchTerm[searchTerms.size()]))));
 			}
 		} catch (AuthenticationFailedException e) {
 			throw new OAuthTokenExpiredException("Authentication failed", e);
@@ -250,8 +262,8 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 		}
 	}
 	
-	private List<IMAPMessage> returnMessages(IMAPMessage... messages) {
-		return (List<IMAPMessage>) Arrays.asList(messages);
+	private List<MailMessage> returnMessages(boolean includeAttachments, IMAPMessage... messages) {
+		return ModelAdapter.toModel(Arrays.asList(messages), includeAttachments);
 	}
 	
 	private <T extends SearchTerm> List<SearchTerm> addStringTerms(List<SearchTerm> searchTerms, List<String> values, Class<T> termClass) {

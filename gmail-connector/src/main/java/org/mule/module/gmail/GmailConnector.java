@@ -26,7 +26,9 @@ import org.mule.api.annotations.param.Optional;
 import org.mule.modules.google.AccessType;
 import org.mule.modules.google.ForcePrompt;
 import org.mule.modules.google.GoogleUserIdExtractor;
+import org.mule.modules.google.oauth.invalidation.OAuthTokenExpiredException;
 
+import com.google.code.javax.mail.AuthenticationFailedException;
 import com.google.code.javax.mail.MessagingException;
 import com.google.code.javax.mail.Store;
 import com.google.code.oauth.OAuth2Authenticator;
@@ -109,6 +111,8 @@ public class GmailConnector extends BaseGmailConnector {
 		
 		try {
 			return OAuth2Authenticator.connectToImap(username, token);
+		} catch (AuthenticationFailedException e) {
+			throw new OAuthTokenExpiredException("Authentication failed", e);
 		} catch (MessagingException e) {
 			throw new RuntimeException("There was an unexpected error connecting to the imap store using OAuth2", e);
 		}

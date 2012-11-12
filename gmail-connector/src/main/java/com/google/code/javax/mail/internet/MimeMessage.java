@@ -2003,13 +2003,13 @@ public class MimeMessage extends Message implements MimePart {
      *
      * @param flag	the flag
      * @return		value of the specified flag for this message
-     * @see 		org.mule.module.gmail.model.mail.Flags.Flag
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#ANSWERED
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#DELETED
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#DRAFT
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#FLAGGED
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#RECENT
-     * @see		org.mule.module.gmail.model.mail.Flags.Flag#SEEN
+     * @see 		org.mule.module.gmail.search.mail.Flags.Flag
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#ANSWERED
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#DELETED
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#DRAFT
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#FLAGGED
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#RECENT
+     * @see		org.mule.module.gmail.search.mail.Flags.Flag#SEEN
      * @exception       MessagingException
      */
     public synchronized boolean isSet(Flags.Flag flag)

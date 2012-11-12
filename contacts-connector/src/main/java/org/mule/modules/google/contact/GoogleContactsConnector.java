@@ -221,7 +221,7 @@ public class GoogleContactsConnector extends AbstractGoogleOAuthConnector {
 		}
 		
 		if (updatedMin != null) {
-			query.setUpdatedMin(DateTimeUtils.parseDateTime(updatedMin, fullTextQuery, null));
+			query.setUpdatedMin(DateTimeUtils.parseDateTime(updatedMin, datetimeFormat, null));
 		}
 		
 		query.setFullTextQuery(fullTextQuery);

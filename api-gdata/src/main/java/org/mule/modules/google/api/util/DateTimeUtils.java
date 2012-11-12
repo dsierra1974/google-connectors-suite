@@ -24,7 +24,7 @@ import com.google.gdata.data.DateTime;
  */
 public abstract class DateTimeUtils {
 
-	public static final String RFC3339 = "yyyy-MM-dd'T'HH:mm:ssZ";
+	public static final String RFC3339 = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
 	public static DateTime parseDateTime(String date, String pattern,
 			String timezone) {
