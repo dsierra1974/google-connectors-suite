@@ -228,11 +228,6 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	}
 	
 	private List<MailMessage> doGetMessages(String username, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge, boolean includeAttachments) throws MessagingException {
-		FetchProfile fp = new FetchProfile();
-		fp.add(IMAPFolder.FetchProfileItem.X_GM_MSGID);
-		fp.add(IMAPFolder.FetchProfileItem.X_GM_THRID);
-		fp.add(IMAPFolder.FetchProfileItem.X_GM_LABELS);
-		
 		Store store = null;
 		Folder folder = null;
 		
@@ -242,11 +237,11 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 
 			int size = searchTerms != null ? searchTerms.size() : 0;
 			if (size == 0) {
-				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.getMessages());
+				return this.returnMessages(includeAttachments, folder, (IMAPMessage[]) folder.getMessages());
 			} else if (size == 1) {
-				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.search(searchTerms.get(0)));
+				return this.returnMessages(includeAttachments, folder, (IMAPMessage[]) folder.search(searchTerms.get(0)));
 			} else {
-				return this.returnMessages(includeAttachments, (IMAPMessage[]) folder.search(new AndTerm(searchTerms.toArray(new SearchTerm[searchTerms.size()]))));
+				return this.returnMessages(includeAttachments, folder, (IMAPMessage[]) folder.search(new AndTerm(searchTerms.toArray(new SearchTerm[searchTerms.size()]))));
 			}
 		} catch (AuthenticationFailedException e) {
 			throw new OAuthTokenExpiredException("Authentication failed", e);
@@ -262,7 +257,13 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 		}
 	}
 	
-	private List<MailMessage> returnMessages(boolean includeAttachments, IMAPMessage... messages) {
+	private List<MailMessage> returnMessages(boolean includeAttachments, Folder folder, IMAPMessage... messages) throws MessagingException {
+		FetchProfile fp = new FetchProfile();
+		fp.add(IMAPFolder.FetchProfileItem.X_GM_MSGID);
+		fp.add(IMAPFolder.FetchProfileItem.X_GM_THRID);
+		fp.add(IMAPFolder.FetchProfileItem.X_GM_LABELS);
+		
+		folder.fetch(messages, fp);
 		return ModelAdapter.toModel(Arrays.asList(messages), includeAttachments);
 	}
 	
