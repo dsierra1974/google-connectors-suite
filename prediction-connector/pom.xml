@@ -69,7 +69,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-google-prediction-connector</path>
+                    <path>prediction-connector</path>
                 </configuration>
                 <executions>
                     <execution>

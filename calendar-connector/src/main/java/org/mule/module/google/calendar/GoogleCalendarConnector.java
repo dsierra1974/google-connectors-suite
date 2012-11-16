@@ -390,12 +390,12 @@ public class GoogleCalendarConnector extends AbstractGoogleOAuthConnector {
 	    	.setSingleEvents(singleEvents)
 	    	.setTimeMax(DateTimeUtils.parseDateTime(timeMax, datetimeFormat, timezone))
 	    	.setTimeMin(DateTimeUtils.parseDateTime(timeMin, datetimeFormat, timezone))
-	    	.setTimeZone(timeMax)
+	    	.setTimeZone(timezone)
 	    	.setUpdatedMin(DateTimeUtils.parseDateTime(lastUpdated, datetimeFormat, timezone))
 	    	.execute();
     	
     	this.saveNextPageToken(result, message);
-    	return Event.valueOf(events.execute().getItems(), Event.class);
+    	return Event.valueOf(result.getItems(), Event.class);
     }
     
     /**

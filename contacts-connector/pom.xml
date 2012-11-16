@@ -44,7 +44,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-google-contacts-connector</path>
+                    <path>contacts-connector</path>
                 </configuration>
                 <executions>
                     <execution>

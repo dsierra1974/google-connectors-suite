@@ -54,7 +54,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-google-calendar-connector</path>
+                    <path>calendar-connector</path>
                 </configuration>
                 <executions>
                     <execution>

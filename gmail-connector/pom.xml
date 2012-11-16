@@ -5,7 +5,7 @@
     <groupId>org.mule.module</groupId>
     <artifactId>mule-module-gmail</artifactId>
     <packaging>mule-module</packaging>
-    <name>Mule Cloud Connector</name>
+    <name>Mule Gmail Cloud Connector</name>
 
     <parent>
 		<groupId>org.mule.modules</groupId>
@@ -32,7 +32,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-gmail-connector</path>
+                    <path>gmail-connector</path>
                 </configuration>
                 <executions>
                     <execution>

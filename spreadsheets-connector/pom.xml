@@ -51,7 +51,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-google-spreadsheets-connector</path>
+                    <path>spreadsheets-connector</path>
                 </configuration>
                 <executions>
                     <execution>

@@ -53,7 +53,7 @@
                 <groupId>org.mule.tools.devkit</groupId>
                 <artifactId>mule-devkit-maven-plugin</artifactId>
                 <configuration>
-                    <path>mule-module-google-tasks-connector</path>
+                    <path>tasks-connector</path>
                 </configuration>
                 <executions>
                     <execution>

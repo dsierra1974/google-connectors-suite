@@ -65,6 +65,9 @@ public abstract class ModelAdapter {
 			message.setCc(parseAddress(imap.getRecipients(RecipientType.CC)));
 			message.setTo(parseAddress(imap.getRecipients(RecipientType.TO)));
 			message.setTimestamp(imap.getReceivedDate() != null ? imap.getReceivedDate() : imap.getSentDate());
+			message.setSubject(imap.getSubject());
+			message.setLabels(imap.getGoogleMessageLabels());
+			message.setThreadId(imap.getGoogleMessageThreadId());
 			extractContentAndAttachments(message, imap, includeAttachments);
 		} catch (MessagingException e) {
 			throw new RuntimeException("Error accessing mailbox", e);

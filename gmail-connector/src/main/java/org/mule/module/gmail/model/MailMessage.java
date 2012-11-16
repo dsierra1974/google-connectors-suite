@@ -33,6 +33,8 @@ public class MailMessage implements Serializable {
 	private String from;
 	private Date timestamp;
 	private String body;
+	private Long threadId;
+	private String[] labels;
 	private List<Attachment> attachments;
 	
 	public MailMessage addAttachment(Attachment attach) {
@@ -44,9 +46,11 @@ public class MailMessage implements Serializable {
 		return this;
 	}
 	
+	
 	public String getGoogleId() {
 		return googleId;
 	}
+
 	public void setGoogleId(String googleId) {
 		this.googleId = googleId;
 	}
@@ -98,4 +102,21 @@ public class MailMessage implements Serializable {
 	public void setFrom(String from) {
 		this.from = from;
 	}
+
+	public Long getThreadId() {
+		return threadId;
+	}
+
+	public void setThreadId(Long threadId) {
+		this.threadId = threadId;
+	}
+
+	public String[] getLabels() {
+		return labels;
+	}
+
+	public void setLabels(String[] labels) {
+		this.labels = labels;
+	}
+	
 }
