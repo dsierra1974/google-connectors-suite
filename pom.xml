@@ -57,7 +57,7 @@
 	<scm>
 		<connection>scm:git:git://github.com:mulesoft/google-connectors-suite.git</connection>
 		<developerConnection>scm:git:git@github.com:mulesoft/google-connectors-suite.git</developerConnection>
-		<url>http://github.com/mulesoft/google-connectors-suite</url>
+		<url>https://github.com/mulesoft/google-connectors-suite</url>
 	</scm>
 
 	  <profiles>

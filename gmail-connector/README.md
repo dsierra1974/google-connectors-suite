@@ -1,14 +1,14 @@
-Mule Google Apps Connector Suite
-=================================
+Mule Google Tasks Connector
+=========================
 
-This project contains connectors for the Google Apps API. Each connector targets one specific API while mantaining a common approach to each API.
+This connector will allow you to create and manipulate tasks on the google apps service.
 
 Installation and Usage
 ----------------------
 
-Look at each individual project or consult Mule Studio update site
+For information about usage and installation you can check our documentation at http://mulesoft.github.com/google-connectors-suite/gmail-connector/mule/gmail-config-with-oauth.html
 
 Reporting Issues
 ----------------
 
-Please report them in each subproject
+We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link https://github.com/mulesoft/google-connectors-suite/issues
