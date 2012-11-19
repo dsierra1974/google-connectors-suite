@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Gmail Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  InternetHeaders
+
+
+| Mule Gmail Cloud Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Gmail Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Gmail Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/java/lang/holders/package-summary.html">java.lang.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimePart.html">MimePart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/SharedInputStream.html">SharedInputStream</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ContentDisposition.html">ContentDisposition</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ContentType.html">ContentType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/HeaderTokenizer.html">HeaderTokenizer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/HeaderTokenizer.Token.html">HeaderTokenizer.Token</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetAddress.html">InternetAddress</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.InternetHeader.html">InternetHeaders.InternetHeader</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MailDateFormat.html">MailDateFormat</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.html">MimeMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.RecipientType.html">MimeMessage.RecipientType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMultipart.html">MimeMultipart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimePartDataSource.html">MimePartDataSource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeUtility.html">MimeUtility</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/NewsAddress.html">NewsAddress</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ParameterList.html">ParameterList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/PreencodedMimeBodyPart.html">PreencodedMimeBodyPart</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/AddressException.html">AddressException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ParseException.html">ParseException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+  <a href="#nestedclasses">Nested Classes</a>
+  
+
+
+
+
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>InternetHeaders</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.mail.internet.InternetHeaders</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>InternetHeaders is a utility class that manages RFC822 style
+ headers. Given an RFC822 format message stream, it reads lines
+ until the blank line that indicates end of header. The input stream
+ is positioned at the start of the body. The lines are stored 
+ within the object and can be extracted as either Strings or
+ javax.mail.Header objects. <p>
+
+ This class is mostly intended for service providers. MimeMessage
+ and MimeBody use this class for holding their headers. <p>
+ 
+ <hr> <strong>A note on RFC822 and MIME headers</strong><p>
+
+ RFC822 and MIME header fields <strong>must</strong> contain only 
+ US-ASCII characters. If a header contains non US-ASCII characters,
+ it must be encoded as per the rules in RFC 2047. The MimeUtility
+ class provided in this package can be used to to achieve this. 
+ Callers of the <code>setHeader</code>, <code>addHeader</code>, and
+ <code>addHeaderLine</code> methods are responsible for enforcing
+ the MIME requirements for the specified headers.  In addition, these
+ header fields must be folded (wrapped) before being sent if they
+ exceed the line length limitation for the transport (1000 bytes for
+ SMTP).  Received headers may have been folded.  The application is
+ responsible for folding and unfolding headers as appropriate. <p>
+
+ The current implementation supports the System property
+ <code>mail.mime.ignorewhitespacelines</code>, which if set to true
+ will cause a line containing only whitespace to be considered
+ a blank line terminating the header.</p>
+
+
+
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.mail.internet.MimeUtility</li>
+      </ul>
+  </div>
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
+
+
+  
+    <tr class="alt-color api apilevel-" >
+      <td class="jd-typecol"><nobr>
+        
+        
+        
+        
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.InternetHeader.html">InternetHeaders.InternetHeader</a></td>
+      <td class="jd-descrcol" width="100%">An individual internet header.&nbsp;</td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          List</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#headers">headers</a></td>
+          <td class="jd-descrcol" width="100%">The actual list of Headers, including placeholder entries.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#ignoreWhitespaceLines">ignoreWhitespaceLines</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#InternetHeaders()">InternetHeaders</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an empty InternetHeaders object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#InternetHeaders(java.io.InputStream)">InternetHeaders</a></span>(InputStream is)</nobr>
+        
+        <div class="jd-descrdiv">Read and parse the given RFC822 message stream till the 
+ blank line separating the header from the body.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#addHeader(java.lang.String, java.lang.String)">addHeader</a></span>(String name, String value)</nobr>
+        
+        <div class="jd-descrdiv">Add a header with the specified name and value to the header list.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#addHeaderLine(java.lang.String)">addHeaderLine</a></span>(String line)</nobr>
+        
+        <div class="jd-descrdiv">Add an RFC822 header line to the header store.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getAllHeaderLines()">getAllHeaderLines</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return all the header lines as an Enumeration of Strings.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getAllHeaders()">getAllHeaders</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return all the headers as an Enumeration of
+ javax.mail.Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getHeader(java.lang.String, java.lang.String)">getHeader</a></span>(String name, String delimiter)</nobr>
+        
+        <div class="jd-descrdiv">Get all the headers for this header name, returned as a single
+ String, with headers separated by the delimiter.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getHeader(java.lang.String)">getHeader</a></span>(String name)</nobr>
+        
+        <div class="jd-descrdiv">Return all the values for the specified header.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getMatchingHeaderLines(java.lang.String[])">getMatchingHeaderLines</a></span>(String[] names)</nobr>
+        
+        <div class="jd-descrdiv">Return all matching header lines as an Enumeration of Strings.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getMatchingHeaders(java.lang.String[])">getMatchingHeaders</a></span>(String[] names)</nobr>
+        
+        <div class="jd-descrdiv">Return all matching javax.mail.Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getNonMatchingHeaderLines(java.lang.String[])">getNonMatchingHeaderLines</a></span>(String[] names)</nobr>
+        
+        <div class="jd-descrdiv">Return all non-matching header lines
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Enumeration</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#getNonMatchingHeaders(java.lang.String[])">getNonMatchingHeaders</a></span>(String[] names)</nobr>
+        
+        <div class="jd-descrdiv">Return all non-matching javax.mail.Header objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#load(java.io.InputStream)">load</a></span>(InputStream is)</nobr>
+        
+        <div class="jd-descrdiv">Read and parse the given RFC822 message stream till the
+ blank line separating the header from the body.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#removeHeader(java.lang.String)">removeHeader</a></span>(String name)</nobr>
+        
+        <div class="jd-descrdiv">Remove all header entries that match the given name</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/InternetHeaders.html#setHeader(java.lang.String, java.lang.String)">setHeader</a></span>(String name, String value)</nobr>
+        
+        <div class="jd-descrdiv">Change the first header line that matches name
+ to have value, adding a new header if no existing header
+ matches.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="headers"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        List
+      </span>
+        headers
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The actual list of Headers, including placeholder entries.
+ Placeholder entries are Headers with a null value and
+ are never seen by clients of the InternetHeaders class.
+ Placeholder entries are used to keep track of the preferred
+ order of headers.  Headers are never actually removed from
+ the list, they're converted into placeholder entries.
+ New headers are added after existing headers of the same name
+ (or before in the case of <code>Received</code> and
+ <code>Return-Path</code> headers).  If no existing header
+ or placeholder for the header is found, new headers are
+ added after the special placeholder with the name ":".</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ignoreWhitespaceLines"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        boolean
+      </span>
+        ignoreWhitespaceLines
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="InternetHeaders()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">InternetHeaders</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an empty InternetHeaders object.  Placeholder entries
+ are inserted to indicate the preferred order of headers.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="InternetHeaders(java.io.InputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">InternetHeaders</span>
+      <span class="normal">(InputStream is)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Read and parse the given RFC822 message stream till the 
+ blank line separating the header from the body. The input 
+ stream is left positioned at the start of the body. The 
+ header lines are stored internally. <p>
+
+ For efficiency, wrap a BufferedInputStream around the actual
+ input stream and pass it as the parameter. <p>
+
+ No placeholder entries are inserted; the original order of
+ the headers is preserved.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>is</td>
+          <td>RFC822 input stream
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addHeader(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">addHeader</span>
+      <span class="normal">(String name, String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a header with the specified name and value to the header list. <p>
+
+ The current implementation knows about the preferred order of most
+ well-known headers and will insert headers in that order.  In
+ addition, it knows that <code>Received</code> headers should be
+ inserted in reverse order (newest before oldest), and that they
+ should appear at the beginning of the headers, preceeded only by
+ a possible <code>Return-Path</code> header.  <p>
+
+ Note that RFC822 headers can only contain US-ASCII characters.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>Header name</td>
+        </tr>
+        <tr>
+          <th>value</td>
+          <td>Header value
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="addHeaderLine(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">addHeaderLine</span>
+      <span class="normal">(String line)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add an RFC822 header line to the header store.
+ If the line starts with a space or tab (a continuation line),
+ add it to the last header line in the list.  Otherwise,
+ append the new header line to the list.  <p>
+
+ Note that RFC822 headers can only contain US-ASCII characters</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>line</td>
+          <td>Raw RFC822 header line
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAllHeaderLines()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getAllHeaderLines</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all the header lines as an Enumeration of Strings.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getAllHeaders()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getAllHeaders</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all the headers as an Enumeration of
+ javax.mail.Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Header objects	
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getHeader(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getHeader</span>
+      <span class="normal">(String name, String delimiter)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get all the headers for this header name, returned as a single
+ String, with headers separated by the delimiter. If the
+ delimiter is <code>null</code>, only the first header is 
+ returned.  Returns <code>null</code>
+ if no headers with the specified name exist.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>Header name</td>
+        </tr>
+        <tr>
+          <th>delimiter</td>
+          <td>Delimiter</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the value fields for all headers with
+				this name, or null if none
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getHeader(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String[]
+      </span>
+      <span class="sympad">getHeader</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all the values for the specified header. The
+ values are String objects.  Returns <code>null</code>
+ if no headers with the specified name exist.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>Header name</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>array of header values, or null if none
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMatchingHeaderLines(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getMatchingHeaderLines</span>
+      <span class="normal">(String[] names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all matching header lines as an Enumeration of Strings.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMatchingHeaders(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getMatchingHeaders</span>
+      <span class="normal">(String[] names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all matching javax.mail.Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>matching Header objects	
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getNonMatchingHeaderLines(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getNonMatchingHeaderLines</span>
+      <span class="normal">(String[] names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all non-matching header lines
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getNonMatchingHeaders(java.lang.String[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Enumeration
+      </span>
+      <span class="sympad">getNonMatchingHeaders</span>
+      <span class="normal">(String[] names)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all non-matching javax.mail.Header objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>names</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>non-matching Header objects	
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="load(java.io.InputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">load</span>
+      <span class="normal">(InputStream is)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Read and parse the given RFC822 message stream till the
+ blank line separating the header from the body. Store the
+ header lines inside this InternetHeaders object. The order
+ of header lines is preserved. <p>
+
+ Note that the header lines are added into this InternetHeaders
+ object, so any existing headers in this object will not be
+ affected.  Headers are added to the end of the existing list
+ of headers, in order.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>is</td>
+          <td>RFC822 input stream
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeHeader(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removeHeader</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove all header entries that match the given name</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>Header name
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setHeader(java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setHeader</span>
+      <span class="normal">(String name, String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Change the first header line that matches name
+ to have value, adding a new header if no existing header
+ matches. Remove all matching headers but the first. <p>
+
+ Note that RFC822 headers can only contain US-ASCII characters</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>Header name</td>
+        </tr>
+        <tr>
+          <th>value</td>
+          <td>Header value
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

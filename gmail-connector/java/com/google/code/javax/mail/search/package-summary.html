@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Gmail Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  com.google.code.javax.mail.search
+
+
+| Mule Gmail Cloud Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Gmail Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Gmail Cloud Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/java/lang/holders/package-summary.html">java.lang.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/AddressStringTerm.html">AddressStringTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/AddressTerm.html">AddressTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/AndTerm.html">AndTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/BodyTerm.html">BodyTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/ComparisonTerm.html">ComparisonTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/DateTerm.html">DateTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/FlagTerm.html">FlagTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/FromStringTerm.html">FromStringTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/FromTerm.html">FromTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailLabelTerm.html">GmailLabelTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailMessageIDTerm.html">GmailMessageIDTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailRawSearchTerm.html">GmailRawSearchTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailSearchTerm.html">GmailSearchTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailThreadIDTerm.html">GmailThreadIDTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/HeaderTerm.html">HeaderTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/IntegerComparisonTerm.html">IntegerComparisonTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/MessageIDTerm.html">MessageIDTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/MessageNumberTerm.html">MessageNumberTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/NotTerm.html">NotTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/OrTerm.html">OrTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/ReceivedDateTerm.html">ReceivedDateTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/RecipientStringTerm.html">RecipientStringTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/RecipientTerm.html">RecipientTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/SearchTerm.html">SearchTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/SentDateTerm.html">SentDateTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/SizeTerm.html">SizeTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/StringTerm.html">StringTerm</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/SubjectTerm.html">SubjectTerm</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/search/SearchException.html">SearchException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>com.google.code.javax.mail.search</h1>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+
+
+  <div class="jd-descr">
+    Message search terms for the JavaMail API.
+This package defines classes that can be used to construct a search
+expression to search a folder for messages matching the expression;
+see the javax.mail.Folder#search search method on
+javax.mail.Folder javax.mail.Folder.
+See javax.mail.search.SearchTerm SearchTerm.
+<P>
+Note that the exact search capabilities depend on the protocol,
+provider, and server in use.  For the POP3 protocol, all searching is
+done on the client side using the JavaMail classes.  For IMAP, all
+searching is done on the server side and is limited by the search
+capabilities of the IMAP protocol and the IMAP server being used.
+For example, IMAP date based searches have only day granularity.
+<P>
+In general, all of the string patterns supported by search terms are
+just simple strings; no regular expressions are supported.
+
+
+  </div>
+
+
+
+
+
+  
+
+
+  
+    <h2>Classes</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/AddressStringTerm.html">AddressStringTerm</a></td>
+              <td class="jd-descrcol" width="100%">This abstract class implements string comparisons for Message 
+ addresses.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/AddressTerm.html">AddressTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements Message Address comparisons.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/AndTerm.html">AndTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the logical AND operator on individual
+ SearchTerms.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/BodyTerm.html">BodyTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements searches on a message body.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/ComparisonTerm.html">ComparisonTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class models the comparison operator.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/DateTerm.html">DateTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for Dates&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/FlagTerm.html">FlagTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for Message Flags.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/FromStringTerm.html">FromStringTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements string comparisons for the From Address
+ header.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/FromTerm.html">FromTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for the From Address header.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailLabelTerm.html">GmailLabelTerm</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailMessageIDTerm.html">GmailMessageIDTerm</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailRawSearchTerm.html">GmailRawSearchTerm</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailSearchTerm.html">GmailSearchTerm</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/GmailThreadIDTerm.html">GmailThreadIDTerm</a></td>
+              <td class="jd-descrcol" width="100%">&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/HeaderTerm.html">HeaderTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for Message headers.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/IntegerComparisonTerm.html">IntegerComparisonTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for integers.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/MessageIDTerm.html">MessageIDTerm</a></td>
+              <td class="jd-descrcol" width="100%">This term models the RFC822 "MessageId" - a message-id for 
+ Internet messages that is supposed to be unique per message.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/MessageNumberTerm.html">MessageNumberTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for Message numbers.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/NotTerm.html">NotTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the logical NEGATION operator.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/OrTerm.html">OrTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the logical OR operator on individual SearchTerms.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/ReceivedDateTerm.html">ReceivedDateTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for the Message Received date&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/RecipientStringTerm.html">RecipientStringTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements string comparisons for the Recipient Address
+ headers.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/RecipientTerm.html">RecipientTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for the Recipient Address headers.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/SearchTerm.html">SearchTerm</a></td>
+              <td class="jd-descrcol" width="100%">Search criteria are expressed as a tree of search-terms, forming
+ a parse-tree for the search expression.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/SentDateTerm.html">SentDateTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for the Message SentDate.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/SizeTerm.html">SizeTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for Message sizes.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/StringTerm.html">StringTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the match method for Strings.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/SubjectTerm.html">SubjectTerm</a></td>
+              <td class="jd-descrcol" width="100%">This class implements comparisons for the message Subject header.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+  
+    <h2>Exceptions</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../java/com/google/code/javax/mail/search/SearchException.html">SearchException</a></td>
+              <td class="jd-descrcol" width="100%">The exception thrown when a Search expression could not be handled.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

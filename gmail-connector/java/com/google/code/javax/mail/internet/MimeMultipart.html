@@ -1,0 +1,3045 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Gmail Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  MimeMultipart
+
+
+| Mule Gmail Cloud Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Gmail Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Gmail Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/java/lang/holders/package-summary.html">java.lang.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimePart.html">MimePart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/SharedInputStream.html">SharedInputStream</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ContentDisposition.html">ContentDisposition</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ContentType.html">ContentType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/HeaderTokenizer.html">HeaderTokenizer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/HeaderTokenizer.Token.html">HeaderTokenizer.Token</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetAddress.html">InternetAddress</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.InternetHeader.html">InternetHeaders.InternetHeader</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MailDateFormat.html">MailDateFormat</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.html">MimeMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMessage.RecipientType.html">MimeMessage.RecipientType</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeMultipart.html">MimeMultipart</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimePartDataSource.html">MimePartDataSource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeUtility.html">MimeUtility</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/NewsAddress.html">NewsAddress</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ParameterList.html">ParameterList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/PreencodedMimeBodyPart.html">PreencodedMimeBodyPart</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/AddressException.html">AddressException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/google/code/javax/mail/internet/ParseException.html">ParseException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+  &#124; <a href="#promethods">Protected Methods</a>
+  
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>MimeMultipart</h1>
+
+
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../../java/com/google/code/javax/mail/Multipart.html">Multipart</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../../java/com/google/code/javax/mail/Multipart.html">com.google.code.javax.mail.Multipart</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.mail.internet.MimeMultipart</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>The MimeMultipart class is an implementation of the abstract Multipart
+ class that uses MIME conventions for the multipart data. <p>
+
+ A MimeMultipart is obtained from a MimePart whose primary type
+ is "multipart" (by invoking the part's <code>getContent()</code> method)
+ or it can be created by a client as part of creating a new MimeMessage. <p>
+
+ The default multipart subtype is "mixed".  The other multipart
+ subtypes, such as "alternative", "related", and so on, can be
+ implemented as subclasses of MimeMultipart with additional methods
+ to implement the additional semantics of that type of multipart
+ content. The intent is that service providers, mail JavaBean writers
+ and mail clients will write many such subclasses and their Command
+ Beans, and will install them into the JavaBeans Activation
+ Framework, so that any JavaMail implementation and its clients can
+ transparently find and use these classes. Thus, a MIME multipart
+ handler is treated just like any other type handler, thereby
+ decoupling the process of providing multipart handlers from the
+ JavaMail API. Lacking these additional MimeMultipart subclasses,
+ all subtypes of MIME multipart data appear as MimeMultipart objects. <p>
+
+ An application can directly construct a MIME multipart object of any
+ subtype by using the <code>MimeMultipart(String subtype)</code>
+ constructor.  For example, to create a "multipart/alternative" object,
+ use <code>new MimeMultipart("alternative")</code>. <p>
+
+ The <code>mail.mime.multipart.ignoremissingendboundary</code>
+ property may be set to <code>false</code> to cause a
+ <code>MessagingException</code> to be thrown if the multipart
+ data does not end with the required end boundary line.  If this
+ property is set to <code>true</code> or not set, missing end
+ boundaries are not considered an error and the final body part
+ ends at the end of the data. <p>
+
+ The <code>mail.mime.multipart.ignoremissingboundaryparameter</code>
+ System property may be set to <code>false</code> to cause a
+ <code>MessagingException</code> to be thrown if the Content-Type
+ of the MimeMultipart does not include a <code>boundary</code> parameter.
+ If this property is set to <code>true</code> or not set, the multipart
+ parsing code will look for a line that looks like a bounary line and
+ use that as the boundary separating the parts. <p>
+
+ The current implementation also supports the following properties: <p>
+
+ The <code>mail.mime.multipart.ignoreexistingboundaryparameter</code>
+ System property may be set to <code>true</code> to cause any boundary
+ to be ignored and instead search for a boundary line in the message
+ as with <code>mail.mime.multipart.ignoremissingboundaryparameter</code>. <p>
+
+ Normally, when writing out a MimeMultipart that contains no body
+ parts, or when trying to parse a multipart message with no body parts,
+ a <code>MessagingException</code> is thrown.  The MIME spec does not allow
+ multipart content with no body parts.  The
+ <code>mail.mime.multipart.allowempty</code> System property may be set to
+ <code>true</code> to override this behavior.
+ When writing out such a MimeMultipart, a single empty part will be
+ included.  When reading such a multipart, a MimeMultipart will be created
+ with no body parts.</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#allowEmpty">allowEmpty</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#bmparse">bmparse</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#complete">complete</a></td>
+          <td class="jd-descrcol" width="100%">Have we seen the final bounary line?
+</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#ds">ds</a></td>
+          <td class="jd-descrcol" width="100%">The DataSource supplying our InputStream.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#ignoreExistingBoundaryParameter">ignoreExistingBoundaryParameter</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#ignoreMissingBoundaryParameter">ignoreMissingBoundaryParameter</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#ignoreMissingEndBoundary">ignoreMissingEndBoundary</a></td>
+          <td class="jd-descrcol" width="100%">Flags to control parsing, initialized from System properties
+ in the parse() method.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#parsed">parsed</a></td>
+          <td class="jd-descrcol" width="100%">Have we parsed the data from our InputStream yet?
+ Defaults to true; set to false when our constructor is
+ given a DataSource with an InputStream that we need to
+ parse.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#preamble">preamble</a></td>
+          <td class="jd-descrcol" width="100%">The MIME multipart preamble text, the text that
+ occurs before the first boundary line.</td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.google.code.javax.mail.Multipart" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.google.code.javax.mail.Multipart-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../com/google/code/javax/mail/Multipart.html">com.google.code.javax.mail.Multipart</a>
+<div id="inherited-fields-com.google.code.javax.mail.Multipart">
+  <div id="inherited-fields-com.google.code.javax.mail.Multipart-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.google.code.javax.mail.Multipart-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#contentType">contentType</a></td>
+          <td class="jd-descrcol" width="100%">This field specifies the content-type of this multipart
+ object.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../../java/com/google/code/javax/mail/Part.html">Part</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#parent">parent</a></td>
+          <td class="jd-descrcol" width="100%">The <code>Part</code> containing this <code>Multipart</code>,
+ if known.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Vector</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#parts">parts</a></td>
+          <td class="jd-descrcol" width="100%">Vector of BodyPart objects.</td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#MimeMultipart()">MimeMultipart</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Default constructor.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#MimeMultipart(java.lang.String)">MimeMultipart</a></span>(String subtype)</nobr>
+        
+        <div class="jd-descrdiv">Construct a MimeMultipart object of the given subtype.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#MimeMultipart(com.google.code.javax.activation.DataSource)">MimeMultipart</a></span>(<a href="../../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a> ds)</nobr>
+        
+        <div class="jd-descrdiv">Constructs a MimeMultipart object and its bodyparts from the 
+ given DataSource.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#addBodyPart(com.google.code.javax.mail.BodyPart)">addBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</nobr>
+        
+        <div class="jd-descrdiv">Adds a Part to the multipart.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#addBodyPart(com.google.code.javax.mail.BodyPart, int)">addBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part, int index)</nobr>
+        
+        <div class="jd-descrdiv">Adds a BodyPart at position <code>index</code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#getBodyPart(int)">getBodyPart</a></span>(int index)</nobr>
+        
+        <div class="jd-descrdiv">Get the specified BodyPart.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#getBodyPart(java.lang.String)">getBodyPart</a></span>(String CID)</nobr>
+        
+        <div class="jd-descrdiv">Get the MimeBodyPart referred to by the given ContentID (CID).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#getCount()">getCount</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the number of enclosed BodyPart objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#getPreamble()">getPreamble</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the preamble text, if any, that appears before the
+ first body part of this multipart.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#isComplete()">isComplete</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return true if the final boundary line for this
+ multipart was seen.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#removeBodyPart(com.google.code.javax.mail.BodyPart)">removeBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</nobr>
+        
+        <div class="jd-descrdiv">Remove the specified part from the multipart message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#removeBodyPart(int)">removeBodyPart</a></span>(int index)</nobr>
+        
+        <div class="jd-descrdiv">Remove the part at specified location (starting from 0).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#setPreamble(java.lang.String)">setPreamble</a></span>(String preamble)</nobr>
+        
+        <div class="jd-descrdiv">Set the preamble text to be included before the first
+ body part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#setSubType(java.lang.String)">setSubType</a></span>(String subtype)</nobr>
+        
+        <div class="jd-descrdiv">Set the subtype.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#writeTo(java.io.OutputStream)">writeTo</a></span>(OutputStream os)</nobr>
+        
+        <div class="jd-descrdiv">Iterates through all the parts and outputs each MIME part
+ separated by a boundary.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#createInternetHeaders(java.io.InputStream)">createInternetHeaders</a></span>(InputStream is)</nobr>
+        
+        <div class="jd-descrdiv">Create and return an InternetHeaders object that loads the
+ headers from the given InputStream.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#createMimeBodyPart(java.io.InputStream)">createMimeBodyPart</a></span>(InputStream is)</nobr>
+        
+        <div class="jd-descrdiv">Create and return a MimeBodyPart object to represent a
+ body part parsed from the InputStream.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#createMimeBodyPart(com.google.code.javax.mail.internet.InternetHeaders, byte[])">createMimeBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a> headers, byte[] content)</nobr>
+        
+        <div class="jd-descrdiv">Create and return a MimeBodyPart object to represent a
+ body part parsed from the InputStream.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#parse()">parse</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Parse the InputStream from our DataSource, constructing the
+ appropriate MimeBodyParts.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/internet/MimeMultipart.html#updateHeaders()">updateHeaders</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Update headers.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.google.code.javax.mail.Multipart" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.google.code.javax.mail.Multipart-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../com/google/code/javax/mail/Multipart.html">com.google.code.javax.mail.Multipart</a>
+
+<div id="inherited-methods-com.google.code.javax.mail.Multipart">
+  <div id="inherited-methods-com.google.code.javax.mail.Multipart-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.google.code.javax.mail.Multipart-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#addBodyPart(com.google.code.javax.mail.BodyPart)">addBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</nobr>
+        
+        <div class="jd-descrdiv">Adds a Part to the multipart.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#addBodyPart(com.google.code.javax.mail.BodyPart, int)">addBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part, int index)</nobr>
+        
+        <div class="jd-descrdiv">Adds a BodyPart at position <code>index</code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#getBodyPart(int)">getBodyPart</a></span>(int index)</nobr>
+        
+        <div class="jd-descrdiv">Get the specified Part.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#getContentType()">getContentType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the content-type of this Multipart.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#getCount()">getCount</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the number of enclosed BodyPart objects.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            <a href="../../../../../../../java/com/google/code/javax/mail/Part.html">Part</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#getParent()">getParent</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the <code>Part</code> that contains this <code>Multipart</code>
+ object, or <code>null</code> if not known.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#removeBodyPart(com.google.code.javax.mail.BodyPart)">removeBodyPart</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</nobr>
+        
+        <div class="jd-descrdiv">Remove the specified part from the multipart message.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#removeBodyPart(int)">removeBodyPart</a></span>(int index)</nobr>
+        
+        <div class="jd-descrdiv">Remove the part at specified location (starting from 0).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#setMultipartDataSource(com.google.code.javax.mail.MultipartDataSource)">setMultipartDataSource</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/MultipartDataSource.html">MultipartDataSource</a> mp)</nobr>
+        
+        <div class="jd-descrdiv">Setup this Multipart object from the given MultipartDataSource.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#setParent(com.google.code.javax.mail.Part)">setParent</a></span>(<a href="../../../../../../../java/com/google/code/javax/mail/Part.html">Part</a> parent)</nobr>
+        
+        <div class="jd-descrdiv">Set the parent of this <code>Multipart</code> to be the specified
+ <code>Part</code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/google/code/javax/mail/Multipart.html#writeTo(java.io.OutputStream)">writeTo</a></span>(OutputStream os)</nobr>
+        
+        <div class="jd-descrdiv">Output an appropriately encoded bytestream to the given
+ OutputStream.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="allowEmpty"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        allowEmpty
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="bmparse"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        bmparse
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="complete"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        complete
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Have we seen the final bounary line?
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ds"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a>
+      </span>
+        ds
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The DataSource supplying our InputStream.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ignoreExistingBoundaryParameter"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        ignoreExistingBoundaryParameter
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ignoreMissingBoundaryParameter"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        ignoreMissingBoundaryParameter
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ignoreMissingEndBoundary"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        boolean
+      </span>
+        ignoreMissingEndBoundary
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Flags to control parsing, initialized from System properties
+ in the parse() method.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="parsed"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        boolean
+      </span>
+        parsed
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Have we parsed the data from our InputStream yet?
+ Defaults to true; set to false when our constructor is
+ given a DataSource with an InputStream that we need to
+ parse.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="preamble"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        preamble
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The MIME multipart preamble text, the text that
+ occurs before the first boundary line.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="MimeMultipart()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">MimeMultipart</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Default constructor. An empty MimeMultipart object
+ is created. Its content type is set to "multipart/mixed".
+ A unique boundary string is generated and this string is
+ setup as the "boundary" parameter for the 
+ <code>contentType</code> field. <p>
+
+ MimeBodyParts may be added later.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="MimeMultipart(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">MimeMultipart</span>
+      <span class="normal">(String subtype)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Construct a MimeMultipart object of the given subtype.
+ A unique boundary string is generated and this string is
+ setup as the "boundary" parameter for the 
+ <code>contentType</code> field. <p>
+
+ MimeBodyParts may be added later.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subtype</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="MimeMultipart(com.google.code.javax.activation.DataSource)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">MimeMultipart</span>
+      <span class="normal">(<a href="../../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a> ds)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constructs a MimeMultipart object and its bodyparts from the 
+ given DataSource. <p>
+
+ This constructor handles as a special case the situation where the
+ given DataSource is a MultipartDataSource object.  In this case, this
+ method just invokes the superclass (i.e., Multipart) constructor
+ that takes a MultipartDataSource object. <p>
+
+ Otherwise, the DataSource is assumed to provide a MIME multipart 
+ byte stream.  The <code>parsed</code> flag is set to false.  When
+ the data for the body parts are needed, the parser extracts the
+ "boundary" parameter from the content type of this DataSource,
+ skips the 'preamble' and reads bytes till the terminating
+ boundary and creates MimeBodyParts for each part of the stream.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>ds</td>
+          <td>DataSource, can be a MultipartDataSource
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addBodyPart(com.google.code.javax.mail.BodyPart)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">addBodyPart</span>
+      <span class="normal">(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Adds a Part to the multipart.  The BodyPart is appended to 
+ the list of existing Parts.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>part</td>
+          <td>The Part to be appended</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying
+			implementation does not support modification
+			of existing values
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="addBodyPart(com.google.code.javax.mail.BodyPart, int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">addBodyPart</span>
+      <span class="normal">(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part, int index)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Adds a BodyPart at position <code>index</code>.
+ If <code>index</code> is not the last one in the list,
+ the subsequent parts are shifted up. If <code>index</code>
+ is larger than the number of parts present, the
+ BodyPart is appended to the end.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>part</td>
+          <td>The BodyPart to be inserted</td>
+        </tr>
+        <tr>
+          <th>index</td>
+          <td>Location where to insert the part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying
+			implementation does not support modification
+			of existing values
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBodyPart(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        <a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a>
+      </span>
+      <span class="sympad">getBodyPart</span>
+      <span class="normal">(int index)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the specified BodyPart.  BodyParts are numbered starting at 0.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>index</td>
+          <td>The index of the desired BodyPart</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the Part</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if no such BodyPart exists
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBodyPart(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        <a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a>
+      </span>
+      <span class="sympad">getBodyPart</span>
+      <span class="normal">(String CID)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the MimeBodyPart referred to by the given ContentID (CID). 
+ Returns null if the part is not found.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>CID</td>
+          <td>The ContentID of the desired part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the Part
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCount()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        int
+      </span>
+      <span class="sympad">getCount</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the number of enclosed BodyPart objects.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>number of parts
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPreamble()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        String
+      </span>
+      <span class="sympad">getPreamble</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the preamble text, if any, that appears before the
+ first body part of this multipart.  Some protocols,
+ such as IMAP, will not allow access to the preamble text.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the preamble text, or null if no preamble</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isComplete()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        boolean
+      </span>
+      <span class="sympad">isComplete</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return true if the final boundary line for this
+ multipart was seen.  When parsing multipart content,
+ this class will (by default) terminate parsing with
+ no error if the end of input is reached before seeing
+ the final multipart boundary line.  In such a case,
+ this method will return false.  (If the System property
+ "mail.mime.multipart.ignoremissingendboundary" is set to
+ false, parsing such a message will instead throw a
+ MessagingException.)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if the final boundary line was seen</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeBodyPart(com.google.code.javax.mail.BodyPart)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">removeBodyPart</span>
+      <span class="normal">(<a href="../../../../../../../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a> part)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove the specified part from the multipart message.
+ Shifts all the parts after the removed part down one.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>part</td>
+          <td>The part to remove</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if part removed, false otherwise</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if no such Part exists</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying
+			implementation does not support modification
+			of existing values
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeBodyPart(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removeBodyPart</span>
+      <span class="normal">(int index)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove the part at specified location (starting from 0).
+ Shifts all the parts after the removed part down one.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>index</td>
+          <td>Index of the part to remove</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IndexOutOfBoundsException</td>
+            <td>if the given index
+			is out of range.</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/IllegalWriteException.html">IllegalWriteException</a></td>
+            <td>if the underlying
+			implementation does not support modification
+			of existing values
+</td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPreamble(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setPreamble</span>
+      <span class="normal">(String preamble)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the preamble text to be included before the first
+ body part.  Applications should generally not include
+ any preamble text.  In some cases it may be helpful to
+ include preamble text with instructions for users of
+ pre-MIME software.  The preamble text should be complete
+ lines, including newlines.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>preamble</td>
+          <td>The preamble text</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSubType(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setSubType</span>
+      <span class="normal">(String subtype)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the subtype. This method should be invoked only on a new
+ MimeMultipart object created by the client. The default subtype
+ of such a multipart object is "mixed". <p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subtype</td>
+          <td>Subtype
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="writeTo(java.io.OutputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">writeTo</span>
+      <span class="normal">(OutputStream os)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Iterates through all the parts and outputs each MIME part
+ separated by a boundary.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>os</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="createInternetHeaders(java.io.InputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a>
+      </span>
+      <span class="sympad">createInternetHeaders</span>
+      <span class="normal">(InputStream is)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create and return an InternetHeaders object that loads the
+ headers from the given InputStream.  Subclasses can override
+ this method to return a subclass of InternetHeaders, if
+ necessary.  This implementation simply constructs and returns
+ an InternetHeaders object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>is</td>
+          <td>The InputStream to read the headers from</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createMimeBodyPart(java.io.InputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a>
+      </span>
+      <span class="sympad">createMimeBodyPart</span>
+      <span class="normal">(InputStream is)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create and return a MimeBodyPart object to represent a
+ body part parsed from the InputStream.  Subclasses can override
+ this method to return a subclass of MimeBodyPart, if
+ necessary.  This implementation simply constructs and returns
+ a MimeBodyPart object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>is</td>
+          <td>InputStream containing the body part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createMimeBodyPart(com.google.code.javax.mail.internet.InternetHeaders, byte[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../../java/com/google/code/javax/mail/internet/MimeBodyPart.html">MimeBodyPart</a>
+      </span>
+      <span class="sympad">createMimeBodyPart</span>
+      <span class="normal">(<a href="../../../../../../../java/com/google/code/javax/mail/internet/InternetHeaders.html">InternetHeaders</a> headers, byte[] content)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create and return a MimeBodyPart object to represent a
+ body part parsed from the InputStream.  Subclasses can override
+ this method to return a subclass of MimeBodyPart, if
+ necessary.  This implementation simply constructs and returns
+ a MimeBodyPart object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>headers</td>
+          <td>The headers for the body part</td>
+        </tr>
+        <tr>
+          <th>content</td>
+          <td>The content of the body part</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="parse()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">parse</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Parse the InputStream from our DataSource, constructing the
+ appropriate MimeBodyParts.  The <code>parsed</code> flag is
+ set to true, and if true on entry nothing is done.  This
+ method is called by all other methods that need data for
+ the body parts, to make sure the data has been parsed.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateHeaders()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">updateHeaders</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Update headers. The default implementation here just
+ calls the <code>updateHeaders</code> method on each of its
+ children BodyParts. <p>
+
+ Note that the boundary parameter is already set up when
+ a new and empty MimeMultipart object is created. <p>
+
+ This method is called when the <code>saveChanges</code>
+ method is invoked on the Message object containing this
+ Multipart. This is typically done as part of the Message
+ send process, however note that a client is free to call
+ it any number of times. So if the header updating process is 
+ expensive for a specific MimeMultipart subclass, then it
+ might itself want to track whether its internal state actually
+ did change, and do the header updating only if necessary.
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1097 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Gmail Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../../favicon.ico" />
+<title>
+
+  com.google.code.com.sun.mail.smtp
+
+
+| Mule Gmail Cloud Connector
+
+</title>
+<link href="../../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Gmail Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Gmail Cloud Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    
+    	<li id="guide"><a href="../../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/java/lang/holders/package-summary.html">java.lang.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SaslAuthenticator.html">SaslAuthenticator</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/DigestMD5.html">DigestMD5</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPMessage.html">SMTPMessage</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPOutputStream.html">SMTPOutputStream</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSaslAuthenticator.html">SMTPSaslAuthenticator</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html">SMTPSSLTransport</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressFailedException.html">SMTPAddressFailedException</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressSucceededException.html">SMTPAddressSucceededException</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSenderFailedException.html">SMTPSenderFailedException</a></li>
+        <li class="api apilevel-"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSendFailedException.html">SMTPSendFailedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>com.google.code.com.sun.mail.smtp</h1>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+
+
+  <div class="jd-descr">
+    An SMTP protocol provider for the JavaMail API
+that provides access to an SMTP server.
+Refer to <A HREF="http://www.ietf.org/rfc/rfc821.txt" TARGET="_top">RFC 821</A>
+for more information.
+<P>
+When sending a message, detailed information on each address that
+fails is available in an
+com.sun.mail.smtp.SMTPAddressFailedException SMTPAddressFailedException
+chained off the top level
+javax.mail.SendFailedException SendFailedException
+that is thrown.
+In addition, if the <code>mail.smtp.reportsuccess</code> property
+is set, an
+com.sun.mail.smtp.SMTPAddressSucceededException
+SMTPAddressSucceededException
+will be included in the list for each address that is successful.
+Note that this will cause a top level
+javax.mail.SendFailedException SendFailedException
+to be thrown even though the send was successful.
+<P>
+The SMTP provider also supports ESMTP
+(<A HREF="http://www.ietf.org/rfc/rfc1651.txt" TARGET="_top">RFC 1651</A>).
+It can optionally use SMTP Authentication 
+(<A HREF="http://www.ietf.org/rfc/rfc2554.txt" TARGET="_top">RFC 2554</A>)
+using the LOGIN, PLAIN, DIGEST-MD5, and NTLM mechanisms
+(<A HREF="http://www.ietf.org/rfc/rfc2595.txt" TARGET="_top">RFC 2595</A>
+and <A HREF="http://www.ietf.org/rfc/rfc2831.txt" TARGET="_top">RFC 2831</A>).
+<P>
+To use SMTP authentication you'll need to set the <code>mail.smtp.auth</code>
+property (see below) or provide the SMTP Transport
+with a username and password when connecting to the SMTP server.  You
+can do this using one of the following approaches:
+<P>
+<UL>
+<LI>
+Provide an Authenticator object when creating your mail Session
+and provide the username and password information during the
+Authenticator callback.
+<P>
+Note that the <code>mail.smtp.user</code> property can be set to provide a
+default username for the callback, but the password will still need to be
+supplied explicitly.
+<P>
+This approach allows you to use the static Transport <code>send</code> method
+to send messages.
+</LI>
+<P>
+<LI>
+Call the Transport <code>connect</code> method explicitly with username and
+password arguments.
+<P>
+This approach requires you to explicitly manage a Transport object
+and use the Transport <code>sendMessage</code> method to send the message.
+The transport.java demo program demonstrates how to manage a Transport
+object.  The following is roughly equivalent to the static
+Transport <code>send</code> method, but supplies the needed username and
+password:
+<P>
+<BLOCKQUOTE><PRE>
+Transport tr = session.getTransport("smtp");
+tr.connect(smtphost, username, password);
+msg.saveChanges();	// don't forget this
+tr.sendMessage(msg, msg.getAllRecipients());
+tr.close();
+</PRE></BLOCKQUOTE>
+</LI>
+</UL>
+<P>
+When using DIGEST-MD5 authentication,
+you'll also need to supply an appropriate realm;
+your mail server administrator can supply this information.
+You can set this using the <code>mail.smtp.sasl.realm</code> property,
+or the <code>setSASLRealm</code> method on <code>SMTPTransport</code>.
+<P>
+The SMTP protocol provider can use SASL
+(<A HREF="http://www.ietf.org/rfc/rfc2222.txt" TARGET="_top">RFC 2222</A>)
+authentication mechanisms on systems that support the
+<CODE>javax.security.sasl</CODE> APIs, such as J2SE 5.0.
+In addition to the SASL mechanisms that are built into 
+the SASL implementation, users can also provide additional
+SASL mechanisms of their own design to support custom authentication
+schemes.  See the
+<A HREF="http://java.sun.com/j2se/1.5.0/docs/guide/security/sasl/sasl-refguide.html" TARGET="_top">
+Java SASL API Programming and Deployment Guide</A> for details.
+Note that the current implementation doesn't support SASL mechanisms
+that provide their own integrity or confidentiality layer.
+<P>
+SMTP can also optionally request Delivery Status Notifications
+(<A HREF="http://www.ietf.org/rfc/rfc1891.txt" TARGET="_top">RFC 1891</A>).
+The delivery status will typically be reported using
+a "multipart/report"
+(<A HREF="http://www.ietf.org/rfc/rfc1892.txt" TARGET="_top">RFC 1892</A>)
+message type with a "message/delivery-status"
+(<A HREF="http://www.ietf.org/rfc/rfc1894.txt" TARGET="_top">RFC 1894</A>)
+part.
+You can use the classes in the com.sun.mail.dsn package to
+handle these MIME types.
+Note that you'll need to include <code>dsn.jar</code> in your CLASSPATH
+as this support is not included in <code>mail.jar</code>.
+<P>
+See below for the properties to enable these features.
+<P>
+Note also that <strong>THERE IS NOT SUFFICIENT DOCUMENTATION HERE TO USE THESE
+FEATURES!!!</strong>  You will need to read the appropriate RFCs mentioned above
+to understand what these features do and how to use them.  Don't just
+start setting properties and then complain to us when it doesn't work
+like you expect it to work.  <strong>READ THE RFCs FIRST!!!</strong>
+<P>
+The SMTP protocol provider supports the following properties,
+which may be set in the JavaMail <code>Session</code> object.
+The properties are always set as strings; the Type column describes
+how the string is interpreted.  For example, use
+<PRE>
+	props.put("mail.smtp.port", "888");
+</PRE>
+to set the <CODE>mail.smtp.port</CODE> property, which is of type int.
+<P>
+Note that if you're using the "smtps" protocol to access SMTP over SSL,
+all the properties would be named "mail.smtps.*".
+<P>
+<TABLE BORDER>
+<TR>
+<TH>Name</TH>
+<TH>Type</TH>
+<TH>Description</TH>
+</TR>
+
+<TR>
+<TD>mail.smtp.user</TD>
+<TD>String</TD>
+<TD>Default user name for SMTP.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.host</TD>
+<TD>String</TD>
+<TD>The SMTP server to connect to.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.port</TD>
+<TD>int</TD>
+<TD>The SMTP server port to connect to, if the connect() method doesn't
+explicitly specify one. Defaults to 25.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.connectiontimeout</TD>
+<TD>int</TD>
+<TD>Socket connection timeout value in milliseconds.
+Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.timeout</TD>
+<TD>int</TD>
+<TD>Socket I/O timeout value in milliseconds.  Default is infinite timeout.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.from</TD>
+<TD>String</TD>
+<TD>
+Email address to use for SMTP MAIL command.  This sets the envelope
+return address.  Defaults to msg.getFrom() or
+InternetAddress.getLocalAddress().  NOTE: mail.smtp.user was previously
+used for this.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.localhost</TD>
+<TD>String</TD>
+<TD>
+Local host name used in the SMTP HELO or EHLO command.
+Defaults to <code>InetAddress.getLocalHost().getHostName()</code>.
+Should not normally need to
+be set if your JDK and your name service are configured properly.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.localaddress</TD>
+<TD>String</TD>
+<TD>
+Local address (host name) to bind to when creating the SMTP socket.
+Defaults to the address picked by the Socket class.
+Should not normally need to be set, but useful with multi-homed hosts
+where it's important to pick a particular local address to bind to.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.localport</TD>
+<TD>int</TD>
+<TD>
+Local port number to bind to when creating the SMTP socket.
+Defaults to the port number picked by the Socket class.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ehlo</TD>
+<TD>boolean</TD>
+<TD>
+If false, do not attempt to sign on with the EHLO command.  Defaults to
+true.  Normally failure of the EHLO command will fallback to the HELO
+command; this property exists only for servers that don't fail EHLO
+properly or don't implement EHLO properly.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth</TD>
+<TD>boolean</TD>
+<TD>If true, attempt to authenticate the user using the AUTH command.
+Defaults to false.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.mechanisms</TD>
+<TD>String</TD>
+<TD>
+If set, lists the authentication mechanisms to consider, and the order
+in which to consider them.  Only mechanisms supported by the server and
+supported by the current implementation will be used.
+The default is <code>"LOGIN PLAIN DIGEST-MD5 NTLM"</code>, which includes all
+the authentication mechanisms supported by the current implementation.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.login.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTH LOGIN</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.plain.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTH PLAIN</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.digest-md5.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTH DIGEST-MD5</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.ntlm.disable</TD>
+<TD>boolean</TD>
+<TD>If true, prevents use of the <code>AUTH NTLM</code> command.
+Default is false.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.ntlm.domain</TD>
+<TD>String</TD>
+<TD>
+The NTLM authentication domain.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.ntlm.flags</TD>
+<TD>int</TD>
+<TD>
+NTLM protocol-specific flags.
+See <A HREF="http://curl.haxx.se/rfc/ntlm.html#theNtlmFlags" TARGET="_top">
+http://curl.haxx.se/rfc/ntlm.html#theNtlmFlags</A> for details.
+</TD>
+</TR>
+
+<!--
+<TR>
+<TD>mail.smtp.auth.ntlm.unicode</TD>
+<TD>boolean</TD>
+<TD>
+Set this to "true" if the username or password may use
+Unicode UTF-8 encoded characters.  Default is "true".
+Currently has no effect.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.auth.ntlm.lmcompat</TD>
+<TD>int</TD>
+<TD>
+Sets the LM compatibility level, as described here:
+<A HREF="http://curl.haxx.se/rfc/ntlm.html#ntlmVersion2" TARGET="_top">
+http://curl.haxx.se/rfc/ntlm.html#ntlmVersion2</A>
+Defaults to "3".  Currently not used.
+</TD>
+</TR>
+-->
+
+<TR>
+<TD>mail.smtp.submitter</TD>
+<TD>String</TD>
+<TD>The submitter to use in the AUTH tag in the MAIL FROM command.
+Typically used by a mail relay to pass along information about the
+original submitter of the message.
+See also the com.sun.mail.smtp.SMTPMessage#setSubmitter setSubmitter
+method of com.sun.mail.smtp.SMTPMessage SMTPMessage.
+Mail clients typically do not use this.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.dsn.notify</TD>
+<TD>String</TD>
+<TD>The NOTIFY option to the RCPT command.  Either NEVER, or some
+combination of SUCCESS, FAILURE, and DELAY (separated by commas).</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.dsn.ret</TD>
+<TD>String</TD>
+<TD>The RET option to the MAIL command.  Either FULL or HDRS.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.allow8bitmime</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, and the server supports the 8BITMIME extension, text
+parts of messages that use the "quoted-printable" or "base64" encodings
+are converted to use "8bit" encoding if they follow the RFC2045 rules
+for 8bit text.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.sendpartial</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, and a message has some valid and some invalid
+addresses, send the message anyway, reporting the partial failure with
+a SendFailedException.  If set to false (the default), the message is
+not sent to any of the recipients if there is an invalid recipient
+address.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.sasl.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, attempt to use the javax.security.sasl package to
+choose an authentication mechanism for login.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.sasl.mechanisms</TD>
+<TD>String</TD>
+<TD>
+A space or comma separated list of SASL mechanism names to try
+to use.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.sasl.authorizationid</TD>
+<TD>String</TD>
+<TD>
+The authorization ID to use in the SASL authentication.
+If not set, the authentication ID (user name) is used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.sasl.realm</TD>
+<TD>String</TD>
+<TD>The realm to use with DIGEST-MD5 authentication.</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.quitwait</TD>
+<TD>boolean</TD>
+<TD>
+If set to false, the QUIT command is sent
+and the connection is immediately closed.
+If set to true (the default), causes the transport to wait
+for the response to the QUIT command.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.reportsuccess</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, causes the transport to include an
+com.sun.mail.smtp.SMTPAddressSucceededException
+SMTPAddressSucceededException
+for each address that is successful.
+Note also that this will cause a
+javax.mail.SendFailedException SendFailedException
+to be thrown from the
+com.sun.mail.smtp.SMTPTransport#sendMessage sendMessage
+method of
+com.sun.mail.smtp.SMTPTransport SMTPTransport
+even if all addresses were correct and the message was sent
+successfully.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.socketFactory</TD>
+<TD>SocketFactory</TD>
+<TD>
+If set to a class that implements the
+<code>javax.net.SocketFactory</code> interface, this class
+will be used to create SMTP sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that implements the
+<code>javax.net.SocketFactory</code> interface.  This class
+will be used to create SMTP sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.socketFactory.fallback</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, failure to create a socket using the specified
+socket factory class will cause the socket to be created using
+the <code>java.net.Socket</code> class.
+Defaults to true.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.enable</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, use SSL to connect and use the SSL port by default.
+Defaults to false for the "smtp" protocol and true for the "smtps" protocol.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.checkserveridentity</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, check the server identity as specified by
+<A HREF="http://www.ietf.org/rfc/rfc2595.txt" TARGET="_top">RFC 2595</A>.
+These additional checks based on the content of the server's certificate
+are intended to prevent man-in-the-middle attacks.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.trust</TD>
+<TD>String</TD>
+<TD>
+If set, and a socket factory hasn't been specified, enables use of a
+com.sun.mail.util.MailSSLSocketFactory MailSSLSocketFactory.
+If set to "*", all hosts are trusted.
+If set to a whitespace separated list of hosts, those hosts are trusted.
+Otherwise, trust depends on the certificate the server presents.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.socketFactory</TD>
+<TD>SSLSocketFactory</TD>
+<TD>
+If set to a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class, this class
+will be used to create SMTP SSL sockets.  Note that this is an
+instance of a class, not a name, and must be set using the
+<code>put</code> method, not the <code>setProperty</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.socketFactory.class</TD>
+<TD>String</TD>
+<TD>
+If set, specifies the name of a class that extends the
+<code>javax.net.ssl.SSLSocketFactory</code> class.  This class
+will be used to create SMTP SSL sockets.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.socketFactory.port</TD>
+<TD>int</TD>
+<TD>
+Specifies the port to connect to when using the specified socket
+factory.
+If not set, the default port will be used.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.protocols</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL protocols that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledProtocols</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.ssl.ciphersuites</TD>
+<TD>string</TD>
+<TD>
+Specifies the SSL cipher suites that will be enabled for SSL connections.
+The property value is a whitespace separated list of tokens acceptable
+to the <code>javax.net.ssl.SSLSocket.setEnabledCipherSuites</code> method.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.mailextension</TD>
+<TD>String</TD>
+<TD>
+Extension string to append to the MAIL command.
+The extension string can be used to specify standard SMTP
+service extensions as well as vendor-specific extensions.
+Typically the application should use the
+com.sun.mail.smtp.SMTPTransport SMTPTransport
+method com.sun.mail.smtp.SMTPTransport#supportsExtension
+supportsExtension
+to verify that the server supports the desired service extension.
+See <A HREF="http://www.ietf.org/rfc/rfc1869.txt" TARGET="_top">RFC 1869</A>
+and other RFCs that define specific extensions.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.starttls.enable</TD>
+<TD>boolean</TD>
+<TD>
+If true, enables the use of the <code>STARTTLS</code> command (if
+supported by the server) to switch the connection to a TLS-protected
+connection before issuing any login commands.  Note that an appropriate
+trust store must configured so that the client will trust the server's
+certificate.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.starttls.required</TD>
+<TD>boolean</TD>
+<TD>
+If true, requires the use of the <code>STARTTLS</code> command.
+If the server doesn't support the STARTTLS command, or the command
+fails, the connect method will fail.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.userset</TD>
+<TD>boolean</TD>
+<TD>
+If set to true, use the RSET command instead of the NOOP command
+in the javax.mail.Transport#isConnected isConnected method.
+In some cases sendmail will respond slowly after many NOOP commands;
+use of RSET avoids this sendmail issue.
+Defaults to false.
+</TD>
+</TR>
+
+<TR>
+<TD>mail.smtp.noop.strict</TD>
+<TD>boolean</TD>
+<TD>
+If set to true (the default), insist on a 250 response code from the NOOP
+command to indicate success.  The NOOP command is used by the
+javax.mail.Transport#isConnected isConnected method to determine
+if the connection is still alive.
+Some older servers return the wrong response code on success, some
+servers don't implement the NOOP command at all and so always return
+a failure code.  Set this property to false to handle servers
+that are broken in this way.
+Normally, when a server times out a connection, it will send a 421
+response code, which the client will see as the response to the next
+command it issues.
+Some servers send the wrong failure response code when timing out a
+connection.
+Do not set this property to false when dealing with servers that are
+broken in this way.
+</TD>
+</TR>
+
+</TABLE>
+<P>
+In general, applications should not need to use the classes in this
+package directly.  Instead, they should use the APIs defined by
+<code>javax.mail</code> package (and subpackages).  Applications should
+never construct instances of <code>SMTPTransport</code> directly.
+Instead, they should use the
+<code>Session</code> method <code>getTransport</code> to acquire an
+appropriate <code>Transport</code> object.
+<P>
+<strong>WARNING:</strong> The APIs unique to this package should be
+considered <strong>EXPERIMENTAL</strong>.  They may be changed in the
+future in ways that are incompatible with applications using the
+current APIs.
+
+
+  </div>
+
+
+
+
+
+  
+    <h2>Interfaces</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SaslAuthenticator.html">SaslAuthenticator</a></td>
+              <td class="jd-descrcol" width="100%">Interface to make it easier to call SMTPSaslAuthenticator.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+    <h2>Classes</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/DigestMD5.html">DigestMD5</a></td>
+              <td class="jd-descrcol" width="100%">DIGEST-MD5 authentication support.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPMessage.html">SMTPMessage</a></td>
+              <td class="jd-descrcol" width="100%">This class is a specialization of the MimeMessage class that allows
+ you to specify various SMTP options and parameters that will be
+ used when this message is sent over SMTP.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPOutputStream.html">SMTPOutputStream</a></td>
+              <td class="jd-descrcol" width="100%">In addition to converting lines into the canonical format,
+ i.e., terminating lines with the CRLF sequence, escapes the "."
+ by adding another "." to any "." that appears in the beginning
+ of a line.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSaslAuthenticator.html">SMTPSaslAuthenticator</a></td>
+              <td class="jd-descrcol" width="100%">This class contains a single method that does authentication using
+ SASL.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSSLTransport.html">SMTPSSLTransport</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the Transport abstract class using SMTP
+ over SSL for message submission and transport.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPTransport.html">SMTPTransport</a></td>
+              <td class="jd-descrcol" width="100%">This class implements the Transport abstract class using SMTP for
+ message submission and transport.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+  
+    <h2>Exceptions</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressFailedException.html">SMTPAddressFailedException</a></td>
+              <td class="jd-descrcol" width="100%">This exception is thrown when the message cannot be sent.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPAddressSucceededException.html">SMTPAddressSucceededException</a></td>
+              <td class="jd-descrcol" width="100%">This exception is chained off a SendFailedException when the
+ <code>mail.smtp.reportsuccess</code> property is true.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSenderFailedException.html">SMTPSenderFailedException</a></td>
+              <td class="jd-descrcol" width="100%">This exception is thrown when the message cannot be sent.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../../../java/com/google/code/com/sun/mail/smtp/SMTPSendFailedException.html">SMTPSendFailedException</a></td>
+              <td class="jd-descrcol" width="100%">This exception is thrown when the message cannot be sent.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

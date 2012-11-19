@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule Gmail Cloud Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  DataHandler
+
+
+| Mule Gmail Cloud Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-toc.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+<script type="text/javascript" charset="utf-8">
+  var is_ssl = ("https:" == document.location.protocol);
+  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" charset="utf-8">
+  var feedback_widget_options = {};
+
+  feedback_widget_options.display = "overlay";
+  feedback_widget_options.company = "mulesoft";
+  feedback_widget_options.placement = "right";
+  feedback_widget_options.color = "#2F74AE";
+  feedback_widget_options.style = "question";
+
+  feedback_widget_options.tag = "Mule Gmail Cloud Connector";
+
+  feedback_widget_options.limit = "3";
+
+  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+</script>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule Gmail Cloud Connector</span>
+    
+    <ul id="header-tabs" class="">
+    
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API Reference</span>
+    	</a></li>
+    
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API Reference</span>
+    	</a></li>
+    
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/auth/package-summary.html">com.google.code.com.sun.mail.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/handlers/package-summary.html">com.google.code.com.sun.mail.handlers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/iap/package-summary.html">com.google.code.com.sun.mail.iap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/package-summary.html">com.google.code.com.sun.mail.imap</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/imap/protocol/package-summary.html">com.google.code.com.sun.mail.imap.protocol</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/pop3/package-summary.html">com.google.code.com.sun.mail.pop3</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/smtp/package-summary.html">com.google.code.com.sun.mail.smtp</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/package-summary.html">com.google.code.com.sun.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/com/sun/mail/util/logging/package-summary.html">com.google.code.com.sun.mail.util.logging</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/activation/package-summary.html">com.google.code.javax.activation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/package-summary.html">com.google.code.javax.mail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/event/package-summary.html">com.google.code.javax.mail.event</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/internet/package-summary.html">com.google.code.javax.mail.internet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/search/package-summary.html">com.google.code.javax.mail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/javax/mail/util/package-summary.html">com.google.code.javax.mail.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/google/code/oauth/package-summary.html">com.google.code.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/registries/package-summary.html">com.sun.activation.registries</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/sun/activation/viewers/package-summary.html">com.sun.activation.viewers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/java/lang/holders/package-summary.html">java.lang.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/package-summary.html">org.mule.module.gmail</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/adapters/package-summary.html">org.mule.module.gmail.adapters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/agents/package-summary.html">org.mule.module.gmail.agents</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/config/package-summary.html">org.mule.module.gmail.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/processors/package-summary.html">org.mule.module.gmail.processors</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/package-summary.html">org.mule.module.gmail.search</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/CommandObject.html">CommandObject</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/DataContentHandler.html">DataContentHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/ActivationDataFlavor.html">ActivationDataFlavor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/CommandMap.html">CommandMap</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/DataHandler.html">DataHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/FileDataSource.html">FileDataSource</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/FileTypeMap.html">FileTypeMap</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/MailcapCommandMap.html">MailcapCommandMap</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/MimeType.html">MimeType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/MimeTypeParameterList.html">MimeTypeParameterList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/MimetypesFileTypeMap.html">MimetypesFileTypeMap</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/URLDataSource.html">URLDataSource</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/MimeTypeParseException.html">MimeTypeParseException</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/google/code/javax/activation/UnsupportedDataTypeException.html">UnsupportedDataTypeException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>DataHandler</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        Transferable 
+      
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.google.code.javax.activation.DataHandler</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>The DataHandler class provides a consistent interface to data
+ available in many different sources and formats.
+ It manages simple stream to string conversions and related operations
+ using DataContentHandlers.
+ It provides access to commands that can operate on the data.
+ The commands are found using a CommandMap. <p>
+
+ <b>DataHandler and the Transferable Interface</b><p>
+ DataHandler implements the Transferable interface so that data can
+ be used in AWT data transfer operations, such as cut and paste and
+ drag and drop. The implementation of the Transferable interface
+ relies on the availability of an installed DataContentHandler
+ object corresponding to the MIME type of the data represented in
+ the specific instance of the DataHandler.<p>
+
+ <b>DataHandler and CommandMaps</b><p>
+ The DataHandler keeps track of the current CommandMap that it uses to
+ service requests for commands (<code>getCommand</code>,
+ <code>getAllCommands</code>, <code>getPreferredCommands</code>).
+ Each instance of a DataHandler may have a CommandMap associated with
+ it using the <code>setCommandMap</code> method.  If a CommandMap was
+ not set, DataHandler calls the <code>getDefaultCommandMap</code>
+ method in CommandMap and uses the value it returns. See
+ <i>CommandMap</i> for more information. <p>
+
+ <b>DataHandler and URLs</b><p>
+ The current DataHandler implementation creates a private
+ instance of URLDataSource when it is constructed with a URL.</p>
+
+
+
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.activation.CommandMap</li><li>javax.activation.DataContentHandler</li><li>javax.activation.DataSource</li><li>javax.activation.URLDataSource</li>
+      </ul>
+  </div>
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/CommandMap.html">CommandMap</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#currentCommandMap">currentCommandMap</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandler.html">DataContentHandler</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#dataContentHandler">dataContentHandler</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#dataSource">dataSource</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          DataFlavor[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#emptyFlavors">emptyFlavors</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#factory">factory</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandler.html">DataContentHandler</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#factoryDCH">factoryDCH</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#objDataSource">objDataSource</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#object">object</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#objectMimeType">objectMimeType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#oldFactory">oldFactory</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#shortType">shortType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          DataFlavor[]</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#transferFlavors">transferFlavors</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#DataHandler(com.google.code.javax.activation.DataSource)">DataHandler</a></span>(<a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a> ds)</nobr>
+        
+        <div class="jd-descrdiv">Create a <code>DataHandler</code> instance referencing the
+ specified DataSource.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#DataHandler(java.lang.Object, java.lang.String)">DataHandler</a></span>(Object obj, String mimeType)</nobr>
+        
+        <div class="jd-descrdiv">Create a <code>DataHandler</code> instance representing an object
+ of this MIME type.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#DataHandler(java.net.URL)">DataHandler</a></span>(URL url)</nobr>
+        
+        <div class="jd-descrdiv">Create a <code>DataHandler</code> instance referencing a URL.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getAllCommands()">getAllCommands</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return all the commands for this type of data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getBean(com.google.code.javax.activation.CommandInfo)">getBean</a></span>(<a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo</a> cmdinfo)</nobr>
+        
+        <div class="jd-descrdiv">A convenience method that takes a CommandInfo object
+ and instantiates the corresponding command, usually
+ a JavaBean component.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getCommand(java.lang.String)">getCommand</a></span>(String cmdName)</nobr>
+        
+        <div class="jd-descrdiv">Get the command <i>cmdName</i>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getContent()">getContent</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the data in its preferred Object form.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getContentType()">getContentType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the MIME type of this object as retrieved from
+ the source object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getDataSource()">getDataSource</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the DataSource associated with this instance
+ of DataHandler.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            InputStream</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getInputStream()">getInputStream</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get the InputStream for this object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getName()">getName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the name of the data object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            OutputStream</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getOutputStream()">getOutputStream</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Get an OutputStream for this DataHandler to allow overwriting
+ the underlying data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getPreferredCommands()">getPreferredCommands</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the <i>preferred</i> commands for this type of data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getTransferData(java.awt.datatransfer.DataFlavor)">getTransferData</a></span>(DataFlavor flavor)</nobr>
+        
+        <div class="jd-descrdiv">Returns an object that represents the data to be
+ transferred.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            DataFlavor[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#getTransferDataFlavors()">getTransferDataFlavors</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Return the DataFlavors in which this data is available.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#isDataFlavorSupported(java.awt.datatransfer.DataFlavor)">isDataFlavorSupported</a></span>(DataFlavor flavor)</nobr>
+        
+        <div class="jd-descrdiv">Returns whether the specified data flavor is supported
+ for this object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#setCommandMap(com.google.code.javax.activation.CommandMap)">setCommandMap</a></span>(<a href="../../../../../../java/com/google/code/javax/activation/CommandMap.html">CommandMap</a> commandMap)</nobr>
+        
+        <div class="jd-descrdiv">Set the CommandMap for use by this DataHandler.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            synchronized
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#setDataContentHandlerFactory(com.google.code.javax.activation.DataContentHandlerFactory)">setDataContentHandlerFactory</a></span>(<a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a> newFactory)</nobr>
+        
+        <div class="jd-descrdiv">Sets the DataContentHandlerFactory.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/google/code/javax/activation/DataHandler.html#writeTo(java.io.OutputStream)">writeTo</a></span>(OutputStream os)</nobr>
+        
+        <div class="jd-descrdiv">Write the data to an <code>OutputStream</code>.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.awt.datatransfer.Transferable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.awt.datatransfer.Transferable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.awt.datatransfer.Transferable
+
+<div id="inherited-methods-java.awt.datatransfer.Transferable">
+  <div id="inherited-methods-java.awt.datatransfer.Transferable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.awt.datatransfer.Transferable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getTransferData</span>(DataFlavor arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            DataFlavor[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getTransferDataFlavors</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">isDataFlavorSupported</span>(DataFlavor arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="currentCommandMap"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/CommandMap.html">CommandMap</a>
+      </span>
+        currentCommandMap
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="dataContentHandler"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandler.html">DataContentHandler</a>
+      </span>
+        dataContentHandler
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="dataSource"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a>
+      </span>
+        dataSource
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="emptyFlavors"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        DataFlavor[]
+      </span>
+        emptyFlavors
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="factory"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a>
+      </span>
+        factory
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="factoryDCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandler.html">DataContentHandler</a>
+      </span>
+        factoryDCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="objDataSource"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a>
+      </span>
+        objDataSource
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="object"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        Object
+      </span>
+        object
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="objectMimeType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        objectMimeType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="oldFactory"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a>
+      </span>
+        oldFactory
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="shortType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        shortType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="transferFlavors"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        DataFlavor[]
+      </span>
+        transferFlavors
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="DataHandler(com.google.code.javax.activation.DataSource)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">DataHandler</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a> ds)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create a <code>DataHandler</code> instance referencing the
+ specified DataSource.  The data exists in a byte stream form.
+ The DataSource will provide an InputStream to access the data.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>ds</td>
+          <td>The DataSource
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="DataHandler(java.lang.Object, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">DataHandler</span>
+      <span class="normal">(Object obj, String mimeType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create a <code>DataHandler</code> instance representing an object
+ of this MIME type.  This constructor is
+ used when the application already has an in-memory representation
+ of the data in the form of a Java Object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>obj</td>
+          <td>The Java Object</td>
+        </tr>
+        <tr>
+          <th>mimeType</td>
+          <td>The MIME type of the object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="DataHandler(java.net.URL)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">DataHandler</span>
+      <span class="normal">(URL url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create a <code>DataHandler</code> instance referencing a URL.
+ The DataHandler internally creates a <code>URLDataSource</code>
+ instance to represent the URL.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>url</td>
+          <td>A URL object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getAllCommands()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo[]</a>
+      </span>
+      <span class="sympad">getAllCommands</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return all the commands for this type of data.
+ This method returns an array containing all commands
+ for the type of data represented by this DataHandler. The
+ MIME type for the underlying data represented by this DataHandler
+ is used to call through to the <code>getAllCommands</code> method
+ of the CommandMap associated with this DataHandler.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the CommandInfo objects representing all the commands</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getAllCommands(java.lang.String)">getAllCommands(String)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBean(com.google.code.javax.activation.CommandInfo)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Object
+      </span>
+      <span class="sympad">getBean</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo</a> cmdinfo)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A convenience method that takes a CommandInfo object
+ and instantiates the corresponding command, usually
+ a JavaBean component.
+ <p>
+ This method calls the CommandInfo's <code>getCommandObject</code>
+ method with the <code>ClassLoader</code> used to load
+ the <code>javax.activation.DataHandler</code> class itself.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>cmdinfo</td>
+          <td>The CommandInfo corresponding to a command</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the instantiated command object
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCommand(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo</a>
+      </span>
+      <span class="sympad">getCommand</span>
+      <span class="normal">(String cmdName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the command <i>cmdName</i>. Use the search semantics as
+ defined by the CommandMap installed in this DataHandler. The
+ MIME type for the underlying data represented by this DataHandler
+ is used to call through to the <code>getCommand</code> method
+ of the CommandMap associated with this DataHandler.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>cmdName</td>
+          <td>The command name</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the CommandInfo corresponding to the command</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getCommand(java.lang.String, java.lang.String)">getCommand(String, String)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getContent()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Object
+      </span>
+      <span class="sympad">getContent</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the data in its preferred Object form. <p>
+
+ If the DataHandler was instantiated with an object, return
+ the object. <p>
+
+ If the DataHandler was instantiated with a DataSource,
+ this method uses a DataContentHandler to return the content
+ object for the data represented by this DataHandler. If no
+ <code>DataContentHandler</code> can be found for the
+ the type of this data, the DataHandler returns an
+ InputStream for the data.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the content.</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an IOException occurs during
+                              this operation.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getContentType()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getContentType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the MIME type of this object as retrieved from
+ the source object. Note that this is the <i>full</i>
+ type with parameters.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the MIME type
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDataSource()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/DataSource.html">DataSource</a>
+      </span>
+      <span class="sympad">getDataSource</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the DataSource associated with this instance
+ of DataHandler.
+ <p>
+ For DataHandlers that have been instantiated with a DataSource,
+ this method returns the DataSource that was used to create the
+ DataHandler object. In other cases the DataHandler
+ constructs a DataSource from the data used to construct
+ the DataHandler. DataSources created for DataHandlers <b>not</b>
+ instantiated with a DataSource are cached for performance
+ reasons.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a valid DataSource object for this DataHandler
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInputStream()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        InputStream
+      </span>
+      <span class="sympad">getInputStream</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the InputStream for this object. <p>
+
+ For DataHandlers instantiated with a DataSource, the DataHandler
+ calls the <code>DataSource.getInputStream</code> method and
+ returns the result to the caller.
+ <p>
+ For DataHandlers instantiated with an Object, the DataHandler
+ first attempts to find a DataContentHandler for the Object. If
+ the DataHandler can not find a DataContentHandler for this MIME
+ type, it throws an UnsupportedDataTypeException.  If it is
+ successful, it creates a pipe and a thread.  The thread uses the
+ DataContentHandler's <code>writeTo</code> method to write the
+ stream data into one end of the pipe.  The other end of the pipe
+ is returned to the caller.  Because a thread is created to copy
+ the data, IOExceptions that may occur during the copy can not be
+ propagated back to the caller. The result is an empty stream.<p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the InputStream representing this data</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an I/O error occurs</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#writeTo(java.lang.Object, java.lang.String, java.io.OutputStream)">writeTo(Object, String, OutputStream)</a></code></li><li>javax.activation.UnsupportedDataTypeException</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getName()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getName</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the name of the data object. If this DataHandler
+ was created with a DataSource, this method calls through
+ to the <code>DataSource.getName</code> method, otherwise it
+ returns <i>null</i>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the name of the object
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getOutputStream()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        OutputStream
+      </span>
+      <span class="sympad">getOutputStream</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get an OutputStream for this DataHandler to allow overwriting
+ the underlying data.
+ If the DataHandler was created with a DataSource, the
+ DataSource's <code>getOutputStream</code> method is called.
+ Otherwise, <code>null</code> is returned.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the OutputStream</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getOutputStream()">getOutputStream()</a></code></li><li>javax.activation.URLDataSource</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPreferredCommands()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/google/code/javax/activation/CommandInfo.html">CommandInfo[]</a>
+      </span>
+      <span class="sympad">getPreferredCommands</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the <i>preferred</i> commands for this type of data.
+ This method calls the <code>getPreferredCommands</code> method
+ in the CommandMap associated with this instance of DataHandler.
+ This method returns an array that represents a subset of
+ available commands. In cases where multiple commands for the
+ MIME type represented by this DataHandler are present, the
+ installed CommandMap chooses the appropriate commands.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the CommandInfo objects representing the preferred commands</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getPreferredCommands(java.lang.String)">getPreferredCommands(String)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransferData(java.awt.datatransfer.DataFlavor)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Object
+      </span>
+      <span class="sympad">getTransferData</span>
+      <span class="normal">(DataFlavor flavor)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns an object that represents the data to be
+ transferred. The class of the object returned is defined by the
+ representation class of the data flavor.<p>
+
+ <b>For DataHandler's created with DataSources or URLs:</b><p>
+
+ The DataHandler attempts to locate a DataContentHandler
+ for this MIME type. If one is found, the passed in DataFlavor
+ and the type of the data are passed to its <code>getTransferData</code>
+ method. If the DataHandler fails to locate a DataContentHandler
+ and the flavor specifies this object's MIME type and the
+ <code>java.io.InputStream</code> class, this object's InputStream
+ is returned.
+ Otherwise it throws an UnsupportedFlavorException. <p>
+
+ <b>For DataHandler's created with Objects:</b><p>
+
+ The DataHandler attempts to locate a DataContentHandler
+ for this MIME type. If one is found, the passed in DataFlavor
+ and the type of the data are passed to its getTransferData
+ method. If the DataHandler fails to locate a DataContentHandler
+ and the flavor specifies this object's MIME type and its class,
+ this DataHandler's referenced object is returned.  
+ Otherwise it throws an UnsupportedFlavorException.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>flavor</td>
+          <td>The requested flavor for the data</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the object</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>UnsupportedFlavorException</td>
+            <td>if the data could not be
+			converted to the requested flavor</td>
+        </tr>  
+        <tr>
+            <th>IOException</td>
+            <td>if an I/O error occurs</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.activation.ActivationDataFlavor</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTransferDataFlavors()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        DataFlavor[]
+      </span>
+      <span class="sympad">getTransferDataFlavors</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the DataFlavors in which this data is available. <p>
+
+ Returns an array of DataFlavor objects indicating the flavors
+ the data can be provided in. The array is usually ordered
+ according to preference for providing the data, from most
+ richly descriptive to least richly descriptive.<p>
+
+ The DataHandler attempts to find a DataContentHandler that
+ corresponds to the MIME type of the data. If one is located,
+ the DataHandler calls the DataContentHandler's
+ <code>getTransferDataFlavors</code> method. <p>
+
+ If a DataContentHandler can <i>not</i> be located, and if the
+ DataHandler was created with a DataSource (or URL), one
+ DataFlavor is returned that represents this object's MIME type
+ and the <code>java.io.InputStream</code> class.  If the
+ DataHandler was created with an object and a MIME type,
+ getTransferDataFlavors returns one DataFlavor that represents
+ this object's MIME type and the object's class.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>an array of data flavors in which this data can be transferred</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getTransferDataFlavors()">getTransferDataFlavors()</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isDataFlavorSupported(java.awt.datatransfer.DataFlavor)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isDataFlavorSupported</span>
+      <span class="normal">(DataFlavor flavor)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns whether the specified data flavor is supported
+ for this object.<p>
+
+ This method iterates through the DataFlavors returned from
+ <code>getTransferDataFlavors</code>, comparing each with
+ the specified flavor.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>flavor</td>
+          <td>The requested flavor for the data</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if the data flavor is supported</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#getTransferDataFlavors()">getTransferDataFlavors()</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCommandMap(com.google.code.javax.activation.CommandMap)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setCommandMap</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/activation/CommandMap.html">CommandMap</a> commandMap)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the CommandMap for use by this DataHandler.
+ Setting it to <code>null</code> causes the CommandMap to revert
+ to the CommandMap returned by the
+ <code>CommandMap.getDefaultCommandMap</code> method.
+ Changing the CommandMap, or setting it to <code>null</code>,
+ clears out any data cached from the previous CommandMap.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>commandMap</td>
+          <td>The CommandMap to use in this DataHandler</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../../../../null#setDefaultCommandMap(javax.activation.CommandMap)">setDefaultCommandMap(CommandMap)</a></code></li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDataContentHandlerFactory(com.google.code.javax.activation.DataContentHandlerFactory)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+        synchronized 
+        void
+      </span>
+      <span class="sympad">setDataContentHandlerFactory</span>
+      <span class="normal">(<a href="../../../../../../java/com/google/code/javax/activation/DataContentHandlerFactory.html">DataContentHandlerFactory</a> newFactory)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the DataContentHandlerFactory.  The DataContentHandlerFactory
+ is called first to find DataContentHandlers.
+ The DataContentHandlerFactory can only be set once.
+ <p>
+ If the DataContentHandlerFactory has already been set,
+ this method throws an Error.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>newFactory</td>
+          <td>The DataContentHandlerFactory</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Error</td>
+            <td>if the factory has already been defined.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li>javax.activation.DataContentHandlerFactory</li>
+      </ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="writeTo(java.io.OutputStream)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">writeTo</span>
+      <span class="normal">(OutputStream os)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Write the data to an <code>OutputStream</code>.<p>
+
+ If the DataHandler was created with a DataSource, writeTo
+ retrieves the InputStream and copies the bytes from the
+ InputStream to the OutputStream passed in.
+ <p>
+ If the DataHandler was created with an object, writeTo
+ retrieves the DataContentHandler for the object's type.
+ If the DataContentHandler was found, it calls the
+ <code>writeTo</code> method on the <code>DataContentHandler</code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>os</td>
+          <td>The OutputStream to write to</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td>if an I/O error occurs
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>
