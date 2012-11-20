@@ -78,7 +78,7 @@ var NAVTREE_DATA =
 , "" ] ]
 , "" ], [ "org.mule.module.gmail.search.transformers", "org/mule/module/gmail/search/transformers/package-summary.html", [ [ "Classes", null, [ [ "FlagCriteriaExpressionHolderTransformer", "org/mule/module/gmail/search/transformers/FlagCriteriaExpressionHolderTransformer.html", null, "" ], [ "FlagEnumTransformer", "org/mule/module/gmail/search/transformers/FlagEnumTransformer.html", null, "" ], [ "GmailFolderEnumTransformer", "org/mule/module/gmail/search/transformers/GmailFolderEnumTransformer.html", null, "" ], [ "SearchCriteriaExpressionHolderTransformer", "org/mule/module/gmail/search/transformers/SearchCriteriaExpressionHolderTransformer.html", null, "" ], [ "SearchOperatorEnumTransformer", "org/mule/module/gmail/search/transformers/SearchOperatorEnumTransformer.html", null, "" ] ]
 , "" ] ]
-, "" ], [ "org.mule.modules.google.transformers", "org/mule/modules/google/transformers/package-summary.html", [ [ "Classes", null, [ [ "AccessTypeEnumTransformer", "org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", null, "" ], [ "ForcePromptEnumTransformer", "org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", null, "" ] ]
+, "" ], [ "org.mule.modules.google.transformers", "org/mule/modules/google/transformers/package-summary.html", [ [ "Classes", null, [ [ "AccessTypeEnumTransformer", "org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", null, "" ], [ "ForcePromptEnumTransformer", "org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", null, "" ], [ "IdentifierPolicyEnumTransformer", "org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", null, "" ] ]
 , "" ] ]
 , "" ] ]
 

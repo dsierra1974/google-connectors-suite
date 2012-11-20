@@ -336,6 +336,7 @@ var DATA = [
       { id:334, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:335, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:336, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:337, label:"search", link:"mule/null-null.html#search", type:"method" }
+      { id:337, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:338, label:"search", link:"mule/null-null.html#search", type:"method" }
 
     ];

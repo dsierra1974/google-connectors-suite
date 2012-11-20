@@ -708,6 +708,17 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
       <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
+          
+          
+          IdentifierPolicy</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/gmail/GmailConnector.html#identifierPolicy">identifierPolicy</a></td>
+          <td class="jd-descrcol" width="100%">This policy represents which id we want to use to represent each google account.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
           static
           
           Boolean</nobr></td>
@@ -716,7 +727,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           private
           
@@ -906,6 +917,22 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
+            IdentifierPolicy</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/gmail/GmailConnector.html#getIdentifierPolicy()">getIdentifierPolicy</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -915,7 +942,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -931,7 +958,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -947,7 +974,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -963,7 +990,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -979,7 +1006,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -990,6 +1017,22 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../org/mule/module/gmail/GmailConnector.html#setConsumerSecret(java.lang.String)">setConsumerSecret</a></span>(String consumerSecret)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/gmail/GmailConnector.html#setIdentifierPolicy(org.mule.modules.google.IdentifierPolicy)">setIdentifierPolicy</a></span>(IdentifierPolicy identifierPolicy)</nobr>
         
   </td></tr>
 
@@ -1559,6 +1602,42 @@ From class
 
 
 
+<A NAME="identifierPolicy"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        IdentifierPolicy
+      </span>
+        identifierPolicy
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This policy represents which id we want to use to represent each google account.
+ 
+ PROFILE means that we want the google profile id. That means, the user's primary key in google's DB.
+ This is a long number represented as a string.
+ 
+ EMAIL means you want to use the account's email address
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="providerInited"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -1830,6 +1909,37 @@ From class
 </div>
 
 
+<A NAME="getIdentifierPolicy()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        IdentifierPolicy
+      </span>
+      <span class="sympad">getIdentifierPolicy</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <A NAME="getScope()"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2043,6 +2153,46 @@ From class
       <table class="jd-tagtable">
         <tr>
           <th>consumerSecret</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIdentifierPolicy(org.mule.modules.google.IdentifierPolicy)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIdentifierPolicy</span>
+      <span class="normal">(IdentifierPolicy identifierPolicy)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>identifierPolicy</td>
           <td></td>
         </tr>
       </table>
