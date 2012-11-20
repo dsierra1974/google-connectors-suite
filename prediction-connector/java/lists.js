@@ -82,8 +82,9 @@ var DATA = [
       { id:80, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:81, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:82, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:83, label:"predict", link:"mule/google-prediction-config-with-oauth.html#predict", type:"method" },
-      { id:84, label:"training-complete", link:"mule/google-prediction-config-with-oauth.html#training-complete", type:"method" },
-      { id:85, label:"update", link:"mule/google-prediction-config-with-oauth.html#update", type:"method" }
+      { id:83, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:84, label:"predict", link:"mule/google-prediction-config-with-oauth.html#predict", type:"method" },
+      { id:85, label:"training-complete", link:"mule/google-prediction-config-with-oauth.html#training-complete", type:"method" },
+      { id:86, label:"update", link:"mule/google-prediction-config-with-oauth.html#update", type:"method" }
 
     ];
