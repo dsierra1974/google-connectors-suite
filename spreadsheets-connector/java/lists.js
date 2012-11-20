@@ -106,10 +106,11 @@ var DATA = [
       { id:104, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:105, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:106, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:107, label:"purge-worksheet", link:"mule/google-spreadsheets-config-with-oauth.html#purge-worksheet", type:"method" },
-      { id:108, label:"search", link:"mule/google-spreadsheets-config-with-oauth.html#search", type:"method" },
-      { id:109, label:"set-csv-values", link:"mule/google-spreadsheets-config-with-oauth.html#set-csv-values", type:"method" },
-      { id:110, label:"set-row-values", link:"mule/google-spreadsheets-config-with-oauth.html#set-row-values", type:"method" },
-      { id:111, label:"update-worksheet-metadata", link:"mule/google-spreadsheets-config-with-oauth.html#update-worksheet-metadata", type:"method" }
+      { id:107, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:108, label:"purge-worksheet", link:"mule/google-spreadsheets-config-with-oauth.html#purge-worksheet", type:"method" },
+      { id:109, label:"search", link:"mule/google-spreadsheets-config-with-oauth.html#search", type:"method" },
+      { id:110, label:"set-csv-values", link:"mule/google-spreadsheets-config-with-oauth.html#set-csv-values", type:"method" },
+      { id:111, label:"set-row-values", link:"mule/google-spreadsheets-config-with-oauth.html#set-row-values", type:"method" },
+      { id:112, label:"update-worksheet-metadata", link:"mule/google-spreadsheets-config-with-oauth.html#update-worksheet-metadata", type:"method" }
 
     ];
