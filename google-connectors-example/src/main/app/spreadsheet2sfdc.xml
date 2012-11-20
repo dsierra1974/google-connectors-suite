@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:objectstore="http://www.mulesoft.org/schema/mule/objectstore" xmlns:google-tasks="http://www.mulesoft.org/schema/mule/google-tasks"
+	xmlns:google-calendars="http://www.mulesoft.org/schema/mule/google-calendars"
+	xmlns:google-contacts="http://www.mulesoft.org/schema/mule/google-contacts"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:json="http://www.mulesoft.org/schema/mule/json"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns:google-spreadsheets="http://www.mulesoft.org/schema/mule/google-spreadsheets"
+	xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"
+	xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core"
+	xmlns:smtps="http://www.mulesoft.org/schema/mule/smtps" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="EE-3.3.1"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/google-calendars http://www.mulesoft.org/schema/mule/google-calendars/1.0/mule-google-calendars.xsd 
+http://www.mulesoft.org/schema/mule/google-contacts http://www.mulesoft.org/schema/mule/google-contacts/1.0/mule-google-contacts.xsd 
+http://www.mulesoft.org/schema/mule/objectstore http://www.mulesoft.org/schema/mule/objectstore/1.0/mule-objectstore.xsd 
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd 
+http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd 
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd 
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd 
+http://www.mulesoft.org/schema/mule/google-tasks http://www.mulesoft.org/schema/mule/google-tasks/1.0/mule-google-tasks.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/google-spreadsheets http://www.mulesoft.org/schema/mule/google-spreadsheets/1.0/mule-google-spreadsheets.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd 
+http://www.mulesoft.org/schema/mule/smtps http://www.mulesoft.org/schema/mule/smtps/current/mule-smtps.xsd 
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd ">
+
+	<data-mapper:config name="gss2sfdc"
+		transformationGraphPath="gss2sfdc.grf" doc:name="DataMapper" />
+
+
+	<google-spreadsheets:config-with-oauth
+		name="google-spreadsheets" consumerKey="${google.apiKey}"
+		consumerSecret="${google.apiSecret}" doc:name="Google Spreadsheets Connector"
+		scope="https://docs.google.com/feeds/private/full https://spreadsheets.google.com/feeds http://spreadsheets.google.com/feeds https://www.googleapis.com/auth/userinfo.profile https://www.google.com/m8/feeds https://www.googleapis.com/auth/tasks https://www.googleapis.com/auth/calendar">
+		<google-spreadsheets:oauth-callback-config
+			domain="aplicor2googleqa.qa.cloudhub.io" localPort="${http.port}"
+			path="oauth2callback" />
+	</google-spreadsheets:config-with-oauth>
+
+	<google-contacts:config-with-oauth
+		name="Google_Contacts_Connector_with_OAuth2_authentication"
+		consumerKey="${google.apiKey}" consumerSecret="${google.apiSecret}"
+		doc:name="Google Contacts Connector with OAuth2 authentication" />
+
+	<google-calendars:config-with-oauth
+		name="Google_Calendars_Connector" consumerKey="${google.apiKey}"
+		consumerSecret="${google.apiSecret}" doc:name="Google Calendars Connector" />
+
+	<data-mapper:config name="filterNotSynced"
+		transformationGraphPath="filternotsynced.grf" doc:name="DataMapper" />
+	<data-mapper:config name="setCellAsSync"
+		transformationGraphPath="setcellassync.grf" doc:name="DataMapper" />
+
+	<sfdc:config-with-oauth name="Salesforce"
+		consumerKey="${salesforce.apiKey}" consumerSecret="${salesforce.apiSecret}"
+		doc:name="Salesforce (OAuth)" />
+
+	<google-tasks:config-with-oauth name="Google_Tasks_Connector"
+		consumerKey="${google.apiKey}" consumerSecret="${google.apiSecret}"
+		doc:name="Google Tasks Connector" />
+    <objectstore:config name="ObjectStore" doc:name="ObjectStore"/>
+
+	<flow name="authorize" doc:name="authorize">
+		<http:inbound-endpoint exchange-pattern="request-response"
+			host="localhost" port="8081" path="authorize" doc:name="HTTP" />
+		<google-spreadsheets:authorize
+			config-ref="google-spreadsheets" doc:name="google-spreadsheets"
+			
+			/>
+        <scripting:transformer doc:name="Script">
+            <scripting:script engine="Groovy">
+                <scripting:text><![CDATA[org.mule.examples.google.sfdc2google.UserIdMapping mapping = new org.mule.examples.google.sfdc2google.UserIdMapping();
+mapping.setUserId(message.getInboundProperty("state"));
+mapping.setGoogleId(message.getInvocationProperty("OAuthAccessTokenId"));
+
+message.setPayload(mapping);
+
+return message;]]></scripting:text>
+            </scripting:script>
+        </scripting:transformer>
+        <objectstore:store config-ref="ObjectStore" key="#[message.inboundProperties['state']]" value-ref="#[payload]" overwrite="true" doc:name="ObjectStore"/>
+
+		<sfdc:authorize display="PAGE" config-ref="Salesforce"
+			doc:name="Salesforce" />
+			
+		<objectstore:retrieve config-ref="ObjectStore" key="#[message.inboundProperties['state']]" doc:name="ObjectStore"/>
+        <scripting:transformer doc:name="Script">
+            <scripting:script engine="Groovy">
+                <scripting:text><![CDATA[org.mule.examples.google.sfdc2google.UserIdMapping mapping = message.getPayload();
+mapping.setSfdcId(message.getInvocationProperty("OAuthAccessTokenId"));
+
+return message;]]></scripting:text>
+            </scripting:script>
+        </scripting:transformer>
+        <objectstore:store config-ref="ObjectStore" key="#[message.inboundProperties['state']]" value-ref="#[payload]" overwrite="true" doc:name="ObjectStore"/>
+	</flow>
+
+	<flow name="integration" doc:name="integration">
+		<http:inbound-endpoint exchange-pattern="one-way"
+			host="localhost" port="8081" path="integrate" doc:name="HTTP" />
+        <objectstore:retrieve config-ref="ObjectStore" key="#[message.inboundProperties['user']]" doc:name="ObjectStore"/>
+        <set-variable variableName="googleTokenId" value="#[payload.getGoogleId()]" doc:name="Variable"/>
+        <set-variable variableName="sfdcTokenId" value="#[payload.getSfdcId()]" doc:name="Variable"/>
+		<google-spreadsheets:get-all-cells
+			config-ref="google-spreadsheets" spreadsheet="My Accounts" worksheet="Accounts"
+			doc:name="get cells" />
+        <all doc:name="All">
+            <flow-ref name="to-salesforce" doc:name="to salesforce"/>
+            <flow-ref name="to-google" doc:name="to google"/>
+            <flow-ref name="mark-entries-as-sync" doc:name="mark as synced"/>
+        </all>
+	</flow>
+	<sub-flow name="mark-entries-as-sync" doc:name="mark-entries-as-sync">
+		<logger message="setting all spreadsheet contacts as synced"
+			level="INFO" doc:name="Logger" />
+		<data-mapper:transform config-ref="setCellAsSync"
+			doc:name="Mark as synced" />
+		<google-spreadsheets:set-row-values
+			config-ref="google-spreadsheets" spreadsheet="My Accounts" worksheet="Accounts"
+			doc:name="Set Row Values" >
+			<google-spreadsheets:rows ref="#[payload]" />
+		</google-spreadsheets:set-row-values>
+	</sub-flow>
+
+	<sub-flow name="to-calendar" doc:name="to-calendar">
+		<logger message="creating calendar event for #[payload]" level="INFO"
+			doc:name="Logger" />
+		<google-calendars:quick-add-event
+			config-ref="Google_Calendars_Connector" calendarId="primary"
+			text="#[string:Meet with #[payload]]" doc:name="Qick add event" />
+	</sub-flow>
+
+	<sub-flow name="to-contacts" doc:name="to-contacts">
+        <logger message="creating contact #[payload]" level="INFO" doc:name="Logger"/>
+		<custom-transformer
+			class="org.mule.examples.google.sfdc2google.ContactTransformer"
+			doc:name="transform to contact" />
+		<google-contacts:insert-contact
+			config-ref="Google_Contacts_Connector_with_OAuth2_authentication"
+			doc:name="insert contact" />
+	</sub-flow>
+    <sub-flow name="to-google" doc:name="to-google">
+        <foreach collection="#[payload]" doc:name="Foreach">
+            <choice doc:name="Choice">
+                <when expression="payload.getRowNumber() &gt; 1">
+                    <processor-chain>
+                        <set-payload value="#[jxpath://cells[columnNumber = '2']/evaluatedValue]" doc:name="select name column"/>
+                        <all doc:name="All">
+                            <processor-chain>
+                                <flow-ref name="to-contacts" doc:name="to contacts"/>
+                            </processor-chain>
+                            <processor-chain>
+                                <flow-ref name="to-calendar" doc:name="to calendar"/>
+                            </processor-chain>
+                            <processor-chain>
+                                <flow-ref name="to-tasks" doc:name="to tasks"/>
+                            </processor-chain>
+                        </all>
+                    </processor-chain>
+                </when>
+                <otherwise>
+                    <processor-chain>
+                        <logger message="headers... skipping" level="INFO" doc:name="Logger"/>
+                    </processor-chain>
+                </otherwise>
+            </choice>
+        </foreach>
+    </sub-flow>
+    <sub-flow name="to-salesforce" doc:name="to-salesforce">
+        <logger message="transforming google rows to List of maps" level="INFO" doc:name="Logger"/>
+        <data-mapper:transform config-ref="gss2sfdc" doc:name="Google to list of maps"/>
+        <logger message="filtering entries already sync" level="INFO" doc:name="Logger"/>
+        <data-mapper:transform config-ref="filterNotSynced" doc:name="Filtering contacts already synced"/>
+        <logger message="About to do bulk upsert with #[payload]" level="INFO" doc:name="Logger"/>
+        <sfdc:upsert-bulk config-ref="Salesforce" type="Account" externalIdFieldName="Id" doc:name="bulk upsert" >
+            <sfdc:objects ref="#[payload]"/>
+        </sfdc:upsert-bulk>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <logger message="Salesforce returned: #[payload]" level="INFO" doc:name="Logger"/>
+    </sub-flow>
+    <sub-flow name="to-tasks" doc:name="to-tasks">
+        <logger message="creating task for #[payload]" level="INFO" doc:name="Logger"/>
+        <custom-transformer class="org.mule.examples.google.sfdc2google.TaskTransformer" doc:name="transform to task"/>
+        <google-tasks:insert-task config-ref="Google_Tasks_Connector" taskListId="primary" task-ref="#[payload]" doc:name="Google Tasks Connector" />
+    </sub-flow>
+</mule>

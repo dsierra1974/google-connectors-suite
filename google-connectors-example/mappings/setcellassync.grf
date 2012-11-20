@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="marianogonzalez" created="Tue May 22 14:21:05 GMT-03:00 2012" guiVersion="3.3.0.M2" id="1337721620257" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 22 14:21:05 GMT-03:00 2012" modifiedBy="marianogonzalez" name="setCellAsSync" preview-file="/Users/marianogonzalez/Desktop/test.groovy" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __sourcePath="{}/list/cells" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="Metadata2" _parent_id="__parent_id" _position="0" _type="Output" id="Metadata3">
+<Record fieldDelimiter="|" name="Cell" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __sourcePath="{}/list/cells/columnNumber" label="columnNumber" name="columnNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/evaluatedValue" label="evaluatedValue" name="evaluatedValue" type="string"/>
+<Field __sourcePath="{}/list/cells/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/valueOrFormula" label="valueOrFormula" name="valueOrFormula" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/list/cells" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="Metadata0" _parent_id="__parent_id" _position="0" _type="Input" id="Metadata1">
+<Record fieldDelimiter="|" name="Cell" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __sourcePath="{}/list/cells/columnNumber" label="columnNumber" name="columnNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/evaluatedValue" label="evaluatedValue" name="evaluatedValue" type="string"/>
+<Field __sourcePath="{}/list/cells/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/valueOrFormula" label="valueOrFormula" name="valueOrFormula" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/list" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Output" id="Metadata2">
+<Record fieldDelimiter="|" name="Row" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/list/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/list" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Input" id="Metadata0">
+<Record fieldDelimiter="|" name="Row" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/list/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+<Entry id="DictionaryEntry2" input="true" name="Synced" output="false" type="string"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="dict:inputPayload" guiHeight="0" guiName="JAVA Reader" guiWidth="0" guiX="20" guiY="20" id="BEAN_READER0" type="BEAN_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath=".">
+  <Mapping cloverField="rowNumber" trim="true" xpath="rowNumber"/>
+  <Context generatedKey="__parent_id" outPort="1" parentKey="__id" sequenceField="__id" xpath="cells">
+    <Mapping cloverField="columnNumber" trim="true" xpath="columnNumber"/>
+    <Mapping cloverField="evaluatedValue" trim="true" xpath="evaluatedValue"/>
+    <Mapping cloverField="rowNumber" trim="true" xpath="rowNumber"/>
+    <Mapping cloverField="valueOrFormula" trim="true" xpath="valueOrFormula"/>
+  </Context>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[JAVA]]></attr>
+<attr name="schema"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema-object>
+  <schema-collection>
+    <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Row"/>
+  </schema-collection>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Row">
+    <schema-collection name="cells" type="java.util.List">
+      <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Cell"/>
+    </schema-collection>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+  </typed-object>
+  <typed-object type="int"/>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Cell">
+    <typed-object-ref name="columnNumber" type-ref="int"/>
+    <typed-object-ref name="evaluatedValue" type-ref="java.lang.String"/>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+    <typed-object-ref name="valueOrFormula" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="java.lang.String"/>
+</schema-object>
+]]></attr>
+</Node>
+<Node enabled="enabled" fileURL="dict:outputPayload" guiHeight="0" guiName="JAVA Writer" guiWidth="0" guiX="460" guiY="20" id="BEAN_WRITER0" type="BEAN_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:collection clover:name="list" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <item clover:inPort="0">
+    <rowNumber>$0.rowNumber</rowNumber>
+    <clover:collection clover:name="cells">
+      <item clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">
+        <columnNumber>$1.columnNumber</columnNumber>
+        <evaluatedValue>$1.evaluatedValue</evaluatedValue>
+        <rowNumber>$1.rowNumber</rowNumber>
+        <valueOrFormula>$1.valueOrFormula</valueOrFormula>
+      </item>
+    </clover:collection>
+  </item>
+</clover:collection>]]></attr>
+<attr name="_data_format"><![CDATA[JAVA]]></attr>
+<attr name="schema"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema-object>
+  <schema-collection>
+    <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Row"/>
+  </schema-collection>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Row">
+    <schema-collection name="cells" type="java.util.List">
+      <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Cell"/>
+    </schema-collection>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+  </typed-object>
+  <typed-object type="int"/>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Cell">
+    <typed-object-ref name="columnNumber" type-ref="int"/>
+    <typed-object-ref name="evaluatedValue" type-ref="java.lang.String"/>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+    <typed-object-ref name="valueOrFormula" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="java.lang.String"/>
+</schema-object>
+]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="list_to_list" guiWidth="0" guiX="240" guiY="20" id="REFORMAT0" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+$out.0.__id=$in.0.__id;
+	$out.0.rowNumber=$in.0.rowNumber;
+		return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="cells_to_cells" guiWidth="0" guiX="240" guiY="120" id="REFORMAT1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.valueOrFormula =  $in.0.columnNumber == 4 AND $in.0.rowNumber > 1 ? "Y" : $in.0.valueOrFormula;
+	
+	
+$out.0.__id=$in.0.__id;
+	$out.0.__parent_id=$in.0.__parent_id;
+	$out.0.columnNumber=$in.0.columnNumber;
+	$out.0.evaluatedValue=$in.0.evaluatedValue;
+	$out.0.rowNumber=$in.0.rowNumber;
+	
+		return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="BEAN_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="REFORMAT0:0"/>
+<Edge fromNode="BEAN_READER0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 1 (out)" toNode="REFORMAT1:0"/>
+<Edge fromNode="REFORMAT0:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="BEAN_WRITER0:0"/>
+<Edge fromNode="REFORMAT1:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="BEAN_WRITER0:1"/>
+</Phase>
+</Graph>

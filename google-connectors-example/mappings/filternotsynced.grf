@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="marianogonzalez" created="Tue May 22 14:21:05 GMT-03:00 2012" guiVersion="3.3.0.M2" id="1337720792354" licenseCode="Unlicensed" licenseType="Unknown" modified="Tue May 22 14:21:05 GMT-03:00 2012" modifiedBy="marianogonzalez" name="filterNotSynced" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __sourcePath="{}/inputMetadata" _dataStructure="OBJECT" _id="__AccountNumber" _type="Input" id="32548b93-d885-41a9-8171-00d19983fb5f">
+<Record fieldDelimiter="|" label="inputMetadata" name="inputMetadata" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__AccountNumber" type="string"/>
+<Field __sourcePath="{=}/inputMetadata/AccountNumber" label="AccountNumber" name="AccountNumber" type="string"/>
+<Field __sourcePath="{}/inputMetadata/Name" label="Name" name="Name" type="string"/>
+<Field __sourcePath="{}/inputMetadata/Phone" label="Phone" name="Phone" type="string"/>
+<Field __sourcePath="{}/inputMetadata/AtSalesForce" label="AtSalesForce" name="AtSalesForce" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/outputMetadata" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__AccountNumber" _type="Output" id="224bfcc8-e015-4b63-9d6a-53646a0b5ece">
+<Record fieldDelimiter="|" label="outputMetadata" name="outputMetadata" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__AccountNumber" type="string"/>
+<Field __sourcePath="{=}/outputMetadata/AccountNumber" label="AccountNumber" name="AccountNumber" type="string"/>
+<Field __sourcePath="{}/outputMetadata/Name" label="Name" name="Name" type="string"/>
+<Field __sourcePath="{}/outputMetadata/Phone" label="Phone" name="Phone" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="dict:inputPayload" guiHeight="0" guiName="MAP Reader" guiWidth="0" guiX="20" guiY="20" id="BEAN_READER0" type="BEAN_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__AccountNumber" xpath=".[AtSalesForce = 'N']">
+  <Mapping cloverField="AccountNumber" trim="true" xpath="AccountNumber"/>
+  <Mapping cloverField="Name" trim="true" xpath="Name"/>
+  <Mapping cloverField="Phone" trim="true" xpath="Phone"/>
+  <Mapping cloverField="AtSalesForce" trim="true" xpath="AtSalesForce"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[MAP]]></attr>
+</Node>
+<Node enabled="enabled" fileURL="dict:outputPayload" guiHeight="0" guiName="MAP Writer" guiWidth="0" guiX="460" guiY="20" id="MAP_WRITER0" type="MAP_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:collection clover:name="outputMetadata" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <item clover:inPort="0">
+    <AccountNumber>$0.AccountNumber</AccountNumber>
+    <Name>$0.Name</Name>
+    <Phone>$0.Phone</Phone>
+  </item>
+</clover:collection>]]></attr>
+<attr name="_data_format"><![CDATA[MAP]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="inputMetadata_to_outputMetadata" guiWidth="0" guiX="240" guiY="20" id="REFORMAT0" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+$out.0.__AccountNumber=$in.0.__AccountNumber;
+	$out.0.AccountNumber=$in.0.AccountNumber;
+	$out.0.Name=$in.0.Name;
+	$out.0.Phone=$in.0.Phone;
+		return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="__xpath_cond"><![CDATA[AtSalesForce = 'N']]></attr>
+</Node>
+<Edge fromNode="BEAN_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="32548b93-d885-41a9-8171-00d19983fb5f" outPort="Port 0 (out)" toNode="REFORMAT0:0"/>
+<Edge fromNode="REFORMAT0:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="224bfcc8-e015-4b63-9d6a-53646a0b5ece" outPort="Port 0 (out)" toNode="MAP_WRITER0:0"/>
+</Phase>
+</Graph>

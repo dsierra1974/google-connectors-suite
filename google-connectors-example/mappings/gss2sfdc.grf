@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="marianogonzalez" created="Thu May 24 12:11:12 GMT-03:00 2012" guiVersion="3.3.0.M2" id="1337873649290" licenseCode="Unlicensed" licenseType="Unknown" modified="Thu May 24 12:11:12 GMT-03:00 2012" modifiedBy="marianogonzalez" name="gss2sfdc" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __sourcePath="{}/list/cells" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="Metadata0" _parent_id="__parent_id" _position="0" _type="Input" id="Metadata1">
+<Record fieldDelimiter="|" name="Cell" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_AccountNumber" __systemManaged="true" name="__id" type="string"/>
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __sourcePath="{}/list/cells/columnNumber" label="columnNumber" name="columnNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/evaluatedValue" label="evaluatedValue" name="evaluatedValue" type="string"/>
+<Field __sourcePath="{}/list/cells/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+<Field __sourcePath="{}/list/cells/valueOrFormula" label="valueOrFormula" name="valueOrFormula" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/outputMetadata" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Output" id="50663171-bede-4718-b046-2d95d3770d21">
+<Record fieldDelimiter="|" label="outputMetadata" name="outputMetadata" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_AccountNumber" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/outputMetadata/Id" label="AccountNumber" name="AccountNumber" type="string"/>
+<Field __sourcePath="{}/outputMetadata/Name" label="Name" name="Name" type="string"/>
+<Field __sourcePath="{}/outputMetadata/Phone" label="Phone" name="Phone" type="string"/>
+<Field __sourcePath="{}/outputMetadata/AtSalesForce" label="AtSalesForce" name="AtSalesForce" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/list" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Input" id="Metadata0">
+<Record fieldDelimiter="|" name="Row" recordDelimiter="&#10;" type="delimited">
+<Field __artificialType="_AccountNumber" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/list/rowNumber" label="rowNumber" name="rowNumber" type="integer"/>
+<Field __artificialType="XPATH" __xpath="{}//cells[columnNumber = 1]/evaluatedValue" label="AccountNumber" name="AccountNumber" type="string"/>
+<Field __artificialType="XPATH" __xpath="{}//cells[columnNumber = 2]/evaluatedValue" label="Name" name="Name" type="string"/>
+<Field __artificialType="XPATH" __xpath="{}//cells[columnNumber = 3]/evaluatedValue" label="Phone" name="Phone" type="string"/>
+<Field __artificialType="XPATH" __xpath="{}//cells[columnNumber = 4]/evaluatedValue" label="AtSalesForce" name="AtSalesForce" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="dict:inputPayload" guiHeight="0" guiName="JAVA Reader" guiWidth="0" guiX="20" guiY="20" id="BEAN_READER0" type="BEAN_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath=".">
+  <Mapping cloverField="rowNumber" trim="true" xpath="rowNumber"/>
+  <Mapping cloverField="AccountNumber" trim="true" xpath="//cells[columnNumber = 1]/evaluatedValue"/>
+  <Mapping cloverField="Name" trim="true" xpath="//cells[columnNumber = 2]/evaluatedValue"/>
+  <Mapping cloverField="Phone" trim="true" xpath="//cells[columnNumber = 3]/evaluatedValue"/>
+  <Mapping cloverField="AtSalesForce" trim="true" xpath="//cells[columnNumber = 4]/evaluatedValue"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[JAVA]]></attr>
+<attr name="schema"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema-object>
+  <schema-collection>
+    <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Row"/>
+  </schema-collection>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Row">
+    <schema-collection name="cells" type="java.util.List">
+      <typed-object-ref type-ref="org.mule.module.google.spreadsheet.model.Cell"/>
+    </schema-collection>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+  </typed-object>
+  <typed-object type="int"/>
+  <typed-object type="org.mule.module.google.spreadsheet.model.Cell">
+    <typed-object-ref name="columnNumber" type-ref="int"/>
+    <typed-object-ref name="evaluatedValue" type-ref="java.lang.String"/>
+    <typed-object-ref name="rowNumber" type-ref="int"/>
+    <typed-object-ref name="valueOrFormula" type-ref="java.lang.String"/>
+  </typed-object>
+  <typed-object type="java.lang.String"/>
+</schema-object>
+]]></attr>
+</Node>
+<Node enabled="enabled" fileURL="dict:outputPayload" guiHeight="0" guiName="MAP Writer" guiWidth="0" guiX="460" guiY="20" id="MAP_WRITER0" type="MAP_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<clover:collection clover:name="outputMetadata" xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <item clover:inPort="0">
+    <Id>$0.AccountNumber</Id>
+    <Name>$0.Name</Name>
+    <Phone>$0.Phone</Phone>
+    <AtSalesForce>$0.AtSalesForce</AtSalesForce>
+  </item>
+</clover:collection>]]></attr>
+<attr name="_data_format"><![CDATA[MAP]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="list_to_outputMetadata" guiWidth="0" guiX="240" guiY="20" id="REFORMAT0" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.AccountNumber =  $in.0.AccountNumber;
+	$out.0.AtSalesForce = $in.0.AtSalesForce;
+	$out.0.Phone = $in.0.Phone;
+	$out.0.Name = $in.0.Name;
+	
+$out.0.__id=$in.0.__id;
+		return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="BEAN_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="REFORMAT0:0"/>
+<Edge fromNode="REFORMAT0:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="50663171-bede-4718-b046-2d95d3770d21" outPort="Port 0 (out)" toNode="MAP_WRITER0:0"/>
+</Phase>
+</Graph>
