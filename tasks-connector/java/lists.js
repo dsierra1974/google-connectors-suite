@@ -80,7 +80,8 @@ var DATA = [
       { id:78, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:79, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:80, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:81, label:"update-task", link:"mule/google-tasks-config-with-oauth.html#update-task", type:"method" },
-      { id:82, label:"update-task-list", link:"mule/google-tasks-config-with-oauth.html#update-task-list", type:"method" }
+      { id:81, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:82, label:"update-task", link:"mule/google-tasks-config-with-oauth.html#update-task", type:"method" },
+      { id:83, label:"update-task-list", link:"mule/google-tasks-config-with-oauth.html#update-task-list", type:"method" }
 
     ];
