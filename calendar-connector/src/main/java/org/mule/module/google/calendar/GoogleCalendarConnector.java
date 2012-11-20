@@ -47,7 +47,7 @@ import org.mule.module.google.calendar.model.batch.EventBatchCallback;
 import org.mule.modules.google.AbstractGoogleOAuthConnector;
 import org.mule.modules.google.AccessType;
 import org.mule.modules.google.ForcePrompt;
-import org.mule.modules.google.GoogleUserIdExtractor;
+import org.mule.modules.google.IdentifierPolicy;
 import org.mule.modules.google.api.client.batch.BatchResponse;
 import org.mule.modules.google.api.client.batch.VoidBatchCallback;
 import org.mule.modules.google.api.datetime.DateTimeConstants;
@@ -117,6 +117,19 @@ public class GoogleCalendarConnector extends AbstractGoogleOAuthConnector {
     private String scope;
     
     /**
+     * This policy represents which id we want to use to represent each google account.
+     * 
+     * PROFILE means that we want the google profile id. That means, the user's primary key in google's DB.
+     * This is a long number represented as a string.
+     * 
+     * EMAIL means you want to use the account's email address
+     */
+    @Configurable
+    @Optional
+    @Default("EMAIL")
+    private IdentifierPolicy identifierPolicy = IdentifierPolicy.EMAIL;
+    
+    /**
      * Factory to instantiate the underlying google client.
      * Usually you don't need to override this. Most common
      * use case of a custom value here is testing.
@@ -147,7 +160,7 @@ public class GoogleCalendarConnector extends AbstractGoogleOAuthConnector {
 	
 	@OAuthAccessTokenIdentifier
 	public String getAccessTokenId() {
-		return GoogleUserIdExtractor.getUserId(this);
+		return this.identifierPolicy.getId(this);
 	}
 	
 	@OAuthPostAuthorization
@@ -944,6 +957,14 @@ public class GoogleCalendarConnector extends AbstractGoogleOAuthConnector {
 
 	public void setClientFactory(GoogleCalendarClientFactory clientFactory) {
 		this.clientFactory = clientFactory;
+	}
+
+	public IdentifierPolicy getIdentifierPolicy() {
+		return identifierPolicy;
+	}
+
+	public void setIdentifierPolicy(IdentifierPolicy identifierPolicy) {
+		this.identifierPolicy = identifierPolicy;
 	}
 	
 }

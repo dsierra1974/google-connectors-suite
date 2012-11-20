@@ -18,7 +18,7 @@ package org.mule.modules.google;
  */
 public abstract class AbstractGoogleOAuthConnector {
 	
-	protected static final String USER_PROFILE_SCOPE = "https://www.googleapis.com/auth/userinfo.profile";
+	protected static final String USER_PROFILE_SCOPE = "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email";
 	
     private String userId;
     

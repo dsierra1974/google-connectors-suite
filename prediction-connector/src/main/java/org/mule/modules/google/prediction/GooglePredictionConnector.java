@@ -30,7 +30,7 @@ import org.mule.api.annotations.param.Optional;
 import org.mule.modules.google.AbstractGoogleOAuthConnector;
 import org.mule.modules.google.AccessType;
 import org.mule.modules.google.ForcePrompt;
-import org.mule.modules.google.GoogleUserIdExtractor;
+import org.mule.modules.google.IdentifierPolicy;
 import org.mule.modules.google.oauth.invalidation.InvalidationAwareCredential;
 import org.mule.modules.google.oauth.invalidation.OAuthTokenExpiredException;
 import org.mule.modules.google.prediction.model.Analyze;
@@ -89,6 +89,19 @@ public class GooglePredictionConnector extends AbstractGoogleOAuthConnector {
     @Optional
     @Default(USER_PROFILE_SCOPE + " " + PredictionScopes.PREDICTION)
     private String scope;
+    
+    /**
+     * This policy represents which id we want to use to represent each google account.
+     * 
+     * PROFILE means that we want the google profile id. That means, the user's primary key in google's DB.
+     * This is a long number represented as a string.
+     * 
+     * EMAIL means you want to use the account's email address
+     */
+    @Configurable
+    @Optional
+    @Default("EMAIL")
+    private IdentifierPolicy identifierPolicy = IdentifierPolicy.EMAIL;
 
     /**
      * Application name registered on Google API console
@@ -108,7 +121,7 @@ public class GooglePredictionConnector extends AbstractGoogleOAuthConnector {
     
     @OAuthAccessTokenIdentifier
 	public String getAccessTokenId() {
-		return GoogleUserIdExtractor.getUserId(this);
+		return this.identifierPolicy.getId(this);
 	}
 	
 	@OAuthPostAuthorization
@@ -359,5 +372,12 @@ public class GooglePredictionConnector extends AbstractGoogleOAuthConnector {
         this.client = prediction;
     }
 
+	public IdentifierPolicy getIdentifierPolicy() {
+		return identifierPolicy;
+	}
 
+	public void setIdentifierPolicy(IdentifierPolicy identifierPolicy) {
+		this.identifierPolicy = identifierPolicy;
+	}
+    
 }

@@ -27,9 +27,19 @@ public abstract class GoogleUserIdExtractor {
 	
 	private static Logger logger = Logger.getLogger(GoogleUserIdExtractor.class);
 	private static Client restClient = Client.create();
-	private static final Pattern userIdPattern = Pattern.compile("\"user_id\"[ ]*:[ ]*\"([^\\\"]*)\"");
+	
+	private static final Pattern profilePattern = Pattern.compile("\"user_id\"[ ]*:[ ]*\"([^\\\"]*)\"");
+	private static final Pattern emailPattern = Pattern.compile("\"email\"[ ]*:[ ]*\"([^\\\"]*)\"");
+	
+	public static String getUserEmail(AbstractGoogleOAuthConnector connector) {
+		return fetchId(connector, "https://www.googleapis.com/oauth2/v1/userinfo", emailPattern);
+	}
 	
 	public static String getUserId(AbstractGoogleOAuthConnector connector) {
+		return fetchId(connector, "https://www.googleapis.com/oauth2/v1/tokeninfo", profilePattern);
+	}
+	
+	private static String fetchId(AbstractGoogleOAuthConnector connector, String url, Pattern pattern) {
 		if (StringUtils.isBlank(connector.getUserId())) {
 			
 			String accessToken = connector.getAccessToken();
@@ -41,12 +51,12 @@ public abstract class GoogleUserIdExtractor {
 				return null;
 			}
 			
-			String response = restClient.resource("https://www.googleapis.com/oauth2/v1/tokeninfo")
+			String response = restClient.resource(url)
 					.queryParam("alt", "json")
 					.queryParam("access_token", accessToken)
 					.get(String.class);
 			
-			Matcher matcher = userIdPattern.matcher(response);
+			Matcher matcher = pattern.matcher(response);
 			if (matcher.find()) {
 				connector.setUserId(matcher.group(1));
 			} else {
@@ -55,6 +65,7 @@ public abstract class GoogleUserIdExtractor {
 		}
 		
 		return connector.getUserId();
+		
 	}
 
 }

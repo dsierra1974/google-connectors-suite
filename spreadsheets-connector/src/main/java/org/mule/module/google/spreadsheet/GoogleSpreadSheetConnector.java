@@ -42,7 +42,7 @@ import org.mule.module.google.spreadsheet.model.Worksheet;
 import org.mule.modules.google.AbstractGoogleOAuthConnector;
 import org.mule.modules.google.AccessType;
 import org.mule.modules.google.ForcePrompt;
-import org.mule.modules.google.GoogleUserIdExtractor;
+import org.mule.modules.google.IdentifierPolicy;
 import org.mule.modules.google.oauth.invalidation.InvalidationAwareCredential;
 import org.mule.modules.google.oauth.invalidation.OAuthTokenExpiredException;
 
@@ -115,6 +115,19 @@ public class GoogleSpreadSheetConnector extends AbstractGoogleOAuthConnector {
     @Default(USER_PROFILE_SCOPE + " https://spreadsheets.google.com/feeds https://docs.google.com/feeds")
     private String scope;
     
+    /**
+     * This policy represents which id we want to use to represent each google account.
+     * 
+     * PROFILE means that we want the google profile id. That means, the user's primary key in google's DB.
+     * This is a long number represented as a string.
+     * 
+     * EMAIL means you want to use the account's email address
+     */
+    @Configurable
+    @Optional
+    @Default("EMAIL")
+    private IdentifierPolicy identifierPolicy = IdentifierPolicy.EMAIL;
+    
     private FeedURLFactory factory = FeedURLFactory.getDefault();
     
     /**
@@ -134,7 +147,7 @@ public class GoogleSpreadSheetConnector extends AbstractGoogleOAuthConnector {
 	
 	@OAuthAccessTokenIdentifier
 	public String getAccessTokenId() {
-		return GoogleUserIdExtractor.getUserId(this);
+		return this.identifierPolicy.getId(this);
 	}
 	
 	@OAuthPostAuthorization
@@ -935,7 +948,13 @@ public class GoogleSpreadSheetConnector extends AbstractGoogleOAuthConnector {
 	public void setDocService(DocsService docService) {
 		this.docService = docService;
 	}
-	
-	
+
+	public IdentifierPolicy getIdentifierPolicy() {
+		return identifierPolicy;
+	}
+
+	public void setIdentifierPolicy(IdentifierPolicy identifierPolicy) {
+		this.identifierPolicy = identifierPolicy;
+	}
 	
 }
