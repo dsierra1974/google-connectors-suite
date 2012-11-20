@@ -22,7 +22,7 @@ var NAVTREE_DATA =
 , "" ] ]
 , "" ], [ "org.mule.module.google.calendar.transformers", "org/mule/module/google/calendar/transformers/package-summary.html", [ [ "Classes", null, [ [ "ScopeRoleEnumTransformer", "org/mule/module/google/calendar/transformers/ScopeRoleEnumTransformer.html", null, "" ], [ "ScopeTypeEnumTransformer", "org/mule/module/google/calendar/transformers/ScopeTypeEnumTransformer.html", null, "" ] ]
 , "" ] ]
-, "" ], [ "org.mule.modules.google.transformers", "org/mule/modules/google/transformers/package-summary.html", [ [ "Classes", null, [ [ "AccessTypeEnumTransformer", "org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", null, "" ], [ "ForcePromptEnumTransformer", "org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", null, "" ] ]
+, "" ], [ "org.mule.modules.google.transformers", "org/mule/modules/google/transformers/package-summary.html", [ [ "Classes", null, [ [ "AccessTypeEnumTransformer", "org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", null, "" ], [ "ForcePromptEnumTransformer", "org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", null, "" ], [ "IdentifierPolicyEnumTransformer", "org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", null, "" ] ]
 , "" ] ]
 , "" ] ]
 

@@ -151,10 +151,11 @@ var DATA = [
       { id:149, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:150, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:151, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:152, label:"quick-add-event", link:"mule/google-calendars-config-with-oauth.html#quick-add-event", type:"method" },
-      { id:153, label:"update-acl-rule", link:"mule/google-calendars-config-with-oauth.html#update-acl-rule", type:"method" },
-      { id:154, label:"update-calendar", link:"mule/google-calendars-config-with-oauth.html#update-calendar", type:"method" },
-      { id:155, label:"update-calendar-list", link:"mule/google-calendars-config-with-oauth.html#update-calendar-list", type:"method" },
-      { id:156, label:"update-event", link:"mule/google-calendars-config-with-oauth.html#update-event", type:"method" }
+      { id:152, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:153, label:"quick-add-event", link:"mule/google-calendars-config-with-oauth.html#quick-add-event", type:"method" },
+      { id:154, label:"update-acl-rule", link:"mule/google-calendars-config-with-oauth.html#update-acl-rule", type:"method" },
+      { id:155, label:"update-calendar", link:"mule/google-calendars-config-with-oauth.html#update-calendar", type:"method" },
+      { id:156, label:"update-calendar-list", link:"mule/google-calendars-config-with-oauth.html#update-calendar-list", type:"method" },
+      { id:157, label:"update-event", link:"mule/google-calendars-config-with-oauth.html#update-event", type:"method" }
 
     ];
