@@ -119,8 +119,9 @@ var DATA = [
       { id:117, label:"org.mule.modules.google.transformers", link:"java/org/mule/modules/google/transformers/package-summary.html", type:"package" },
       { id:118, label:"org.mule.modules.google.transformers.AccessTypeEnumTransformer", link:"java/org/mule/modules/google/transformers/AccessTypeEnumTransformer.html", type:"class" },
       { id:119, label:"org.mule.modules.google.transformers.ForcePromptEnumTransformer", link:"java/org/mule/modules/google/transformers/ForcePromptEnumTransformer.html", type:"class" },
-      { id:120, label:"update-contact", link:"mule/google-contacts-config-with-oauth.html#update-contact", type:"method" },
-      { id:121, label:"update-contact-photo", link:"mule/google-contacts-config-with-oauth.html#update-contact-photo", type:"method" },
-      { id:122, label:"update-group", link:"mule/google-contacts-config-with-oauth.html#update-group", type:"method" }
+      { id:120, label:"org.mule.modules.google.transformers.IdentifierPolicyEnumTransformer", link:"java/org/mule/modules/google/transformers/IdentifierPolicyEnumTransformer.html", type:"class" },
+      { id:121, label:"update-contact", link:"mule/google-contacts-config-with-oauth.html#update-contact", type:"method" },
+      { id:122, label:"update-contact-photo", link:"mule/google-contacts-config-with-oauth.html#update-contact-photo", type:"method" },
+      { id:123, label:"update-group", link:"mule/google-contacts-config-with-oauth.html#update-group", type:"method" }
 
     ];
