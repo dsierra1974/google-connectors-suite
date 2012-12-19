@@ -34,12 +34,13 @@ import com.google.code.javax.mail.Store;
 import com.google.code.oauth.OAuth2Authenticator;
 
 /**
- * Google Calendars Cloud connector.
- * This connector covers almost all the Google Calendar API v3 using OAuth2 for authentication.
+ * Gmail cloud connector.
+ * This connector covers the standard IMAP protocol plus Google's extensions for Gmail.
+ * This implementation uses OAuth2 for authentication
  *
  * @author mariano.gonzalez@mulesoft.com
  */
-@Connector(name="gmail", schemaVersion="1.0", friendlyName="GMail Connector", minMuleVersion="3.3", configElementName="config-with-oauth")
+@Connector(name="gmail", schemaVersion="1.0", friendlyName="GMail Connector (OAuth2)", minMuleVersion="3.3", configElementName="config-with-oauth")
 @OAuth2(
 		authorizationUrl = "https://accounts.google.com/o/oauth2/auth",
 		accessTokenUrl = "https://accounts.google.com/o/oauth2/token",
@@ -115,7 +116,7 @@ public class GmailConnector extends BaseGmailConnector {
     }
     
 	@Override
-	protected Store getStore(String username) {
+	protected Store getStore(String username, String password) throws MessagingException {
 		String token = this.getAccessToken();
 		
 		if (StringUtils.isEmpty(token)) {

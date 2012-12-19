@@ -62,7 +62,7 @@ import com.google.code.javax.mail.search.SubjectTerm;
  */
 public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 
-	protected abstract Store getStore(String username);
+	protected abstract Store getStore(String username, String password) throws MessagingException;
 	
 	
 	/**
@@ -77,6 +77,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	 * {@sample.xml ../../../doc/Gmail-connector.xml.sample gmail:advanced-search}
 	 * 
 	 * @param username the account's username
+	 * @param password only needed is you're using basic authentication. If you're using OAuth2 then this parameter is not used
 	 * @param folder the folder in which to search. If you want all of them then use ALL_MAIL
 	 * @param searchTerm an instance of {@link com.google.code.javax.mail.search.SearchTerm}. If not provided, then no filtering criteria is applied
 	 * @param expunge if true, all read messages will be deleted upon operation completion
@@ -89,6 +90,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	@OAuthInvalidateAccessTokenOn(exception=OAuthTokenExpiredException.class)
 	public List<MailMessage> advancedSearch(
 									String username,
+									@Optional String password,
 									GmailFolder folder,
 									SearchTerm searchTerm,
 									@Optional @Default("false") Boolean expunge,
@@ -96,7 +98,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 		
 		List<SearchTerm> terms = new ArrayList<SearchTerm>(1);
 		terms.add(searchTerm);
-		return this.doGetMessages(username, folder, terms, expunge, includeAttachments);
+		return this.doGetMessages(username, password, folder, terms, expunge, includeAttachments);
 	}
 	
 
@@ -110,6 +112,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	 * 
 	 * @param username the account's username
 	 * @param folder the folder in which to search. If you want all of them then use ALL_MAIL
+	 * @param password only needed is you're using basic authentication. If you're using OAuth2 then this parameter is not used
 	 * @param receivedBefore a date in the specified string format giving a lower bound filter to the received date. If no dateFormat is specified, then RFC3339 is assumed
 	 * @param receivedAfter a date in the specified string format giving an upper bound filter to the received date. If no dateFormat is specified, then RFC3339 is assumed
 	 * @param sentBefore a date in the specified string format giving a lower bound filter to the sent date. If no dateFormat is specified, then RFC3339 is assumed
@@ -138,6 +141,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	public List<MailMessage> search(
 					String username,
 					GmailFolder folder,
+					@Optional String password,
 					@Optional String receivedBefore,
 					@Optional String receivedAfter,
 					@Optional String sentBefore,
@@ -224,15 +228,15 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 			searchTerms.add(new MessageIDTerm(messageId));
 		}
 		
-		return this.doGetMessages(username, folder, searchTerms, expunge, includeAttachments);
+		return this.doGetMessages(username, password, folder, searchTerms, expunge, includeAttachments);
 	}
 	
-	private List<MailMessage> doGetMessages(String username, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge, boolean includeAttachments) throws MessagingException {
+	private List<MailMessage> doGetMessages(String username, String password, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge, boolean includeAttachments) throws MessagingException {
 		Store store = null;
 		Folder folder = null;
 		
 		try {
-			store = this.getStore(username);
+			store = this.getStore(username, password);
 			folder = this.openFolder(store, gmailFolder);
 
 			int size = searchTerms != null ? searchTerms.size() : 0;
