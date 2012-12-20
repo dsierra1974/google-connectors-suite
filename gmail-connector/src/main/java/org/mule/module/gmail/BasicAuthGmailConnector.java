@@ -12,7 +12,7 @@ package org.mule.module.gmail;
 import java.util.Properties;
 
 import org.apache.commons.lang.StringUtils;
-import org.mule.api.annotations.Connector;
+import org.mule.api.annotations.Module;
 import org.mule.api.annotations.lifecycle.Start;
 
 import com.google.code.javax.mail.MessagingException;
@@ -29,7 +29,7 @@ import com.google.code.javax.mail.Store;
  * @author mariano.gonzalez@mulesoft.com
  *
  */
-@Connector(name="gmail", schemaVersion="1.0", friendlyName="GMail Connector", minMuleVersion="3.3")
+@Module(name="gmail", schemaVersion="1.0", friendlyName="GMail Connector", minMuleVersion="3.3")
 public class BasicAuthGmailConnector extends BaseGmailConnector {
 	
 	private Properties props;
