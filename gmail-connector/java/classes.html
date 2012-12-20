@@ -428,7 +428,7 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html">AdvancedSearchMessageProcessor</a></td>
-            <td class="jd-descrcol" width="100%">AdvancedSearchMessageProcessor invokes the <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch(java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">AdvancedSearchMessageProcessor invokes the <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch(java.lang.String, java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>.&nbsp;</td>
         </tr>
     
     
@@ -540,49 +540,79 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></td>
+            <td class="jd-descrcol" width="100%">Gmail cloud connector.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html">BasicAuthGmailConnectorCapabilitiesAdapter</a></td>
+            <td class="jd-descrcol" width="100%">A <code>BasicAuthGmailConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/config/BasicAuthGmailConnectorConfigDefinitionParser.html">BasicAuthGmailConnectorConfigDefinitionParser</a></td>
             <td class="jd-descrcol" width="100%">&nbsp;</td>
         </tr>
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html">BasicAuthGmailConnectorLifecycleAdapter</a></td>
+            <td class="jd-descrcol" width="100%">A <code>BasicAuthGmailConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">BasicAuthGmailConnectorMetadataAdapater</a></td>
+            <td class="jd-descrcol" width="100%">A <code>BasicAuthGmailConnectorMetadataAdapater</code> is a wrapper around <code><a href="../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that adds support for querying metadata about the extension.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorProcessAdapter.html">BasicAuthGmailConnectorProcessAdapter</a></td>
+            <td class="jd-descrcol" width="100%">A <code>BasicAuthGmailConnectorProcessAdapter</code> is a wrapper around <code><a href="../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that enables custom processing strategies.&nbsp;</td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/com/sun/mail/util/BEncoderStream.html">BEncoderStream</a></td>
             <td class="jd-descrcol" width="100%">This class implements a 'B' Encoder as defined by RFC2047 for
  encoding MIME headers.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/com/sun/mail/imap/protocol/BODY.html">BODY</a></td>
             <td class="jd-descrcol" width="100%">The BODY fetch response item.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/javax/mail/BodyPart.html">BodyPart</a></td>
             <td class="jd-descrcol" width="100%">This class models a Part that is contained within a Multipart.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/com/sun/mail/imap/protocol/BODYSTRUCTURE.html">BODYSTRUCTURE</a></td>
             <td class="jd-descrcol" width="100%">A BODYSTRUCTURE response.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/javax/mail/search/BodyTerm.html">BodyTerm</a></td>
             <td class="jd-descrcol" width="100%">This class implements searches on a message body.&nbsp;</td>
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/com/sun/mail/iap/ByteArray.html">ByteArray</a></td>
             <td class="jd-descrcol" width="100%">A simple wrapper around a byte array, with a start position and
  count of bytes.&nbsp;</td>
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/com/google/code/javax/mail/util/ByteArrayDataSource.html">ByteArrayDataSource</a></td>
             <td class="jd-descrcol" width="100%">A DataSource backed by a byte array.&nbsp;</td>
         </tr>
@@ -954,7 +984,7 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/GmailConnector.html">GmailConnector</a></td>
-            <td class="jd-descrcol" width="100%">Google Calendars Cloud connector.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">Gmail cloud connector.&nbsp;</td>
         </tr>
     
     
@@ -2013,7 +2043,7 @@
     
         <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../java/org/mule/module/gmail/processors/SearchMessageProcessor.html">SearchMessageProcessor</a></td>
-            <td class="jd-descrcol" width="100%">SearchMessageProcessor invokes the <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html#search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List<org.mule.module.gmail.search.FlagCriteria>, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.Boolean, java.lang.Boolean)">search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List, java.util.List, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List, java.util.List, java.util.List, java.lang.String, java.util.List, java.util.List, java.lang.String, java.util.List, java.lang.String, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">SearchMessageProcessor invokes the <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html#search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List<org.mule.module.gmail.search.FlagCriteria>, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.Boolean, java.lang.Boolean)">search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List, java.util.List, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List, java.util.List, java.util.List, java.lang.String, java.util.List, java.util.List, java.lang.String, java.util.List, java.lang.String, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>.&nbsp;</td>
         </tr>
     
     

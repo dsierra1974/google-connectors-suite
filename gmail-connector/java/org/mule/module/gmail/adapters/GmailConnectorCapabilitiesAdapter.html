@@ -273,6 +273,10 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html">BasicAuthGmailConnectorCapabilitiesAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html">BasicAuthGmailConnectorLifecycleAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">BasicAuthGmailConnectorMetadataAdapater</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorProcessAdapter.html">BasicAuthGmailConnectorProcessAdapter</a></li>
           <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html">GmailConnectorCapabilitiesAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorHttpCallbackAdapter.html">GmailConnectorHttpCallbackAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorLifecycleAdapter.html">GmailConnectorLifecycleAdapter</a></li>
@@ -1057,7 +1061,7 @@ From class
             <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getStore(java.lang.String)">getStore</a></span>(String username)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getStore(java.lang.String, java.lang.String)">getStore</a></span>(String username, String password)</nobr>
         
   </td></tr>
 
@@ -1211,7 +1215,7 @@ From class
             List&lt;<a href="../../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a>&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch</a></span>(String username, <a href="../../../../../../java/org/mule/module/gmail/search/GmailFolder.html">GmailFolder</a> folder, <a href="../../../../../../java/com/google/code/javax/mail/search/SearchTerm.html">SearchTerm</a> searchTerm, Boolean expunge, Boolean includeAttachments)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch</a></span>(String username, String password, <a href="../../../../../../java/org/mule/module/gmail/search/GmailFolder.html">GmailFolder</a> folder, <a href="../../../../../../java/com/google/code/javax/mail/search/SearchTerm.html">SearchTerm</a> searchTerm, Boolean expunge, Boolean includeAttachments)</nobr>
         
         <div class="jd-descrdiv">Search and returns messages on a folder of the given username
  using a search criteria provided by the user via the searchTerm parameter.</div>
@@ -1230,7 +1234,7 @@ From class
             <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#getStore(java.lang.String)">getStore</a></span>(String username)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#getStore(java.lang.String, java.lang.String)">getStore</a></span>(String username, String password)</nobr>
         
   </td></tr>
 
@@ -1246,7 +1250,7 @@ From class
             List&lt;<a href="../../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a>&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List<org.mule.module.gmail.search.FlagCriteria>, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.Boolean, java.lang.Boolean)">search</a></span>(String username, <a href="../../../../../../java/org/mule/module/gmail/search/GmailFolder.html">GmailFolder</a> folder, String receivedBefore, String receivedAfter, String sentBefore, String sentAfter, List&lt;String&gt; fromAddresses, List&lt;String&gt; toAddresses, Integer messageNumber, <a href="../../../../../../java/org/mule/module/gmail/search/SearchCriteria.html">SearchCriteria</a> size, List&lt;<a href="../../../../../../java/org/mule/module/gmail/search/FlagCriteria.html">FlagCriteria</a>&gt; flags, List&lt;String&gt; labels, List&lt;String&gt; rawSearchTerms, String threadId, List&lt;String&gt; bodyTerms, List&lt;String&gt; headerTerms, String messageId, List&lt;String&gt; subjectTerms, String dateFormat, Boolean expunge, Boolean includeAttachments)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BaseGmailConnector.html#search(java.lang.String, org.mule.module.gmail.search.GmailFolder, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Integer, org.mule.module.gmail.search.SearchCriteria, java.util.List<org.mule.module.gmail.search.FlagCriteria>, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.Boolean, java.lang.Boolean)">search</a></span>(String username, <a href="../../../../../../java/org/mule/module/gmail/search/GmailFolder.html">GmailFolder</a> folder, String password, String receivedBefore, String receivedAfter, String sentBefore, String sentAfter, List&lt;String&gt; fromAddresses, List&lt;String&gt; toAddresses, Integer messageNumber, <a href="../../../../../../java/org/mule/module/gmail/search/SearchCriteria.html">SearchCriteria</a> size, List&lt;<a href="../../../../../../java/org/mule/module/gmail/search/FlagCriteria.html">FlagCriteria</a>&gt; flags, List&lt;String&gt; labels, List&lt;String&gt; rawSearchTerms, String threadId, List&lt;String&gt; bodyTerms, List&lt;String&gt; headerTerms, String messageId, List&lt;String&gt; subjectTerms, String dateFormat, Boolean expunge, Boolean includeAttachments)</nobr>
         
         <div class="jd-descrdiv">Returns messages in the user mailbox applying optional search criterias.</div>
   

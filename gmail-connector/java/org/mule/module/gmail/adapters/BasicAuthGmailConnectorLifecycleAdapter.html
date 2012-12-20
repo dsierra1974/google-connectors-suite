@@ -74,7 +74,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
 
-  GmailConnectorMetadataAdapater
+  BasicAuthGmailConnectorLifecycleAdapter
 
 
 | Mule Gmail Cloud Connector
@@ -274,13 +274,13 @@
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html">BasicAuthGmailConnectorCapabilitiesAdapter</a></li>
-          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html">BasicAuthGmailConnectorLifecycleAdapter</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html">BasicAuthGmailConnectorLifecycleAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">BasicAuthGmailConnectorMetadataAdapater</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorProcessAdapter.html">BasicAuthGmailConnectorProcessAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html">GmailConnectorCapabilitiesAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorHttpCallbackAdapter.html">GmailConnectorHttpCallbackAdapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorLifecycleAdapter.html">GmailConnectorLifecycleAdapter</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html">GmailConnectorMetadataAdapater</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html">GmailConnectorMetadataAdapater</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorOAuth2Adapter.html">GmailConnectorOAuth2Adapter</a></li>
           <li class="api apilevel-"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorProcessAdapter.html">GmailConnectorProcessAdapter</a></li>
       </ul>
@@ -330,15 +330,8 @@
    
   
   
-  
-  
-
-  
    
   
-  
-  
-   
   
   
 
@@ -352,8 +345,6 @@
   
    
   
-  
-   
   
   
    
@@ -371,12 +362,66 @@
    
   
   
+   
+  
+  
+   
   
   
 
   
    
   
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+   
   
   
   
@@ -391,11 +436,8 @@ Summary:
 
 
 
-  <a href="#constants">Constants</a>
-  
 
-
-  &#124; <a href="#inhconstants">Inherited Constants</a>
+  <a href="#inhconstants">Inherited Constants</a>
   
 
 
@@ -438,7 +480,7 @@ Summary:
      
     
     class
-<h1>GmailConnectorMetadataAdapater</h1>
+<h1>BasicAuthGmailConnectorLifecycleAdapter</h1>
 
 
 
@@ -459,7 +501,11 @@ Summary:
   
 
   
-    extends <a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html">GmailConnectorCapabilitiesAdapter</a><br/>
+  
+  
+
+  
+    extends <a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">BasicAuthGmailConnectorMetadataAdapater</a><br/>
   
   
   
@@ -468,7 +514,13 @@ Summary:
   
       implements 
       
-        MetadataAware 
+        Disposable 
+      
+        Initialisable 
+      
+        Startable 
+      
+        Stoppable 
       
   
   
@@ -484,7 +536,7 @@ Summary:
 
     <tr>
         
-        <td colspan="6" class="jd-inheritance-class-cell">java.lang.Object</td>
+        <td colspan="7" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -492,7 +544,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="5" class="jd-inheritance-class-cell">org.mule.modules.google.AbstractGoogleOAuthConnector</td>
+        <td colspan="6" class="jd-inheritance-class-cell">org.mule.modules.google.AbstractGoogleOAuthConnector</td>
     </tr>
     
 
@@ -502,19 +554,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="4" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html">org.mule.module.gmail.BaseGmailConnector</a></td>
-    </tr>
-    
-
-    <tr>
-        
-            <td class="jd-inheritance-space">&nbsp;</td>
-        
-            <td class="jd-inheritance-space">&nbsp;</td>
-        
-            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
-        
-        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/GmailConnector.html">org.mule.module.gmail.GmailConnector</a></td>
+        <td colspan="5" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html">org.mule.module.gmail.BaseGmailConnector</a></td>
     </tr>
     
 
@@ -524,11 +564,9 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;</td>
         
-            <td class="jd-inheritance-space">&nbsp;</td>
-        
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html">org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter</a></td>
+        <td colspan="4" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/BasicAuthGmailConnector.html">org.mule.module.gmail.BasicAuthGmailConnector</a></td>
     </tr>
     
 
@@ -540,11 +578,43 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;</td>
         
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html">org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
             <td class="jd-inheritance-space">&nbsp;</td>
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
         
-        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.gmail.adapters.GmailConnectorMetadataAdapater</td>
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.gmail.adapters.BasicAuthGmailConnectorLifecycleAdapter</td>
     </tr>
     
 
@@ -567,7 +637,7 @@ Summary:
               >
           
             
-              <a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorLifecycleAdapter.html">GmailConnectorLifecycleAdapter</a>
+              <a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorProcessAdapter.html">BasicAuthGmailConnectorProcessAdapter</a>
             
           
       </div>
@@ -576,8 +646,8 @@ Summary:
               >
   <table class="jd-sumtable-expando">
         <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorLifecycleAdapter.html">GmailConnectorLifecycleAdapter</a></td>
-              <td class="jd-descrcol" width="100%">A <code>GmailConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/GmailConnector.html">GmailConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
+              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/gmail/adapters/BasicAuthGmailConnectorProcessAdapter.html">BasicAuthGmailConnectorProcessAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>BasicAuthGmailConnectorProcessAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that enables custom processing strategies.&nbsp;</td>
           </tr>
   </table>
       </div>
@@ -585,50 +655,13 @@ Summary:
 </td></tr></table>
 
 
-
-<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
-
-  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-indirect" class="jd-expando-trigger closed"
-          ><img id="subclasses-indirect-trigger"
-          src="../../../../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>Known Indirect Subclasses
-
-  <div id="subclasses-indirect">
-      <div id="subclasses-indirect-list"
-              class="jd-inheritedlinks"
-              
-              >
-          
-            
-              <a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorOAuth2Adapter.html">GmailConnectorOAuth2Adapter</a>,
-            
-              <a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorProcessAdapter.html">GmailConnectorProcessAdapter</a>
-            
-          
-      </div>
-      <div id="subclasses-indirect-summary"
-              style="display: none;"
-              >
-  <table class="jd-sumtable-expando">
-        <tr class="alt-color api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorOAuth2Adapter.html">GmailConnectorOAuth2Adapter</a></td>
-              <td class="jd-descrcol" width="100%">A <code>GmailConnectorOAuth2Adapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/GmailConnector.html">GmailConnector</a></code> that adds OAuth capabilites to the pojo.&nbsp;</td>
-          </tr>
-        <tr class=" api apilevel-" >
-              <td class="jd-linkcol"><a href="../../../../../../java/org/mule/module/gmail/adapters/GmailConnectorProcessAdapter.html">GmailConnectorProcessAdapter</a></td>
-              <td class="jd-descrcol" width="100%">A <code>GmailConnectorProcessAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/GmailConnector.html">GmailConnector</a></code> that enables custom processing strategies.&nbsp;</td>
-          </tr>
-  </table>
-      </div>
-  </div>
-</td></tr></table>
 
 
 <div class="jd-descr">
 
 
 <h2>Class Overview</h2>
-<p>A <code>GmailConnectorMetadataAdapater</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/GmailConnector.html">GmailConnector</a></code> that adds support for querying metadata about the extension.
+<p>A <code>BasicAuthGmailConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../../java/org/mule/module/gmail/BasicAuthGmailConnector.html">BasicAuthGmailConnector</a></code> that adds lifecycle methods to the pojo.
  
 </p>
 
@@ -670,43 +703,6 @@ Summary:
 
 
 
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#DEVKIT_BUILD">DEVKIT_BUILD</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#DEVKIT_VERSION">DEVKIT_VERSION</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#MODULE_NAME">MODULE_NAME</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#MODULE_VERSION">MODULE_VERSION</a></td>
-        <td class="jd-descrcol" width="100%"></td>
-    </tr>
-    
-    
-
-</table>
-
-
 
 
 
@@ -714,6 +710,58 @@ Summary:
 <table id="inhconstants" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Constants</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater</a>
+<div id="inherited-constants-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater">
+  <div id="inherited-constants-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#DEVKIT_BUILD">DEVKIT_BUILD</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#DEVKIT_VERSION">DEVKIT_VERSION</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#MODULE_NAME">MODULE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#MODULE_VERSION">MODULE_VERSION</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 
 
@@ -758,6 +806,130 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.lifecycle.Disposable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.api.lifecycle.Disposable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+org.mule.api.lifecycle.Disposable
+<div id="inherited-constants-org.mule.api.lifecycle.Disposable">
+  <div id="inherited-constants-org.mule.api.lifecycle.Disposable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.api.lifecycle.Disposable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol">PHASE_NAME</td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.lifecycle.Initialisable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.api.lifecycle.Initialisable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+org.mule.api.lifecycle.Initialisable
+<div id="inherited-constants-org.mule.api.lifecycle.Initialisable">
+  <div id="inherited-constants-org.mule.api.lifecycle.Initialisable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.api.lifecycle.Initialisable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol">PHASE_NAME</td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.lifecycle.Startable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.api.lifecycle.Startable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+org.mule.api.lifecycle.Startable
+<div id="inherited-constants-org.mule.api.lifecycle.Startable">
+  <div id="inherited-constants-org.mule.api.lifecycle.Startable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.api.lifecycle.Startable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol">PHASE_NAME</td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-org.mule.api.lifecycle.Stoppable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-org.mule.api.lifecycle.Stoppable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+org.mule.api.lifecycle.Stoppable
+<div id="inherited-constants-org.mule.api.lifecycle.Stoppable">
+  <div id="inherited-constants-org.mule.api.lifecycle.Stoppable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-org.mule.api.lifecycle.Stoppable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol">PHASE_NAME</td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
 </table>
 
 
@@ -774,19 +946,21 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 
+
+
 <tr class="api apilevel-" >
 <td colspan="12">
 
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.gmail.GmailConnector" class="jd-expando-trigger closed"
-          ><img id="inherited-fields-org.mule.module.gmail.GmailConnector-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.gmail.BasicAuthGmailConnector" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-org.mule.module.gmail.BasicAuthGmailConnector-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>From class
-<a href="../../../../../../org/mule/module/gmail/GmailConnector.html">org.mule.module.gmail.GmailConnector</a>
-<div id="inherited-fields-org.mule.module.gmail.GmailConnector">
-  <div id="inherited-fields-org.mule.module.gmail.GmailConnector-list"
+<a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html">org.mule.module.gmail.BasicAuthGmailConnector</a>
+<div id="inherited-fields-org.mule.module.gmail.BasicAuthGmailConnector">
+  <div id="inherited-fields-org.mule.module.gmail.BasicAuthGmailConnector-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-fields-org.mule.module.gmail.GmailConnector-summary" style="display: none;">
+  <div id="inherited-fields-org.mule.module.gmail.BasicAuthGmailConnector-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -796,79 +970,9 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
           private
           
           
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#accessToken">accessToken</a></td>
+          Properties</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html#props">props</a></td>
           <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#applicationName">applicationName</a></td>
-          <td class="jd-descrcol" width="100%">Application name registered on Google API console
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#consumerKey">consumerKey</a></td>
-          <td class="jd-descrcol" width="100%">The OAuth2 consumer key 
-</td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#consumerSecret">consumerSecret</a></td>
-          <td class="jd-descrcol" width="100%">The OAuth2 consumer secret 
-</td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          IdentifierPolicy</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#identifierPolicy">identifierPolicy</a></td>
-          <td class="jd-descrcol" width="100%">This policy represents which id we want to use to represent each google account.</td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          static
-          
-          Boolean</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#providerInited">providerInited</a></td>
-          <td class="jd-descrcol" width="100%"></td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-" >
-          <td class="jd-typecol"><nobr>
-          private
-          
-          
-          String</nobr></td>
-          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#scope">scope</a></td>
-          <td class="jd-descrcol" width="100%">The OAuth scopes you want to request
-</td>
       </tr>
       
     
@@ -921,6 +1025,14 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 
 
+
+
+
+
+
+
+
+
 </table>
 
 
@@ -942,7 +1054,7 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#GmailConnectorMetadataAdapater()">GmailConnectorMetadataAdapater</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html#BasicAuthGmailConnectorLifecycleAdapter()">BasicAuthGmailConnectorLifecycleAdapter</a></span>()</nobr>
         
   </td></tr>
 
@@ -968,10 +1080,10 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
-            String</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html#dispose()">dispose</a></span>()</nobr>
         
   </td></tr>
 
@@ -984,10 +1096,10 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
-            String</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html#initialise()">initialise</a></span>()</nobr>
         
   </td></tr>
 
@@ -1000,10 +1112,10 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
-            String</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#getModuleName()">getModuleName</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html#start()">start</a></span>()</nobr>
         
   </td></tr>
 
@@ -1016,10 +1128,10 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
-            String</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorMetadataAdapater.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorLifecycleAdapter.html#stop()">stop</a></span>()</nobr>
         
   </td></tr>
 
@@ -1041,19 +1153,109 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html">org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter</a>
+  <a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html">org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater</a>
 
-<div id="inherited-methods-org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter">
-  <div id="inherited-methods-org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter-list"
+<div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater">
+  <div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.module.gmail.adapters.GmailConnectorCapabilitiesAdapter-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorMetadataAdapater-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#getDevkitBuild()">getDevkitBuild</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#getDevkitVersion()">getDevkitVersion</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#getModuleName()">getModuleName</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorMetadataAdapater.html#getModuleVersion()">getModuleVersion</a></span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html">org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter</a>
+
+<div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter">
+  <div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.gmail.adapters.BasicAuthGmailConnectorCapabilitiesAdapter-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -1069,7 +1271,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/GmailConnectorCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/adapters/BasicAuthGmailConnectorCapabilitiesAdapter.html#isCapableOf(org.mule.api.Capability)">isCapableOf</a></span>(Capability capability)</nobr>
         
         <div class="jd-descrdiv">Returns true if this module implements such capability
  
@@ -1087,19 +1289,19 @@ From class
 
 <tr class="api apilevel-" >
 <td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.gmail.GmailConnector" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-org.mule.module.gmail.GmailConnector-trigger"
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.gmail.BasicAuthGmailConnector" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.gmail.BasicAuthGmailConnector-trigger"
           src="../../../../../../assets/images/triangle-closed.png"
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="../../../../../../org/mule/module/gmail/GmailConnector.html">org.mule.module.gmail.GmailConnector</a>
+  <a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html">org.mule.module.gmail.BasicAuthGmailConnector</a>
 
-<div id="inherited-methods-org.mule.module.gmail.GmailConnector">
-  <div id="inherited-methods-org.mule.module.gmail.GmailConnector-list"
+<div id="inherited-methods-org.mule.module.gmail.BasicAuthGmailConnector">
+  <div id="inherited-methods-org.mule.module.gmail.BasicAuthGmailConnector-list"
         class="jd-inheritedlinks">
   </div>
-  <div id="inherited-methods-org.mule.module.gmail.GmailConnector-summary" style="display: none;">
+  <div id="inherited-methods-org.mule.module.gmail.BasicAuthGmailConnector-summary" style="display: none;">
     <table class="jd-sumtable-expando">
     
 
@@ -1115,104 +1317,10 @@ From class
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getAccessToken()">getAccessToken</a></span>()</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html#getAccessToken()">getAccessToken</a></span>()</nobr>
         
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getAccessTokenId()">getAccessTokenId</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getApplicationName()">getApplicationName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getConsumerKey()">getConsumerKey</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getConsumerSecret()">getConsumerSecret</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            IdentifierPolicy</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getIdentifierPolicy()">getIdentifierPolicy</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getScope()">getScope</a></span>()</nobr>
-        
+        <div class="jd-descrdiv">Unsupported for this implementation.</div>
+  
   </td></tr>
 
 
@@ -1227,7 +1335,7 @@ From class
             <a href="../../../../../../java/com/google/code/javax/mail/Store.html">Store</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#getStore(java.lang.String, java.lang.String)">getStore</a></span>(String username, String password)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html#getStore(java.lang.String, java.lang.String)">getStore</a></span>(String username, String password)</nobr>
         
   </td></tr>
 
@@ -1243,103 +1351,7 @@ From class
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#init()">init</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setAccessToken(java.lang.String)">setAccessToken</a></span>(String accessToken)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setApplicationName(java.lang.String)">setApplicationName</a></span>(String applicationName)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setConsumerKey(java.lang.String)">setConsumerKey</a></span>(String consumerKey)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setConsumerSecret(java.lang.String)">setConsumerSecret</a></span>(String consumerSecret)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setIdentifierPolicy(org.mule.modules.google.IdentifierPolicy)">setIdentifierPolicy</a></span>(IdentifierPolicy identifierPolicy)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/GmailConnector.html#setScope(java.lang.String)">setScope</a></span>(String scope)</nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/BasicAuthGmailConnector.html#init()">init</a></span>()</nobr>
         
   </td></tr>
 
@@ -1837,6 +1849,174 @@ From interface
 </td></tr>
 
 
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.lifecycle.Disposable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.lifecycle.Disposable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  org.mule.api.lifecycle.Disposable
+
+<div id="inherited-methods-org.mule.api.lifecycle.Disposable">
+  <div id="inherited-methods-org.mule.api.lifecycle.Disposable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.api.lifecycle.Disposable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">dispose</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.lifecycle.Initialisable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.lifecycle.Initialisable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  org.mule.api.lifecycle.Initialisable
+
+<div id="inherited-methods-org.mule.api.lifecycle.Initialisable">
+  <div id="inherited-methods-org.mule.api.lifecycle.Initialisable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.api.lifecycle.Initialisable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">initialise</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.lifecycle.Startable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.lifecycle.Startable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  org.mule.api.lifecycle.Startable
+
+<div id="inherited-methods-org.mule.api.lifecycle.Startable">
+  <div id="inherited-methods-org.mule.api.lifecycle.Startable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.api.lifecycle.Startable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">start</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.api.lifecycle.Stoppable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.api.lifecycle.Stoppable-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  org.mule.api.lifecycle.Stoppable
+
+<div id="inherited-methods-org.mule.api.lifecycle.Stoppable">
+  <div id="inherited-methods-org.mule.api.lifecycle.Stoppable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.api.lifecycle.Stoppable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">stop</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
 </table>
 
 
@@ -1860,169 +2040,6 @@ From interface
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="DEVKIT_BUILD"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-        static 
-        final 
-        String
-      </span>
-        DEVKIT_BUILD
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "UNNAMED.1373.24989b8"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="DEVKIT_VERSION"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-        static 
-        final 
-        String
-      </span>
-        DEVKIT_VERSION
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "3.3.2"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="MODULE_NAME"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-        static 
-        final 
-        String
-      </span>
-        MODULE_NAME
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "GMail Connector (OAuth2)"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="MODULE_VERSION"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        private 
-        static 
-        final 
-        String
-      </span>
-        MODULE_VERSION
-    </h4>
-      <div class="api-level">
-        
-
-
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "1.0.3-SNAPSHOT"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
@@ -2034,7 +2051,7 @@ From interface
 
 
 
-<A NAME="GmailConnectorMetadataAdapater()"></A>
+<A NAME="BasicAuthGmailConnectorLifecycleAdapter()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2046,7 +2063,7 @@ From interface
          
         
       </span>
-      <span class="sympad">GmailConnectorMetadataAdapater</span>
+      <span class="sympad">BasicAuthGmailConnectorLifecycleAdapter</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2080,7 +2097,7 @@ From interface
 
 
 
-<A NAME="getDevkitBuild()"></A>
+<A NAME="dispose()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2090,9 +2107,9 @@ From interface
          
          
          
-        String
+        void
       </span>
-      <span class="sympad">getDevkitBuild</span>
+      <span class="sympad">dispose</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2111,7 +2128,7 @@ From interface
 </div>
 
 
-<A NAME="getDevkitVersion()"></A>
+<A NAME="initialise()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2121,9 +2138,9 @@ From interface
          
          
          
-        String
+        void
       </span>
-      <span class="sympad">getDevkitVersion</span>
+      <span class="sympad">initialise</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2137,12 +2154,21 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>InitialisationException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getModuleName()"></A>
+<A NAME="start()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2152,9 +2178,9 @@ From interface
          
          
          
-        String
+        void
       </span>
-      <span class="sympad">getModuleName</span>
+      <span class="sympad">start</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2168,12 +2194,21 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>MuleException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getModuleVersion()"></A>
+<A NAME="stop()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2183,9 +2218,9 @@ From interface
          
          
          
-        String
+        void
       </span>
-      <span class="sympad">getModuleVersion</span>
+      <span class="sympad">stop</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2199,6 +2234,15 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>MuleException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>

@@ -580,7 +580,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p>AdvancedSearchMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch(java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
+<p>AdvancedSearchMessageProcessor invokes the <code><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html#advancedSearch(java.lang.String, java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)">advancedSearch(java.lang.String, java.lang.String, org.mule.module.gmail.search.GmailFolder, com.google.code.javax.mail.search.SearchTerm, java.lang.Boolean, java.lang.Boolean)</a></code> method in <code><a href="../../../../../../java/org/mule/module/gmail/BaseGmailConnector.html">BaseGmailConnector</a></code>. For each argument there is a field in this processor to match it.  Before invoking the actual method the processor will evaluate and transform where possible to the expected argument type.
  
 </p>
 
@@ -816,13 +816,24 @@ org.mule.api.lifecycle.Stoppable
           protected
           
           
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#_passwordType">_passwordType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
           <a href="../../../../../../java/com/google/code/javax/mail/search/SearchTerm.html">SearchTerm</a></nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#_searchTermType">_searchTermType</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           protected
           
@@ -833,7 +844,7 @@ org.mule.api.lifecycle.Stoppable
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           protected
           
@@ -844,7 +855,7 @@ org.mule.api.lifecycle.Stoppable
       </tr>
       
     
-      <tr class="alt-color api apilevel-" >
+      <tr class=" api apilevel-" >
           <td class="jd-typecol"><nobr>
           protected
           
@@ -855,13 +866,24 @@ org.mule.api.lifecycle.Stoppable
       </tr>
       
     
-      <tr class=" api apilevel-" >
+      <tr class="alt-color api apilevel-" >
           <td class="jd-typecol"><nobr>
           protected
           
           
           Object</nobr></td>
           <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#includeAttachments">includeAttachments</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Object</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#password">password</a></td>
           <td class="jd-descrcol" width="100%"></td>
       </tr>
       
@@ -1219,6 +1241,24 @@ org.mule.api.lifecycle.Stoppable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#setPassword(java.lang.Object)">setPassword</a></span>(Object value)</nobr>
+        
+        <div class="jd-descrdiv">Sets password</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../../../../org/mule/module/gmail/processors/AdvancedSearchMessageProcessor.html#setSearchTerm(java.lang.Object)">setSearchTerm</a></span>(Object value)</nobr>
         
         <div class="jd-descrdiv">Sets searchTerm</div>
@@ -1227,7 +1267,7 @@ org.mule.api.lifecycle.Stoppable
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1245,7 +1285,7 @@ org.mule.api.lifecycle.Stoppable
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1261,7 +1301,7 @@ org.mule.api.lifecycle.Stoppable
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2354,6 +2394,36 @@ From interface
 
 
 
+<A NAME="_passwordType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        _passwordType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
 <A NAME="_searchTermType"></A>
 
 <div class="jd-details api apilevel-"> 
@@ -2485,6 +2555,36 @@ From interface
         Object
       </span>
         includeAttachments
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="password"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Object
+      </span>
+        password
     </h4>
       <div class="api-level">
         
@@ -2935,6 +3035,47 @@ From interface
         <tr>
           <th>context</td>
           <td>Mule context to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPassword(java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPassword</span>
+      <span class="normal">(Object value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets password</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Value to set
 </td>
         </tr>
       </table>
