@@ -251,6 +251,10 @@
     <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/gmail/model/package-summary.html">org.mule.module.gmail.model</a></li>
     <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/gmail/model/holders/package-summary.html">org.mule.module.gmail.model.holders</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/gmail/model/transformers/package-summary.html">org.mule.module.gmail.model.transformers</a></li>
+    <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/gmail/oauth/package-summary.html">org.mule.module.gmail.oauth</a></li>
     <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/gmail/process/package-summary.html">org.mule.module.gmail.process</a></li>
@@ -262,6 +266,8 @@
   <a href="../../../../../java/org/mule/module/gmail/search/holders/package-summary.html">org.mule.module.gmail.search.holders</a></li>
     <li class="api apilevel-">
   <a href="../../../../../java/org/mule/module/gmail/search/transformers/package-summary.html">org.mule.module.gmail.search.transformers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/gmail/transformers/package-summary.html">org.mule.module.gmail.transformers</a></li>
     <li class="api apilevel-">
   <a href="../../../../../java/org/mule/modules/google/transformers/package-summary.html">org.mule.modules.google.transformers</a></li>
               </ul><br/>
@@ -768,6 +774,26 @@ org.mule.modules.google.AbstractGoogleOAuthConnector
             
             
             
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/gmail/BaseGmailConnector.html#delete(org.mule.module.gmail.model.MailMessage, java.lang.String, java.lang.String)">delete</a></span>(<a href="../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a> mailMessage, String username, String password)</nobr>
+        
+        <div class="jd-descrdiv">Moves the given message to the trash and deletes it from its current folder 
+ 
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             List&lt;<a href="../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a>&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -1246,6 +1272,71 @@ From class
         <tr>
             <th><a href="../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
             <td>if an error is found accessing the mailbox
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="delete(org.mule.module.gmail.model.MailMessage, java.lang.String, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">delete</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a> mailMessage, String username, String password)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Moves the given message to the trash and deletes it from its current folder 
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>mailMessage</td>
+          <td>An instance of <code><a href="../../../../../java/org/mule/module/gmail/model/MailMessage.html">MailMessage</a></code> representing the message to be deleted. At the very
+ 					least, the googleId property must be not null</td>
+        </tr>
+        <tr>
+          <th>username</td>
+          <td>The mailbox username</td>
+        </tr>
+        <tr>
+          <th>password</td>
+          <td>Optional value only required when using basic auth. Ignore this if you're using OAuth</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/google/code/javax/mail/MessagingException.html">MessagingException</a></td>
+            <td>if the mailbox throws an exception</td>
+        </tr>  
+        <tr>
+            <th>IllegalArgumentException</td>
+            <td>if the mailbox contains no email with that id
 </td>
         </tr>
       </table>

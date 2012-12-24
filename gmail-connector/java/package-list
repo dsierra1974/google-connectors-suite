@@ -22,11 +22,14 @@ org.mule.module.gmail.adapters
 org.mule.module.gmail.agents
 org.mule.module.gmail.config
 org.mule.module.gmail.model
+org.mule.module.gmail.model.holders
+org.mule.module.gmail.model.transformers
 org.mule.module.gmail.oauth
 org.mule.module.gmail.process
 org.mule.module.gmail.processors
 org.mule.module.gmail.search
 org.mule.module.gmail.search.holders
 org.mule.module.gmail.search.transformers
+org.mule.module.gmail.transformers
 org.mule.modules.google.transformers
 
