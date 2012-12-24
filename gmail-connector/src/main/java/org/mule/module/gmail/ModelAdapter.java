@@ -10,6 +10,7 @@
 package org.mule.module.gmail;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,9 +23,9 @@ import org.mule.module.gmail.model.Attachment;
 import org.mule.module.gmail.model.MailMessage;
 
 import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
-import com.google.code.com.sun.mail.imap.IMAPBodyPart;
 import com.google.code.com.sun.mail.imap.IMAPMessage;
 import com.google.code.javax.mail.Address;
+import com.google.code.javax.mail.HasRawInputStream;
 import com.google.code.javax.mail.Message;
 import com.google.code.javax.mail.MessagingException;
 import com.google.code.javax.mail.Multipart;
@@ -121,17 +122,14 @@ public abstract class ModelAdapter {
 	}
 	
 	private static String partToString(Part part) {
-		IMAPBodyPart bodyPart = (IMAPBodyPart) part;
-    	byte[] bytes = null;
-    	try {
-    		bytes = IOUtils.toByteArray(bodyPart.getRawInputStream());
-    	} catch (IOException e) {
-    		throw new RuntimeException(e);
-    	} catch (MessagingException e) {
-    		throw new RuntimeException(e);
-    	}
-	
-    	return new String(bytes);
+		try {
+			InputStream in = part instanceof HasRawInputStream ? ((HasRawInputStream) part).getRawInputStream() : part.getInputStream();
+			return new String(IOUtils.toByteArray(in));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 	private static void extractContentAndAttachments(MailMessage email, Message message, boolean includeAttachments) throws MessagingException {

@@ -33,7 +33,9 @@ import com.google.code.com.sun.mail.imap.IMAPFolder;
 import com.google.code.com.sun.mail.imap.IMAPMessage;
 import com.google.code.javax.mail.AuthenticationFailedException;
 import com.google.code.javax.mail.FetchProfile;
+import com.google.code.javax.mail.Flags.Flag;
 import com.google.code.javax.mail.Folder;
+import com.google.code.javax.mail.Message;
 import com.google.code.javax.mail.MessagingException;
 import com.google.code.javax.mail.Store;
 import com.google.code.javax.mail.internet.InternetAddress;
@@ -43,6 +45,7 @@ import com.google.code.javax.mail.search.ComparisonTerm;
 import com.google.code.javax.mail.search.FlagTerm;
 import com.google.code.javax.mail.search.FromTerm;
 import com.google.code.javax.mail.search.GmailLabelTerm;
+import com.google.code.javax.mail.search.GmailMessageIDTerm;
 import com.google.code.javax.mail.search.GmailRawSearchTerm;
 import com.google.code.javax.mail.search.GmailThreadIDTerm;
 import com.google.code.javax.mail.search.HeaderTerm;
@@ -231,6 +234,55 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 		return this.doGetMessages(username, password, folder, searchTerms, expunge, includeAttachments);
 	}
 	
+	/**
+	 * Moves the given message to the trash and deletes it from its current folder 
+	 * 
+	 * {@sample.xml ../../../doc/Gmail-connector.xml.sample gmail:delete}
+	 * 
+	 * @param mailMessage an instance of {@link org.mule.module.gmail.model.MailMessage} representing the message to be deleted. At the very
+	 * 					least, the googleId property must be not null
+	 * @param username the mailbox username
+	 * @param password optional value only required when using basic auth. Ignore this if you're using OAuth
+	 * @throws MessagingException if the mailbox throws an exception
+	 * @throws IllegalArgumentException if the mailbox contains no email with that id
+	 */
+	@Processor
+	@OAuthProtected
+	@OAuthInvalidateAccessTokenOn(exception=OAuthTokenExpiredException.class)
+	public void delete(
+					@Optional @Default("#[payload]") MailMessage mailMessage,
+					String username,
+					@Optional String password) throws MessagingException {
+		
+		SearchTerm idTerm = new GmailMessageIDTerm(mailMessage.getGoogleId());
+		Store store = null;
+		Folder folder = null;
+		Folder trash = null;
+		
+		try {
+			store = this.getStore(username, password);
+			folder = this.openFolder(store, GmailFolder.ALL_MAIL, Folder.READ_WRITE);
+			trash = this.openFolder(store, GmailFolder.TRASH, Folder.READ_WRITE);
+			
+			Message[] msg = folder.search(idTerm);
+			
+			if (msg.length == 0) {
+				throw new IllegalArgumentException(String.format("Message with id %s was not found on the mailbox", mailMessage.getGoogleId()));
+			} else if (msg.length > 1) {
+				throw new RuntimeException(String.format("%d matches found on mailbox for id %s but only one was expected", msg.length, mailMessage.getGoogleId()));
+			}
+			
+			
+			folder.copyMessages(msg, trash);
+			msg[0].setFlag(Flag.DELETED, true);
+			
+		} finally {
+			this.closeFolder(folder, true);
+			this.closeFolder(trash, false);
+			this.closeStore(store);
+		}
+	}
+	
 	private List<MailMessage> doGetMessages(String username, String password, GmailFolder gmailFolder, List<SearchTerm> searchTerms, boolean expunge, boolean includeAttachments) throws MessagingException {
 		Store store = null;
 		Folder folder = null;
@@ -250,13 +302,27 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 		} catch (AuthenticationFailedException e) {
 			throw new OAuthTokenExpiredException("Authentication failed", e);
 		} finally {
-			
-			if (folder != null && folder.isOpen()) {
-				folder.close(expunge);
-			}
-			
-			if (store != null) {
+			this.closeFolder(folder, expunge);
+			this.closeStore(store);
+		}
+	}
+	
+	private void closeStore(Store store) {
+		if (store != null & store.isConnected()) {
+			try {
 				store.close();
+			} catch (MessagingException e) {
+				throw new RuntimeException("Error closing store", e);
+			}
+		}
+	}
+	
+	private void closeFolder(Folder folder, boolean expunge) {
+		if (folder != null && folder.isOpen()) {
+			try {
+				folder.close(expunge);
+			} catch (MessagingException e) {
+				throw new RuntimeException("Error closing folder", e);
 			}
 		}
 	}
@@ -289,6 +355,10 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 	}
 	
 	private Folder openFolder(Store store, GmailFolder gmailFolder) throws MessagingException {
+		return this.openFolder(store, gmailFolder, Folder.READ_ONLY);
+	}
+	
+	private Folder openFolder(Store store, GmailFolder gmailFolder, int openMode) throws MessagingException {
 		String target = gmailFolder.getDescription(); 
 		for (Folder f : store.getDefaultFolder().xlist("*")) {
 			IMAPFolder folder = (IMAPFolder) f;
@@ -296,7 +366,7 @@ public abstract class BaseGmailConnector extends AbstractGoogleOAuthConnector {
 				attr = attr.substring(1);
 				if (target.equals(attr)) { // xlist returns things like \Inbox so remove first character
 					f = store.getFolder(target.equals("Inbox") ? target : folder.getFullName());
-					f.open(Folder.READ_ONLY);
+					f.open(openMode);
 					return f;
 				}
 			}

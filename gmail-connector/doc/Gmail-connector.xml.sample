@@ -5,3 +5,7 @@
 <!-- BEGIN_INCLUDE(gmail:search) -->
     <gmail:search username="me@mulesoft.com" folder="INBOX" config-ref="gmail" />
 <!-- END_INCLUDE(gmail:search) -->
+
+<!-- BEGIN_INCLUDE(gmail:delete) -->
+    <gmail:delete username="me@mulesoft.com" config-ref="gmail" />
+<!-- END_INCLUDE(gmail:delete) -->
